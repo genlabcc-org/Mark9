@@ -13,10 +13,10 @@ export function Header() {
 
   return (
     <>
-      {/* GSAP Wave Overlays for Menu Transition */}
+      {/* GSAP Pixel Grid Overlay for Menu Transition */}
       <ShapeOverlays 
         isOpened={isMenuOpen} 
-        colors={["#ff4d00", "#ff2200"]} 
+        color="#ff2200" 
         onComplete={() => setIsOverlayAnimating(false)} 
       />
 

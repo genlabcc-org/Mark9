@@ -1,121 +1,113 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import './ShapeOverlays.css';
 
-export function ShapeOverlays({ isOpened, onComplete, colors = ["#ff2200", "#090909"] }) {
-  const svgRef = useRef(null);
-  const pathsRef = useRef([]);
+export function ShapeOverlays({ isOpened, onComplete, color = "#ff2200" }) {
+  const containerRef = useRef(null);
   const tlRef = useRef(null);
-  const isFirstRender = useRef(true);
+  const prevIsOpenedRef = useRef(isOpened);
+  const onCompleteRef = useRef(onComplete);
+
+  const [gridDimensions, setGridDimensions] = useState(() => {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    return isMobile ? { rows: 10, cols: 6 } : { rows: 6, cols: 10 };
+  });
 
   useEffect(() => {
-    if (!svgRef.current) return;
-
-    const numPoints = 10;
-    const numPaths = colors.length;
-    const delayPointsMax = 0.3;
-    const delayPerPath = 0.25;
-    const pointsDelay = [];
-    const allPoints = [];
-
-    // Initialize points
-    for (let i = 0; i < numPaths; i++) {
-      const points = [];
-      allPoints.push(points);
-      for (let j = 0; j < numPoints; j++) {
-        points.push(isOpened ? 100 : 0);
-      }
-    }
-
-    const render = () => {
-      for (let i = 0; i < numPaths; i++) {
-        const path = pathsRef.current[i];
-        if (!path) continue;
-        const points = allPoints[i];
-
-        let d = "";
-        d += `M 0 ${points[0]} C`;
-
-        for (let j = 0; j < numPoints - 1; j++) {
-          const p = ((j + 1) / (numPoints - 1)) * 100;
-          const cp = p - ((1 / (numPoints - 1)) * 100) / 2;
-          d += ` ${cp} ${points[j]} ${cp} ${points[j + 1]} ${p} ${points[j + 1]}`;
-        }
-
-        d += ` V 100 H 0 Z`;
-        path.setAttribute("d", d);
-      }
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const nextDims = isMobile ? { rows: 10, cols: 6 } : { rows: 6, cols: 10 };
+      setGridDimensions((prev) => (prev.rows !== nextDims.rows || prev.cols !== nextDims.cols ? nextDims : prev));
     };
 
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      render();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const boxes = containerRef.current.querySelectorAll('.pixel-overlay-box');
+
+    // Prevent double execution on initial render if closed, or if isOpened hasn't changed
+    if (prevIsOpenedRef.current === isOpened) {
       if (!isOpened) {
-        // Clear paths when closed initially
-        for (let i = 0; i < numPaths; i++) {
-          if (pathsRef.current[i]) pathsRef.current[i].setAttribute("d", "");
-        }
-        return;
+        gsap.set(boxes, { scale: 0, opacity: 0 });
       }
+      return;
     }
+    prevIsOpenedRef.current = isOpened;
+
+    if (tlRef.current) tlRef.current.kill();
 
     const tl = gsap.timeline({
-      onUpdate: render,
       onComplete: () => {
-        if (!isOpened) {
-          // Clear paths when animation closing completes
-          for (let i = 0; i < numPaths; i++) {
-            if (pathsRef.current[i]) pathsRef.current[i].setAttribute("d", "");
-          }
-        }
-        if (onComplete) onComplete();
-      },
-      defaults: {
-        ease: "power2.inOut",
-        duration: 0.75
+        if (onCompleteRef.current) onCompleteRef.current();
       }
     });
-
     tlRef.current = tl;
 
-    for (let i = 0; i < numPoints; i++) {
-      pointsDelay[i] = Math.random() * delayPointsMax;
-    }
+    const { rows, cols } = gridDimensions;
 
-    for (let i = 0; i < numPaths; i++) {
-      const points = allPoints[i];
-      const pathDelay = delayPerPath * (isOpened ? i : (numPaths - i - 1));
-      const targetVal = isOpened ? 0 : 100;
-
-      for (let j = 0; j < numPoints; j++) {
-        const delay = pointsDelay[j];
-        tl.to(points, {
-          [j]: targetVal
-        }, delay + pathDelay);
-      }
+    if (isOpened) {
+      // OPENING: Pixel boxes assemble & grow to cover viewport
+      gsap.set(boxes, { scale: 0, opacity: 0, borderRadius: '0px' });
+      tl.to(boxes, {
+        scale: 1.03,
+        opacity: 1,
+        borderRadius: '0px',
+        duration: 0.35,
+        ease: 'power2.out',
+        stagger: {
+          grid: [rows, cols],
+          from: 'random',
+          amount: 0.45
+        }
+      });
+    } else {
+      // CLOSING: Pixel boxes shrink & dissolve away
+      gsap.set(boxes, { scale: 1, opacity: 1, borderRadius: '0px' });
+      tl.to(boxes, {
+        scale: 0,
+        opacity: 0,
+        borderRadius: '0px',
+        duration: 0.35,
+        ease: 'power2.inOut',
+        stagger: {
+          grid: [rows, cols],
+          from: 'random',
+          amount: 0.45
+        }
+      });
     }
 
     return () => {
       if (tlRef.current) tlRef.current.kill();
     };
-  }, [isOpened, colors, onComplete]);
+  }, [isOpened, gridDimensions]);
+
+  const totalBoxes = gridDimensions.rows * gridDimensions.cols;
 
   return (
-    <svg
-      ref={svgRef}
-      className={`shape-overlays ${isOpened ? 'active' : ''}`}
-      viewBox="0 0 100 100"
-      preserveAspectRatio="none"
+    <div 
+      ref={containerRef}
+      className={`shape-overlays-pixel ${isOpened ? 'active' : ''}`}
+      style={{
+        gridTemplateColumns: `repeat(${gridDimensions.cols}, 1fr)`,
+        gridTemplateRows: `repeat(${gridDimensions.rows}, 1fr)`
+      }}
     >
-      {colors.map((color, index) => (
-        <path
-          key={index}
-          ref={(el) => (pathsRef.current[index] = el)}
-          className="shape-overlays__path"
-          fill={color}
+      {Array.from({ length: totalBoxes }).map((_, index) => (
+        <div 
+          key={index} 
+          className="pixel-overlay-box"
+          style={{ backgroundColor: color }}
         />
       ))}
-    </svg>
+    </div>
   );
 }
 

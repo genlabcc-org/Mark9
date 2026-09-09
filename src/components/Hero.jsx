@@ -11,7 +11,7 @@ export function Hero() {
       <div className="hero-meta-bar">
         <div className="meta-left">
           <span className="square-bullet"></span>
-          <span>Mark9 Studio — design school</span>
+          <span>mark9 studio — design school</span>
         </div>
         <div className="meta-right">
           <span>design school — 2026</span>
@@ -23,18 +23,12 @@ export function Hero() {
         <h1 className="hero-title">
           <div className="title-row">
             <span>we design</span>
-            <span className="pill-capsule portrait-capsule">
-              <img src="/portrait1.jpg" alt="Portrait" />
-            </span>
           </div>
           <div className="title-row">
             <span>interfaces</span>
           </div>
           <div className="title-row">
-            <span>that <span className="orange-text">move</span> people</span>
-            <span className="pill-capsule preview-capsule">
-              <img src="/portrait1.jpg" alt="Work Preview" />
-            </span>
+            <span>that <span>move</span> <span className="orange-text">people</span></span>
           </div>
         </h1>
       </div>

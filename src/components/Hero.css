@@ -63,11 +63,6 @@
   white-space: nowrap;
 }
 
-.hero-title .title-row:nth-child(3),
-.title-row-indented {
-  margin-left: clamp(40px, 8vw, 100px);
-}
-
 .orange-text {
   color: var(--accent-red);
 }
@@ -154,11 +149,6 @@
     font-size: clamp(2.4rem, 9vw, 4.2rem);
     line-height: 1.1;
     letter-spacing: -0.03em;
-  }
-
-  .hero-title .title-row:nth-child(3),
-  .title-row-indented {
-    margin-left: clamp(15px, 5vw, 45px);
   }
 
   .hero-bottom-bar {

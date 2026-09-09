@@ -6,22 +6,22 @@ import './Preloader.css';
 export function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
-  const [waveTrigger, setWaveTrigger] = useState(false);
+  const [pixelExit, setPixelExit] = useState(false);
 
   useEffect(() => {
     const controls = animate(0, 100, {
-      duration: 2.2,
+      duration: 2.0,
       ease: [0.65, 0, 0.35, 1],
       onUpdate: (latest) => {
         setProgress(Math.round(latest));
       },
       onComplete: () => {
-        setWaveTrigger(true);
+        setPixelExit(true);
         setTimeout(() => {
-          setWaveTrigger(false);
           setIsFinished(true);
+          setPixelExit(false);
           if (onComplete) onComplete();
-        }, 800);
+        }, 450);
       },
     });
 
@@ -31,28 +31,28 @@ export function Preloader({ onComplete }) {
   return (
     <>
       <ShapeOverlays 
-        isOpened={waveTrigger} 
-        colors={["#ff2200", "#090909"]} 
+        isOpened={pixelExit} 
+        color="#ff2200" 
       />
 
       <AnimatePresence>
         {!isFinished && (
-          <motion.div 
+          <motion.div
             className="preloader-overlay"
-            initial={{ y: "0%" }}
-            exit={{ 
+            initial={{ opacity: 1 }}
+            exit={{
               opacity: 0,
-              transition: { duration: 0.3 }
+              transition: { duration: 0.1 }
             }}
           >
             {/* Center SVG Text Filling Logo */}
             <div className="preloader-center">
-              <motion.svg 
-                className="filling-svg" 
+              <motion.svg
+                className="filling-svg"
                 viewBox="0 0 600 120"
                 initial={{ scale: 0.92, opacity: 0.8 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <defs>
                   <linearGradient id="textLiquidFill" x1="0" y1="1" x2="0" y2="0">
@@ -75,21 +75,21 @@ export function Preloader({ onComplete }) {
 
             {/* Bottom Footer Bar */}
             <div className="preloader-bottom-bar">
-              <motion.div 
+              <motion.div
                 className="preloader-meta-left"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <span className="bullet-square"></span>
-                <span>MARK9 STUDIO — design school</span>
+                <span>mark9 studio — design school</span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="preloader-counter"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.5 }}
               >
                 <span className="counter-num">{progress}</span>
                 <span className="counter-symbol">%</span>

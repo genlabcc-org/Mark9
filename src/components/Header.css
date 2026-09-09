@@ -31,16 +31,16 @@
   background-color: var(--text-primary);
 }
 
-/* Fullscreen Orange Overlay Navigation Menu */
+/* Fullscreen Navigation Menu Overlay */
 .fullscreen-menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--accent-red);
+  background-color: transparent;
   color: #090909;
-  z-index: 9999;
+  z-index: 9997;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,14 +48,12 @@
   box-sizing: border-box;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35 ease, transform 0.35s ease;
-  transform: translateY(-10px);
+  transition: opacity 0.25s ease 0.12s;
 }
 
 .fullscreen-menu-overlay.active {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
 }
 
 .menu-header {
