@@ -1,0 +1,18 @@
+/* GSAP Shape Overlays Component Styles */
+.shape-overlays {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+.shape-overlays.active {
+  pointer-events: auto;
+}
+
+.shape-overlays__path {
+  transition: fill 0.3s ease;
+}

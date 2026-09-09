@@ -1,0 +1,52 @@
+
+
+@font-face {
+  font-family: 'Fractual';
+  src: url('/fonts/Fractul.woff2') format('woff2'),
+       url("https://db.onlinewebfonts.com/t/cb601ca75e5b1d13f72452bfcd2c2b0a.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Global Brand Colors (from Brand Specs) */
+  --bg-dark: #090909;
+  --text-primary: #fefefe;
+  --text-muted: #808080;
+  --accent-red: #ff2200;
+
+  /* Global Fonts */
+  --font-heading: 'Fractul', 'Fractual', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

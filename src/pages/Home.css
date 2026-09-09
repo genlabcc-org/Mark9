@@ -1,0 +1,15 @@
+.home-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0 1.25rem;
+  }
+}

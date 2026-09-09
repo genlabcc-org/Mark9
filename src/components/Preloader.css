@@ -1,0 +1,97 @@
+/* Preloader Overlay Styles */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Center SVG Text Filling Logo */
+.preloader-center {
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.filling-svg {
+  width: clamp(340px, 72vw, 900px);
+  height: auto;
+  max-height: 55vh;
+  display: block;
+  overflow: visible;
+}
+
+.svg-monogram-text {
+  font-family: var(--font-heading);
+  font-size: 110px;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+/* Bottom Footer Bar */
+.preloader-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.preloader-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.bullet-square {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-red);
+  border-radius: 1px;
+}
+
+/* Bottom Right Counter */
+.preloader-counter {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+}
+
+.counter-num {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-symbol {
+  color: var(--accent-red);
+  font-size: 0.55em;
+  margin-left: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .preloader-overlay {
+    padding: 2rem 1.5rem;
+  }
+  .preloader-counter {
+    font-size: 2.2rem;
+  }
+}
