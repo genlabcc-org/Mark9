@@ -92,6 +92,49 @@
   color: var(--accent-red);
 }
 
+@keyframes slidePeopleBg {
+
+  0%,
+  20% {
+    background-image: url('/project3.png');
+    background-position: 0% 50%;
+  }
+
+  25%,
+  45% {
+    background-image: url('/project2.png');
+    background-position: 50% 50%;
+  }
+
+  50%,
+  70% {
+    background-image: url('/project5.png');
+    background-position: 100% 50%;
+  }
+
+  75%,
+  95% {
+    background-image: url('/insight1.jpg');
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-image: url('/project3.png');
+    background-position: 0% 50%;
+  }
+}
+
+.people-bg-text {
+  animation: slidePeopleBg 4s infinite ease-in-out;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline;
+  will-change: background-image, background-position;
+}
+
 .pill-capsule {
   display: inline-flex;
   border-radius: 999px;

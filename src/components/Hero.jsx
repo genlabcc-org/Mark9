@@ -27,7 +27,7 @@ export function Hero() {
               <span>we design interfaces</span>
             </div>
             <div className="title-row">
-              <span>that <span>move</span> people<span className="orange-text">.</span></span>
+              <span>that <span>move</span> <span className="people-bg-text">people</span><span className="orange-text">.</span></span>
             </div>
           </h1>
         </div>
