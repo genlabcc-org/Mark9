@@ -197,11 +197,24 @@
   }
 
   .about-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    gap: 0.2rem;
+    align-items: center;
+    text-align: center;
   }
 
   .stat-number {
-    font-size: 2.2rem;
+    font-size: clamp(1.35rem, 5.2vw, 1.8rem);
+  }
+
+  .stat-label {
+    font-size: clamp(0.55rem, 2.1vw, 0.68rem);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
   }
 }

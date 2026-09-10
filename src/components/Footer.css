@@ -1,12 +1,9 @@
 /* Footer Section Styles - Off-White Theme (#F5F5F2) with Black Text & Accent Orange/Red Hover */
 
 .site-footer {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-right: -3rem;
   background-color: #F5F5F2;
   color: #090909;
   border-top: 1px solid rgba(9, 9, 9, 0.12);
@@ -190,6 +187,17 @@
   transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
 }
 
+.social-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
 .social-arrow {
   color: #090909;
   font-size: 1.1rem;
@@ -200,6 +208,10 @@
   background-color: var(--accent-red);
   color: #ffffff;
   padding-left: 3.5rem;
+}
+
+.social-list a:hover .social-icon {
+  transform: scale(1.15);
 }
 
 .social-list a:hover .social-arrow {
@@ -272,6 +284,12 @@
 
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
+  .site-footer {
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
   .footer-top-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -296,28 +314,57 @@
 }
 
 @media (max-width: 768px) {
+  .site-footer {
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
   .footer-top-grid {
     grid-template-columns: 1fr;
   }
 
-  .footer-nav-col,
-  .footer-newsletter-col,
+  .footer-nav-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(9, 9, 9, 0.12);
+    padding: 2rem 1.25rem;
+  }
+
+  .footer-links-list a {
+    font-size: 1.25rem;
+  }
+
+  .footer-newsletter-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(9, 9, 9, 0.12);
+    padding: 2.2rem 1.25rem;
+  }
+
+  .newsletter-title {
+    font-size: 1.6rem;
+  }
+
   .footer-social-col {
     border-right: none;
-    padding: 2.5rem 1.5rem;
   }
 
   .social-list a {
-    padding: 1rem 1.5rem;
+    padding: 1.1rem 1.25rem;
+    font-size: 1.1rem;
   }
 
   .footer-bottom-grid {
     grid-template-columns: 1fr;
-    padding: 2.5rem 1.5rem;
-    gap: 1.8rem;
+    padding: 2.2rem 1.25rem;
+    gap: 1.5rem;
   }
 
   .sub-col-copyright {
     grid-column: span 1;
+    align-items: flex-start;
+  }
+
+  .phone-number {
+    font-size: 1.6rem;
   }
 }

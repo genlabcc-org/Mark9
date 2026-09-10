@@ -69,13 +69,6 @@ export function About() {
             </div>
           </div>
 
-          {/* More About Me Button */}
-          <div className="about-btn-wrapper">
-            <a href="#contact" className="about-btn">
-              <span>more about me</span>
-              <span className="btn-arrow">→</span>
-            </a>
-          </div>
         </motion.div>
       </div>
     </section>

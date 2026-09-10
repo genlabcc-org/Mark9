@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import { ArrowUpRight } from 'lucide-react';
 import './Hero.css';
 
 export function Hero() {
@@ -18,33 +19,33 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Hero Title in 2 lines */}
-      <div className="hero-title-container">
-        <h1 className="hero-title">
-          <div className="title-row">
-            <span>we design interfaces</span>
-          </div>
-          <div className="title-row">
-            <span>that <span>move</span> <span className="orange-text">people</span></span>
-          </div>
-        </h1>
-      </div>
+      {/* Hero Title and Bio Content Block */}
+      <div className="hero-main-content">
+        <div className="hero-title-container">
+          <h1 className="hero-title">
+            <div className="title-row">
+              <span>we design interfaces</span>
+            </div>
+            <div className="title-row">
+              <span>that <span>move</span> people<span className="orange-text">.</span></span>
+            </div>
+          </h1>
+        </div>
 
-
-      {/* Hero Bottom Bar */}
-      <div className="hero-bottom-bar">
         <div className="hero-bio">
           <p>
             I design websites and digital products for universities, research institutes and finance companies — work that has to win over a boardroom and still feel effortless to use.
           </p>
-        </div>
-
-        <div className="hero-scroll">
-          <span className="scroll-dot">●</span> scroll
+          <a href="/contact" className="hero-talk-btn">
+            <span>let’s talk</span>
+            <ArrowUpRight size={16} />
+          </a>
         </div>
       </div>
+
     </section>
   );
 }
 
 export default Hero;
+

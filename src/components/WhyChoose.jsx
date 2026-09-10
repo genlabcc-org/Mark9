@@ -49,7 +49,7 @@ export function WhyChoose() {
       <div className="why-choose-container">
         {/* Main Headline */}
         <div className="why-choose-headline-wrapper">
-          <h2 className="why-choose-headline">Why Mark9?</h2>
+          <h2 className="why-choose-headline">Why Mark9<span className="dot-red">.</span></h2>
         </div>
 
         {/* 4-Column Feature Grid */}

@@ -53,6 +53,10 @@
   margin-bottom: 0.5rem;
 }
 
+.insights-tag .bullet-square {
+  background-color: var(--accent-red);
+}
+
 .insights-title {
   font-family: var(--font-heading);
   font-size: clamp(3.4rem, 5.2vw, 5.5rem);
@@ -62,6 +66,10 @@
   color: #090909;
   margin: 0.4rem 0 1.2rem;
   text-align: left;
+}
+
+.insights-title .dot-red {
+  color: var(--accent-red);
 }
 
 .insights-desc {
@@ -161,23 +169,19 @@
 .card-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.05) 45%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.05) 45%,
+      rgba(0, 0, 0, 0.85) 100%);
   z-index: 2;
   transition: opacity 0.4s ease;
 }
 
 .insight-card:hover .card-overlay-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45) 0%,
-    rgba(0, 0, 0, 0.1) 40%,
-    rgba(0, 0, 0, 0.92) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0.92) 100%);
 }
 
 /* Top Badge */
@@ -259,13 +263,29 @@
     padding: 4.5rem 1.25rem 5.5rem;
   }
 
-  .insights-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .insights-left-top {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .insights-tag {
+    width: 100%;
+    justify-content: center;
   }
 
   .insights-title {
     font-size: clamp(2.6rem, 8vw, 4rem);
+    text-align: left;
+  }
+
+  .insights-desc {
+    text-align: left;
+  }
+
+  .insights-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .insight-card {

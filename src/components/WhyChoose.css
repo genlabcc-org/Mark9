@@ -63,6 +63,10 @@
   text-align: left;
 }
 
+.why-choose-headline .dot-red {
+  color: var(--accent-red);
+}
+
 /* 4-Column Feature Grid */
 .why-choose-grid {
   display: grid;

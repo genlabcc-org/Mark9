@@ -50,8 +50,7 @@ export function FAQ() {
         {/* Left Column - Large Typography Heading */}
         <div className="faq-left-col">
           <h2 className="faq-heading">
-            Frequently<br />
-            Asked <span className="faq-dot">•</span><br />
+            Frequently Asked<br />
             Questions
           </h2>
         </div>

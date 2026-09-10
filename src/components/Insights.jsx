@@ -44,7 +44,7 @@ export function Insights() {
               <span>insights</span>
             </div>
 
-            <h2 className="insights-title">Insights.</h2>
+            <h2 className="insights-title">Insights<span className="dot-red">.</span></h2>
 
             <p className="insights-desc">
               Lessons, frameworks, and honest takes on what it actually takes to grow.
