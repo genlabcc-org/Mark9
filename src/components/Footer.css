@@ -1,0 +1,323 @@
+/* Footer Section Styles - Off-White Theme (#F5F5F2) with Black Text & Accent Orange/Red Hover */
+
+.site-footer {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #F5F5F2;
+  color: #090909;
+  border-top: 1px solid rgba(9, 9, 9, 0.12);
+  box-sizing: border-box;
+  user-select: none;
+  text-transform: none;
+}
+
+.footer-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Top Grid Area (4 Columns) */
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr 1.2fr;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.12);
+}
+
+.footer-nav-col {
+  padding: 4rem 3rem;
+  border-right: 1px solid rgba(9, 9, 9, 0.12);
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-links-list a {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  font-weight: 600;
+  color: #090909;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.link-dash {
+  color: #090909;
+  font-weight: 400;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links-list a:hover {
+  color: var(--accent-red);
+  transform: translateX(4px);
+}
+
+.footer-links-list a:hover .link-dash {
+  color: var(--accent-red);
+}
+
+.red-dot {
+  color: var(--accent-red);
+  font-size: 0.6em;
+  margin-left: 0.3rem;
+}
+
+/* Column 3: Newsletter Box */
+.footer-newsletter-col {
+  padding: 4rem 3.5rem;
+  border-right: 1px solid rgba(9, 9, 9, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletter-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #090909;
+  margin: 0;
+  text-transform: none;
+}
+
+.newsletter-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #333333;
+  margin: 0;
+}
+
+.newsletter-subdesc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #777777;
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.3);
+  padding-bottom: 0.4rem;
+}
+
+.newsletter-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #090909;
+  outline: none;
+  padding-right: 2.5rem;
+}
+
+.newsletter-input::placeholder {
+  color: #888888;
+}
+
+.newsletter-btn {
+  background: transparent;
+  border: none;
+  color: #090909;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.newsletter-btn:hover {
+  color: var(--accent-red);
+  transform: translateX(4px);
+}
+
+/* Column 4: Social Links List */
+.footer-social-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.social-list li {
+  flex: 1;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.12);
+}
+
+.social-list li:last-child {
+  border-bottom: none;
+}
+
+.social-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 1.2rem 3rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 600;
+  color: #090909;
+  text-decoration: none;
+  text-transform: none;
+  transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+}
+
+.social-arrow {
+  color: #090909;
+  font-size: 1.1rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-list a:hover {
+  background-color: var(--accent-red);
+  color: #ffffff;
+  padding-left: 3.5rem;
+}
+
+.social-list a:hover .social-arrow {
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+/* Bottom Sub-Footer Area (3 Columns) */
+.footer-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 3.5rem 3rem;
+  gap: 2rem;
+}
+
+.sub-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #777777;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #888888;
+  border-radius: 50%;
+}
+
+.address-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+}
+
+.phone-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  font-weight: 800;
+  color: #090909;
+  letter-spacing: -0.03em;
+  margin: 0.4rem 0 0;
+}
+
+.sub-col-legal p,
+.sub-col-copyright p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+}
+
+.sub-col-copyright {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-newsletter-col,
+  .footer-social-col {
+    border-top: 1px solid rgba(9, 9, 9, 0.12);
+  }
+
+  .footer-social-col {
+    border-right: none;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sub-col-copyright {
+    align-items: flex-start;
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav-col,
+  .footer-newsletter-col,
+  .footer-social-col {
+    border-right: none;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .social-list a {
+    padding: 1rem 1.5rem;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem;
+    gap: 1.8rem;
+  }
+
+  .sub-col-copyright {
+    grid-column: span 1;
+  }
+}

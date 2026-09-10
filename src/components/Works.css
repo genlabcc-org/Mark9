@@ -1,0 +1,132 @@
+/* Works Showcase Section Styles */
+
+.works-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 3rem 6rem;
+  background-color: #F5F5F2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.works-header {
+  margin-bottom: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.works-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #666666;
+}
+
+.works-tag .bullet-square {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-red);
+  border-radius: 1px;
+}
+
+/* 2x2 Works Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 2.2rem;
+  width: 100%;
+}
+
+/* Individual Work Card */
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+
+
+.work-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+  will-change: transform;
+}
+
+/* Text Below Image */
+.work-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.work-title {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 1.25vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #090909;
+  margin: 0;
+  text-transform: none;
+}
+
+.work-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 0.85vw, 0.85rem);
+  line-height: 1.45;
+  color: #666666;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .works-section {
+    padding: 3.5rem 1.5rem 4.5rem;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    left: 0;
+    right: 0;
+  }
+
+  .work-title {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+
+  .work-subtitle {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+}

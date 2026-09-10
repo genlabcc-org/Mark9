@@ -18,8 +18,9 @@
   margin-bottom: 3rem;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
+
 
 .services-tag {
   display: flex;
@@ -28,9 +29,10 @@
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   color: #666666;
 }
+
 
 .services-tag .bullet-square {
   background-color: var(--accent-red);
@@ -128,7 +130,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   color: #777777;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   will-change: transform, color;
   transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -137,13 +139,14 @@
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4.5vw, 3.8rem);
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.06em;
   color: #090909;
   margin: 0;
   line-height: 1.1;
   will-change: transform, color;
   transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 
 /* Smooth Hover State */
 .service-row.is-hovered .service-title {

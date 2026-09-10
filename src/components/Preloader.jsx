@@ -30,9 +30,9 @@ export function Preloader({ onComplete }) {
 
   return (
     <>
-      <ShapeOverlays 
-        isOpened={pixelExit} 
-        color="#ff2200" 
+      <ShapeOverlays
+        isOpened={pixelExit}
+        color="#ff2200"
       />
 
       <AnimatePresence>
@@ -68,7 +68,7 @@ export function Preloader({ onComplete }) {
                   fill="url(#textLiquidFill)"
                   className="svg-monogram-text"
                 >
-                  mark-9
+                  mark9
                 </text>
               </motion.svg>
             </div>

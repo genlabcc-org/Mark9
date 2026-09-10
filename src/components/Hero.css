@@ -45,15 +45,16 @@
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 7.5vw, 117.6px);
+  font-size: clamp(2.5rem, 6.8vw, 105px);
   font-weight: 600;
-  line-height: 111.72px;
-  letter-spacing: -4.116px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
   gap: 0.1em;
 }
+
 
 .title-row {
   display: flex;

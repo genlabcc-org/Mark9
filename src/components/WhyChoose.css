@@ -1,0 +1,147 @@
+/* Why Choose Mark9 Section Styles - Clean Minimal Grid */
+
+.why-choose-section {
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  padding: 6.5rem 4rem 8.5rem;
+  background-color: #F5F5F2;
+  color: #090909;
+  font-family: var(--font-heading);
+  box-sizing: border-box;
+}
+
+.why-choose-header {
+  margin-bottom: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-choose-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #555555;
+  text-transform: uppercase;
+}
+
+.why-choose-tag .bullet-square {
+  background-color: var(--accent-red);
+}
+
+.why-choose-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Main Headline */
+.why-choose-headline-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.why-choose-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 6.5vw, 6.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #090909;
+  margin: 0;
+  text-align: left;
+}
+
+/* 4-Column Feature Grid */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.why-choose-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.why-choose-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.why-choose-icon-wrapper {
+  color: #090909;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+
+.why-choose-card-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #090909;
+  margin: 0;
+  text-align: left;
+}
+
+
+.why-choose-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+  text-align: left;
+}
+
+
+
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-section {
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 4.5rem 1.25rem 5.5rem;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .why-choose-headline {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+}

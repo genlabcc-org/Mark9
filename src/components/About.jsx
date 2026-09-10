@@ -24,9 +24,9 @@ export function About() {
           <h2 className="about-headline">
             <span>design with </span>
             <br />
-            <span>real </span>
-            <span className="orange-text">stakes.</span>
+            <span>real stakes<span className="orange-text">.</span></span>
           </h2>
+
         </motion.div>
 
         {/* Right Column: Bio Paragraphs, Stats & Button */}

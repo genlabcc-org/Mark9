@@ -18,20 +18,18 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Hero Title in 3 strict lines, natural casing */}
+      {/* Hero Title in 2 lines */}
       <div className="hero-title-container">
         <h1 className="hero-title">
           <div className="title-row">
-            <span>we design</span>
-          </div>
-          <div className="title-row">
-            <span>interfaces</span>
+            <span>we design interfaces</span>
           </div>
           <div className="title-row">
             <span>that <span>move</span> <span className="orange-text">people</span></span>
           </div>
         </h1>
       </div>
+
 
       {/* Hero Bottom Bar */}
       <div className="hero-bottom-bar">

@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import './Services.css';
 
 const servicesList = [
-  { id: '(01)', title: 'branding', image: '/portrait1.jpg' },
-  { id: '(02)', title: 'ux/ui design', image: '/portrait1.jpg' },
-  { id: '(03)', title: 'web & development', image: '/portrait1.jpg' },
-  { id: '(04)', title: '3d / motion', image: '/portrait1.jpg' }
+  { id: '(01)', title: 'branding', image: '/project2.png' },
+  { id: '(02)', title: 'ux/ui design', image: '/project3.png' },
+  { id: '(03)', title: 'web & development', image: '/project5.png' },
+  { id: '(04)', title: 'design school', image: '/portrait1.jpg' }
 ];
+
 
 export function Services() {
   const [hoveredIndex, setHoveredIndex] = useState(null);

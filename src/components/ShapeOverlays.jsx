@@ -53,33 +53,33 @@ export function ShapeOverlays({ isOpened, onComplete, color = "#ff2200" }) {
     const { rows, cols } = gridDimensions;
 
     if (isOpened) {
-      // OPENING: Pixel boxes assemble & grow to cover viewport
+      // OPENING: Pixel boxes assemble & grow to cover viewport (slower animation)
       gsap.set(boxes, { scale: 0, opacity: 0, borderRadius: '0px' });
       tl.to(boxes, {
         scale: 1.03,
         opacity: 1,
         borderRadius: '0px',
-        duration: 0.35,
+        duration: 0.6,
         ease: 'power2.out',
         stagger: {
           grid: [rows, cols],
           from: 'random',
-          amount: 0.45
+          amount: 0.7
         }
       });
     } else {
-      // CLOSING: Pixel boxes shrink & dissolve away
+      // CLOSING: Pixel boxes shrink & dissolve away (slower animation)
       gsap.set(boxes, { scale: 1, opacity: 1, borderRadius: '0px' });
       tl.to(boxes, {
         scale: 0,
         opacity: 0,
         borderRadius: '0px',
-        duration: 0.35,
+        duration: 0.6,
         ease: 'power2.inOut',
         stagger: {
           grid: [rows, cols],
           from: 'random',
-          amount: 0.45
+          amount: 0.7
         }
       });
     }
@@ -92,7 +92,7 @@ export function ShapeOverlays({ isOpened, onComplete, color = "#ff2200" }) {
   const totalBoxes = gridDimensions.rows * gridDimensions.cols;
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`shape-overlays-pixel ${isOpened ? 'active' : ''}`}
       style={{
@@ -101,8 +101,8 @@ export function ShapeOverlays({ isOpened, onComplete, color = "#ff2200" }) {
       }}
     >
       {Array.from({ length: totalBoxes }).map((_, index) => (
-        <div 
-          key={index} 
+        <div
+          key={index}
           className="pixel-overlay-box"
           style={{ backgroundColor: color }}
         />
