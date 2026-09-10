@@ -5,6 +5,7 @@ import BrandMarquee from '../components/BrandMarquee';
 import Services from '../components/Services';
 import About from '../components/About';
 import WhyChoose from '../components/WhyChoose';
+import Insights from '../components/Insights';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
@@ -21,6 +22,7 @@ export function Home() {
       <Services />
       <Works />
       <BrandMarquee />
+      <Insights />
       <FAQ />
       <CTA />
       <Footer />

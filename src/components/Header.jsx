@@ -70,8 +70,11 @@ export function Header() {
             <a href="#what-we-do" onClick={toggleMenu} className="menu-nav-item">
               <span className="item-num">03</span> what we do
             </a>
+            <a href="#insights" onClick={toggleMenu} className="menu-nav-item">
+              <span className="item-num">04</span> insights
+            </a>
             <a href="#contact" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">04</span> contact
+              <span className="item-num">05</span> contact
             </a>
           </nav>
 
