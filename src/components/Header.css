@@ -35,7 +35,7 @@
 }
 
 .hero-header .header-logo-svg .logo-dot {
-  fill: #cd130a;
+  fill: var(--accent-red);
 }
 
 .dark-brand .header-logo-svg {

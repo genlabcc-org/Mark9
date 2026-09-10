@@ -16,7 +16,7 @@ export function Header() {
       {/* GSAP Pixel Grid Overlay for Menu Transition */}
       <ShapeOverlays 
         isOpened={isMenuOpen} 
-        color="#ff2200" 
+        color="var(--accent-red)" 
         onComplete={() => setIsOverlayAnimating(false)} 
       />
 

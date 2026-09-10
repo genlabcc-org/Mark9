@@ -32,7 +32,7 @@ export function Preloader({ onComplete }) {
     <>
       <ShapeOverlays
         isOpened={pixelExit}
-        color="#cd130a"
+        color="var(--accent-red)"
       />
 
       <AnimatePresence>
