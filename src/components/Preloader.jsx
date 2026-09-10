@@ -68,7 +68,7 @@ export function Preloader({ onComplete }) {
                   fill="url(#textLiquidFill)"
                   className="svg-monogram-text"
                 >
-                  mark9
+                  mark9.
                 </text>
               </motion.svg>
             </div>

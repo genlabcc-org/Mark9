@@ -22,7 +22,9 @@ export function Header() {
 
       <header className="hero-header">
         <div className="brand-monogram">
-          <span>Mark 9</span>
+          <a href="#" className="logo-link">
+            <img src="/9logo.png" alt="Mark 9" className="header-logo-img" />
+          </a>
         </div>
         <button 
           className="menu-toggle-btn" 
@@ -38,7 +40,9 @@ export function Header() {
       <div className={`fullscreen-menu-overlay ${isMenuOpen ? 'active' : ''}`}>
         <div className="menu-header">
           <div className="brand-monogram dark-brand">
-            <span>Mark 9</span>
+            <a href="#" onClick={toggleMenu} className="logo-link">
+              <img src="/9logo.png" alt="Mark 9" className="header-logo-img" />
+            </a>
           </div>
           <button 
             className="menu-close-btn" 

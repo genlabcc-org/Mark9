@@ -7,11 +7,21 @@
 }
 
 .brand-monogram {
-  font-family: var(--font-heading);
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .menu-toggle-btn {
@@ -124,7 +134,6 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  max-width: 320px;
 }
 
 .info-block {
@@ -230,7 +239,6 @@
   }
 
   .menu-info-sidebar {
-    max-width: 100%;
     gap: 1.5rem;
   }
 
