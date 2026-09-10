@@ -24,6 +24,28 @@
   display: block;
 }
 
+.header-logo-svg {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.hero-header .header-logo-svg {
+  color: #FEFEFE;
+}
+
+.hero-header .header-logo-svg .logo-dot {
+  fill: #cd130a;
+}
+
+.dark-brand .header-logo-svg {
+  color: #FEFEFE;
+}
+
+.dark-brand .header-logo-svg .logo-dot {
+  fill: #090909;
+}
+
 .menu-toggle-btn {
   background: transparent;
   border: none;

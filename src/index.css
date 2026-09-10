@@ -14,7 +14,7 @@
   --bg-dark: #090909;
   --text-primary: #fefefe;
   --text-muted: #808080;
-  --accent-red: #ff2200;
+  --accent-red: #cd130a;
 
   /* Global Fonts */
   --font-heading: 'Fractul', 'Fractual', sans-serif;
@@ -49,4 +49,14 @@ h6 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Global Section Title & Tag Round Bullets */
+.bullet-square,
+.square-bullet {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-red);
+  border-radius: 50% !important;
 }

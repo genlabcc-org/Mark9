@@ -31,7 +31,7 @@
   width: 7px;
   height: 7px;
   background-color: var(--accent-red);
-  border-radius: 1px;
+  border-radius: 50%;
 }
 
 .meta-right {

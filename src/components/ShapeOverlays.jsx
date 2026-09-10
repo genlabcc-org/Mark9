@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import './ShapeOverlays.css';
 
-export function ShapeOverlays({ isOpened, onComplete, color = "#ff2200" }) {
+export function ShapeOverlays({ isOpened, onComplete, color = "#cd130a" }) {
   const containerRef = useRef(null);
   const tlRef = useRef(null);
   const prevIsOpenedRef = useRef(isOpened);

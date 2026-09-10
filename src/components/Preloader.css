@@ -25,9 +25,9 @@
 }
 
 .filling-svg {
-  width: clamp(340px, 72vw, 900px);
+  width: clamp(240px, 48vw, 600px);
   height: auto;
-  max-height: 55vh;
+  max-height: 40vh;
   display: block;
   overflow: visible;
 }
@@ -62,7 +62,7 @@
   width: 7px;
   height: 7px;
   background-color: var(--accent-red);
-  border-radius: 1px;
+  border-radius: 50%;
 }
 
 /* Bottom Right Counter */
