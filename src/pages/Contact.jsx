@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
+import Button from '../components/Button';
 import useSplitReveal from '../utils/useSplitReveal';
-import { ArrowUpRight, Sparkles, Phone, Mail, MapPin } from 'lucide-react';
+import { Sparkles, Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 
 const LinkedinIcon = ({ size = 16, className = "" }) => (
@@ -142,15 +143,16 @@ export function Contact() {
                 <p>
                   thank you for reaching out, {formData.name || 'there'}. we've received your message and will get back to you shortly.
                 </p>
-                <button
-                  className="reset-btn"
+                <Button
+                  variant="secondary"
+                  showIcon={false}
                   onClick={() => {
                     setFormSubmitted(false);
                     setFormData({ name: '', email: '', company: '', message: '' });
                   }}
                 >
                   send another message
-                </button>
+                </Button>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -211,16 +213,13 @@ export function Contact() {
                 </div>
 
                 {/* Submit Button */}
-                <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                  {isSubmitting ? (
-                    <span className="submitting-spinner">sending...</span>
-                  ) : (
-                    <>
-                      <span>send message</span>
-                      <span className="btn-arrow">→</span>
-                    </>
-                  )}
-                </button>
+                <Button
+                  type="submit"
+                  variant="dark"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'sending...' : 'send message'}
+                </Button>
               </form>
             )}
           </div>

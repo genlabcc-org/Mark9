@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'motion/react';
+import Button from './Button';
 import useSplitReveal from '../utils/useSplitReveal';
 import './CTA.css';
 
@@ -26,10 +27,7 @@ export function CTA() {
         <div className="cta-title-wrapper">
           <h2 className="cta-title">
             <span className="split-line-wrap">
-              <span className="split-line-content">got a brand worth building?</span>
-            </span>
-            <span className="split-line-wrap">
-              <span className="split-line-content">let's <span className="orange-text">talk.</span></span>
+              <span className="split-line-content">got a brand worth building? let's <span className="orange-text">talk.</span></span>
             </span>
           </h2>
         </div>
@@ -53,10 +51,9 @@ export function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <a href="mailto:info@mark9.cc" className="cta-primary-btn">
-            <span>start a conversation</span>
-            <span className="btn-arrow">→</span>
-          </a>
+          <Button href="mailto:info@mark9.cc" variant="primary">
+            start a conversation
+          </Button>
 
           <div className="cta-contact-info-bar">
             <span>Nagercoil, Tamil Nadu</span>

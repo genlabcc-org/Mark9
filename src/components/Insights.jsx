@@ -59,12 +59,7 @@ export function Insights() {
             </p>
           </div>
 
-          {/* <div className="insights-left-bottom">
-            <a href="#insights" className="insights-view-all-btn">
-              <span>View All</span>
-              <span className="btn-dot">●</span>
-            </a>
-          </div> */}
+
         </div>
 
         {/* Right Column: Cards Grid */}

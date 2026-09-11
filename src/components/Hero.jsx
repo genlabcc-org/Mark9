@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Header from './Header';
-import { ArrowUpRight } from 'lucide-react';
+import Button from './Button';
 import useSplitReveal from '../utils/useSplitReveal';
 import './Hero.css';
 
@@ -41,13 +41,12 @@ export function Hero() {
           </p>
 
           <div className="hero-cta-group">
-            <a href="/contact" className="hero-talk-btn">
-              <span>let's build something</span>
-              <ArrowUpRight size={16} />
-            </a>
-            <a href="/works" className="hero-secondary-btn">
-              <span>see our work</span>
-            </a>
+            <Button href="/contact" variant="primary">
+              let's build something
+            </Button>
+            <Button href="/works" variant="secondary" showIcon={false}>
+              see our work
+            </Button>
           </div>
         </div>
       </div>

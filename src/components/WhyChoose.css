@@ -5,8 +5,8 @@
   margin-left: -3rem;
   margin-right: -3rem;
   padding: 6.5rem 3rem 8.5rem;
-  background-color: #F5F5F2;
-  color: #090909;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   font-family: var(--font-heading);
   box-sizing: border-box;
   display: flex;
@@ -19,7 +19,7 @@
   width: 100%;
   max-width: 1300px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .why-choose-tag {
@@ -30,7 +30,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #666666;
+  color: var(--text-muted-light);
 }
 
 .why-choose-tag .bullet-square {
@@ -63,7 +63,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  color: #090909;
+  color: var(--text-dark);
   margin: 0;
   text-align: left;
 }
@@ -101,7 +101,7 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
-  color: #777777;
+  color: var(--text-muted-mid);
   letter-spacing: 0.1em;
   flex-shrink: 0;
   margin-top: 0.35rem;
@@ -121,7 +121,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #090909;
+  color: var(--text-dark);
   margin: 0;
   text-align: left;
 }
@@ -131,7 +131,7 @@
   font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   font-weight: 400;
   line-height: 1.65;
-  color: #444444;
+  color: var(--text-muted-dim);
   margin: 0;
   text-align: left;
 }

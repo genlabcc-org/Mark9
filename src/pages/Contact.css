@@ -3,8 +3,8 @@
 .contact-page-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #F5F5F2;
-  color: #090909;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -13,11 +13,11 @@
 
 /* Adapt Header Logo & Menu Toggle Line for Light Background */
 .contact-page-wrapper .header-logo-svg {
-  color: #090909;
+  color: var(--text-dark);
 }
 
 .contact-page-wrapper .menu-line {
-  background-color: #090909;
+  background-color: var(--text-dark);
 }
 
 .contact-header-wrap {
@@ -49,7 +49,7 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
-  color: #666666;
+  color: var(--text-muted-light);
   text-transform: lowercase;
   letter-spacing: 0.15em;
 }
@@ -64,7 +64,7 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  color: #090909;
+  color: var(--text-dark);
   margin: 0.2rem 0;
 }
 
@@ -80,7 +80,7 @@
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   line-height: 1.6;
-  color: #555555;
+  color: var(--text-muted-soft);
   margin: 0;
   max-width: 680px;
   font-weight: 400;
@@ -120,7 +120,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: lowercase;
-  color: #777777;
+  color: var(--text-muted-mid);
 }
 
 .contact-info-row {
@@ -146,7 +146,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.05rem, 1.25vw, 1.25rem);
   font-weight: 700;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -159,7 +159,7 @@
   font-family: var(--font-body);
   font-size: 0.92rem;
   line-height: 1.5;
-  color: #333333;
+  color: var(--text-muted-faint);
   margin: 0;
 }
 
@@ -179,7 +179,7 @@
   border-radius: 999px;
   background: rgba(9, 9, 9, 0.06);
   border: none;
-  color: #090909;
+  color: var(--text-dark);
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 500;
@@ -189,7 +189,7 @@
 
 .social-pill:hover {
   background: var(--accent-red);
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 /* Right Column Form */
@@ -218,7 +218,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: #090909;
+  color: var(--text-dark);
 }
 
 /* Chips Selection */
@@ -233,7 +233,7 @@
   border-radius: 999px;
   background: rgba(9, 9, 9, 0.06);
   border: none;
-  color: #555555;
+  color: var(--text-muted-soft);
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 500;
@@ -243,7 +243,7 @@
 
 .chip-btn.active {
   background: var(--accent-red);
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -257,11 +257,11 @@
 .form-input,
 .form-textarea {
   width: 100%;
-  background: #ffffff;
+  background: var(--bg-light);
   border: 1px solid rgba(9, 9, 9, 0.12);
   border-radius: 14px;
   padding: 0.95rem 1.2rem;
-  color: #090909;
+  color: var(--text-dark);
   font-family: var(--font-body);
   font-size: 0.95rem;
   outline: none;
@@ -271,13 +271,13 @@
 
 .form-input:focus,
 .form-textarea:focus {
-  background: #ffffff;
+  background: var(--bg-light);
   border-color: var(--accent-red);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #888888;
+  color: var(--text-muted);
 }
 
 .form-textarea {
@@ -285,40 +285,7 @@
   min-height: 120px;
 }
 
-/* Submit Button */
-.submit-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1.05rem 2.2rem;
-  border-radius: 999px;
-  background-color: #090909;
-  color: #ffffff;
-  border: none;
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  width: fit-content;
-  margin-top: 0.5rem;
-  transition: background-color 0.35s ease, transform 0.25s ease;
-}
 
-.submit-btn:hover {
-  background-color: var(--accent-red);
-}
-
-.submit-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.btn-dot {
-  font-size: 0.5rem;
-  color: currentColor;
-}
 
 /* Success Card */
 .form-success-card {
@@ -336,7 +303,7 @@
   border-radius: 50%;
   background: rgba(22, 163, 74, 0.12);
   border: none;
-  color: #16a34a;
+  color: var(--color-success);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,7 +313,7 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
-  color: #090909;
+  color: var(--text-dark);
   margin: 0;
 }
 
@@ -354,23 +321,11 @@
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
-  color: #555555;
+  color: var(--text-muted-soft);
   max-width: 420px;
   margin: 0;
 }
 
-.reset-btn {
-  margin-top: 1rem;
-  padding: 0.75rem 1.6rem;
-  border-radius: 999px;
-  background: rgba(9, 9, 9, 0.08);
-  border: none;
-  color: #090909;
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-}
 
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
@@ -460,11 +415,5 @@
     font-size: 0.92rem;
     padding: 0.85rem 1rem;
     border-radius: 12px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    font-size: 0.9rem;
   }
 }

@@ -5,8 +5,8 @@
   margin-left: -3rem;
   margin-right: -3rem;
   padding: 6.5rem 3rem 8.5rem;
-  background-color: #F5F5F2;
-  color: #090909;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   font-family: var(--font-heading);
   box-sizing: border-box;
 }
@@ -48,7 +48,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: #666666;
+  color: var(--text-muted-light);
   text-transform: lowercase;
   margin-bottom: 0.5rem;
 }
@@ -63,7 +63,7 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: #090909;
+  color: var(--text-dark);
   margin: 0.4rem 0 1.2rem;
   text-align: left;
 }
@@ -76,44 +76,14 @@
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.15vw, 1.1rem);
   line-height: 1.55;
-  color: #555555;
+  color: var(--text-muted-soft);
   margin: 0;
   max-width: 290px;
   font-weight: 400;
   text-align: left;
 }
 
-.insights-left-bottom {
-  margin-top: 2.5rem;
-}
 
-.insights-view-all-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.75rem 1.4rem;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border-radius: 999px;
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-decoration: none;
-  width: fit-content;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-}
-
-.insights-view-all-btn:hover {
-  background-color: var(--accent-red);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 34, 0, 0.3);
-}
-
-.btn-dot {
-  font-size: 0.48rem;
-  color: #ffffff;
-}
 
 /* Right Column: Cards Grid */
 .insights-cards-grid {
@@ -133,7 +103,7 @@
   justify-content: space-between;
   padding: 1.4rem 1.5rem;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-primary);
   box-sizing: border-box;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
@@ -197,7 +167,7 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 500;
@@ -234,7 +204,7 @@
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: var(--text-primary);
   margin: 0;
 }
 

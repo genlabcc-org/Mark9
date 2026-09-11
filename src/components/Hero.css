@@ -8,19 +8,19 @@
   margin-left: -3rem;
   margin-right: -3rem;
   padding: 1.5rem 3rem 2rem;
-  background-color: #F5F5F2;
-  color: #090909;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   position: relative;
   box-sizing: border-box;
 }
 
 /* Header styling within Light Hero */
 .hero-section .hero-header .header-logo-svg {
-  color: #090909;
+  color: var(--text-dark);
 }
 
 .hero-section .hero-header .menu-line {
-  background-color: #090909;
+  background-color: var(--text-dark);
 }
 
 /* Meta Bar */
@@ -30,7 +30,7 @@
   align-items: center;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #666666;
+  color: var(--text-muted-light);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -50,7 +50,7 @@
 }
 
 .meta-right {
-  color: #666666;
+  color: var(--text-muted-light);
 }
 
 /* Hero Main Content Block */
@@ -74,7 +74,7 @@
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.02em;
-  color: #090909;
+  color: var(--text-dark);
   display: flex;
   flex-direction: column;
   gap: 0.12em;
@@ -174,7 +174,7 @@
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.6;
-  color: #333333;
+  color: var(--text-muted-faint);
   font-weight: 400;
   margin: 0;
 }
@@ -187,51 +187,7 @@
   flex-wrap: wrap;
 }
 
-.hero-talk-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.8rem;
-  border-radius: 999px;
-  background-color: var(--accent-red);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(255, 34, 0, 0.25);
-}
 
-.hero-talk-btn:hover {
-  background-color: #090909;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(9, 9, 9, 0.3);
-}
-
-.hero-secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.85rem 1.8rem;
-  border-radius: 999px;
-  background-color: transparent;
-  border: 1.5px solid #090909;
-  color: #090909;
-  font-family: var(--font-heading);
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-secondary-btn:hover {
-  background-color: #090909;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
 
 @media (max-width: 768px) {
   .hero-section {
@@ -286,11 +242,5 @@
   .hero-bio p {
     font-size: 0.9rem;
     line-height: 1.55;
-  }
-
-  .hero-talk-btn {
-    padding: 0.68rem 1.35rem;
-    font-size: 0.8rem;
-    margin-top: 1rem;
   }
 }

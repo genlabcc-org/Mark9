@@ -31,7 +31,7 @@
 }
 
 .hero-header .header-logo-svg {
-  color: #FEFEFE;
+  color: var(--text-primary);
 }
 
 .hero-header .header-logo-svg .logo-dot {
@@ -39,11 +39,11 @@
 }
 
 .dark-brand .header-logo-svg {
-  color: #FEFEFE;
+  color: var(--text-primary);
 }
 
 .dark-brand .header-logo-svg .logo-dot {
-  fill: #090909;
+  fill: var(--text-dark);
 }
 
 .menu-toggle-btn {
@@ -71,7 +71,7 @@
   width: 100vw;
   height: 100vh;
   background-color: transparent;
-  color: #090909;
+  color: var(--text-dark);
   z-index: 9997;
   display: flex;
   flex-direction: column;
@@ -95,7 +95,7 @@
 }
 
 .dark-brand span {
-  color: #090909;
+  color: var(--text-dark);
   font-family: var(--font-heading);
   font-size: 1.9rem;
   font-weight: 700;
@@ -106,7 +106,7 @@
   background: transparent;
   border: none;
   font-size: 2.2rem;
-  color: #090909;
+  color: var(--text-dark);
   cursor: pointer;
   line-height: 1;
   padding: 0.5rem;
@@ -132,7 +132,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3.5vw, 3.6rem);
   font-weight: 800;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
   letter-spacing: -0.02em;
   display: flex;
@@ -145,7 +145,7 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 600;
-  color: #090909;
+  color: var(--text-dark);
   letter-spacing: 0;
   position: relative;
   top: -0.8em;
@@ -169,14 +169,14 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #090909;
+  color: var(--text-dark);
 }
 
 .info-value {
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 600;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
 }
 
@@ -190,7 +190,7 @@
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 600;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
 }
 
@@ -198,7 +198,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: #090909;
+  color: var(--text-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -206,7 +206,7 @@
 
 .black-dot {
   font-size: 0.6rem;
-  color: #090909;
+  color: var(--text-dark);
 }
 
 /* Menu Footer */
@@ -218,7 +218,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #090909;
+  color: var(--text-dark);
 }
 
 @media (max-width: 768px) {

@@ -10,9 +10,19 @@
 :root {
   /* Global Brand Colors (from Brand Specs) */
   --bg-dark: #090909;
+  --bg-light: #F5F5F2;
+  --bg-light-dim: #EBEBE6;
   --text-primary: #fefefe;
+  --text-dark: #090909;
   --text-muted: #808080;
+  --text-muted-light: #666666;
+  --text-muted-mid: #777777;
+  --text-muted-soft: #555555;
+  --text-muted-dim: #444444;
+  --text-muted-faint: #333333;
   --accent-red: #ff2200;
+  --accent-red-dark: #e01e00;
+  --color-success: #16a34a;
 
   /* Global Fonts */
   --font-heading: 'Fractul', 'Fractual', sans-serif;

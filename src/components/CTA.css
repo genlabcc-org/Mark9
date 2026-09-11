@@ -83,37 +83,6 @@
   gap: 1.5rem;
 }
 
-.cta-primary-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.75rem 1.8rem;
-  background-color: var(--accent-red);
-  color: #ffffff;
-  border-radius: 999px;
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 20px rgba(255, 34, 0, 0.2);
-}
-
-.cta-primary-btn:hover {
-  background-color: #e01e00;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(255, 34, 0, 0.3);
-}
-
-.cta-primary-btn .btn-arrow {
-  transition: transform 0.3s ease;
-}
-
-.cta-primary-btn:hover .btn-arrow {
-  transform: translateX(4px);
-}
-
 /* Contact Info Bar */
 .cta-contact-info-bar {
   display: flex;
@@ -158,11 +127,6 @@
   .cta-subline {
     font-size: 0.82rem;
     margin-bottom: 1.1rem;
-  }
-
-  .cta-primary-btn {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.78rem;
   }
 
   .cta-contact-info-bar {

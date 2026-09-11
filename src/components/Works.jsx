@@ -71,11 +71,6 @@ export function Works() {
           <span className="bullet-square"></span>
           <span>selected works</span>
         </span>
-        <h2 className="works-title">
-          <span className="split-line-wrap">
-            <span className="split-line-content">selected works & case studies<span className="dot-red">.</span></span>
-          </span>
-        </h2>
       </div>
 
       {/* 2x2 Grid of 4 Works Cards */}

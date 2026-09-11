@@ -4,8 +4,8 @@
   width: calc(100% + 6rem);
   margin-left: -3rem;
   margin-right: -3rem;
-  background-color: #F5F5F2;
-  color: #090909;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   border-top: 1px solid rgba(9, 9, 9, 0.12);
   box-sizing: border-box;
   user-select: none;
@@ -39,14 +39,14 @@
 .footer-brand-logo {
   height: 32px;
   width: auto;
-  color: #090909;
+  color: var(--text-dark);
 }
 
 .footer-tagline {
   font-family: var(--font-heading);
   font-size: 0.98rem;
   font-weight: 700;
-  color: #090909;
+  color: var(--text-dark);
   letter-spacing: -0.01em;
   line-height: 1.4;
   margin: 0;
@@ -65,7 +65,7 @@
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #777777;
+  color: var(--text-muted-mid);
   text-transform: lowercase;
 }
 
@@ -82,7 +82,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.02rem, 1.25vw, 1.28rem);
   font-weight: 600;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -92,7 +92,7 @@
 }
 
 .link-dash {
-  color: #090909;
+  color: var(--text-dark);
   font-weight: 400;
   transition: color 0.25s ease, transform 0.25s ease;
 }
@@ -118,7 +118,7 @@
   font-family: var(--font-heading);
   font-size: 1.02rem;
   font-weight: 700;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -135,7 +135,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.05rem, 1.22vw, 1.22rem);
   font-weight: 700;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -148,7 +148,7 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #444444;
+  color: var(--text-muted-dim);
   margin: 0;
 }
 
@@ -186,7 +186,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.02rem, 1.25vw, 1.25rem);
   font-weight: 600;
-  color: #090909;
+  color: var(--text-dark);
   text-decoration: none;
   text-transform: none;
   transition: color 0.25s ease, transform 0.25s ease;
@@ -204,7 +204,7 @@
 }
 
 .social-arrow {
-  color: #090909;
+  color: var(--text-dark);
   font-size: 1.1rem;
   transition: color 0.25s ease, transform 0.25s ease;
 }
@@ -229,7 +229,7 @@
 .footer-bottom-credits p {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: #666666;
+  color: var(--text-muted-light);
   margin: 0;
   line-height: 1.5;
 }

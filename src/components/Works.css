@@ -8,7 +8,7 @@
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 5rem 3rem 6rem;
-  background-color: #F5F5F2;
+  background-color: var(--bg-light);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #666666;
+  color: var(--text-muted-light);
 }
 
 .works-tag .bullet-square {
@@ -89,7 +89,7 @@
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: #090909;
+  color: var(--text-dark);
   margin: 0;
   text-transform: none;
 }
@@ -98,7 +98,7 @@
   font-family: var(--font-body);
   font-size: clamp(0.75rem, 0.85vw, 0.85rem);
   line-height: 1.45;
-  color: #666666;
+  color: var(--text-muted-light);
   margin: 0;
   font-weight: 400;
 }

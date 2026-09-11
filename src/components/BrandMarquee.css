@@ -18,7 +18,7 @@
   width: 100%;
   padding: 0;
   overflow: hidden;
-  background-color: #F5F5F2;
+  background-color: var(--bg-light);
   user-select: none;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: #666666;
+  color: var(--text-muted-light);
   text-transform: lowercase;
 }
 
@@ -100,7 +100,7 @@
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.04em;
-  color: #090909;
+  color: var(--text-dark);
   line-height: 1;
 }
 
@@ -116,7 +116,7 @@
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.04em;
-  color: #090909;
+  color: var(--text-dark);
   line-height: 1;
 }
 
@@ -124,7 +124,7 @@
   font-family: var(--font-heading);
   font-size: clamp(2.8rem, 8.5vw, 125px);
   font-weight: 400;
-  color: #555555;
+  color: var(--text-muted-soft);
   margin: 0 0.1em;
 }
 
