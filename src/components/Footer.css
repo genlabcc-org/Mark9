@@ -1,9 +1,9 @@
 /* Footer Section Styles - Off-White Theme (#F5F5F2) with Black Text */
 
 .site-footer {
-  width: calc(100% + 6rem);
-  margin-left: -3rem;
-  margin-right: -3rem;
+  width: calc(100% + (var(--page-padding-x) * 2));
+  margin-left: calc(var(--page-padding-x) * -1);
+  margin-right: calc(var(--page-padding-x) * -1);
   background-color: var(--bg-light);
   color: var(--text-dark);
   border-top: 1px solid rgba(9, 9, 9, 0.12);

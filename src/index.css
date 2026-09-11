@@ -27,6 +27,18 @@
   /* Global Fonts */
   --font-heading: 'Fractul', 'Fractual', sans-serif;
   --font-body: 'Poppins', sans-serif;
+
+  /* Global Page Gaps & Layout Spacing Tokens */
+  --page-padding-x: 3rem;
+  --page-padding-y: 1.5rem;
+  --page-max-width: 1320px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding-x: 1.25rem;
+    --page-padding-y: 1rem;
+  }
 }
 
 * {

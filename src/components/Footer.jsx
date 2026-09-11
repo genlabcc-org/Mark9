@@ -85,37 +85,37 @@ export function Footer() {
             <span className="footer-col-label">services</span>
             <ul className="footer-links-list">
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> branding
                 </a>
               </li>
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> design
                 </a>
               </li>
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> strategy
                 </a>
               </li>
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> marketing
                 </a>
               </li>
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> packaging design
                 </a>
               </li>
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> ui/ux
                 </a>
               </li>
               <li>
-                <a href="#services">
+                <a href="/services">
                   <span className="link-dash">—</span> ads
                 </a>
               </li>

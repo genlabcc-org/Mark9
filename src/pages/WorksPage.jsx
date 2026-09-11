@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, Flip);
 
 const GALLERY_IMAGES = [
   'https://assets.codepen.io/16327/portrait-pattern-1.jpg',
-  'https://assets.codepen.io/16327/portrait-image-12.jpg',
+  'project5.png',
   'https://assets.codepen.io/16327/portrait-image-8.jpg',
   'https://assets.codepen.io/16327/portrait-pattern-2.jpg',
   'https://assets.codepen.io/16327/portrait-image-4.jpg',

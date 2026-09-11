@@ -1,0 +1,323 @@
+/* Services Page Container (Standard Full-Width Wrapper) */
+.services-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: var(--page-padding-y) var(--page-padding-x) 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Header Adaptations for Light Background */
+.services-page-container .header-logo-svg {
+  color: var(--text-dark);
+}
+
+.services-page-container .menu-line {
+  background-color: var(--text-dark);
+}
+
+/* Main Content Wrapper (Centered & Aligned) */
+.services-main {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Services Hero Section */
+.services-page-hero {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.services-page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 13.5vw, 13rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  color: var(--text-dark);
+  margin: 0 0 2rem 0;
+  text-transform: lowercase;
+}
+
+.services-meta-divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(9, 9, 9, 0.12);
+  border-bottom: 1px solid rgba(9, 9, 9, 0.12);
+  padding: 0.85rem 0;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.meta-year {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted-faint);
+  letter-spacing: 0.05em;
+}
+
+/* Services Intro Block (Locked to 2-Column Category Grid Alignment) */
+.services-intro-block {
+  width: 100%;
+  margin-bottom: 5.5rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+.services-intro-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.7vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  max-width: 840px;
+  margin: 0;
+}
+
+/* Services List & Category Blocks */
+.services-page-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.services-category-block {
+  border-top: 1px solid rgba(9, 9, 9, 0.12);
+  padding: 4.5rem 0;
+  width: 100%;
+}
+
+.services-category-block:last-child {
+  border-bottom: 1px solid rgba(9, 9, 9, 0.12);
+  margin-bottom: 4rem;
+}
+
+.category-block-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+/* Left Column: Category Title & Deliverables */
+.category-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.category-header-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-num {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  letter-spacing: 0.05em;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.deliverables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.deliverable-item {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-muted-faint);
+  line-height: 1.5;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.deliverable-item:hover {
+  color: var(--accent-red);
+  transform: translateX(4px);
+}
+
+/* Right Column: Description & Image Grid */
+.category-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.category-description {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-muted-faint);
+  max-width: 760px;
+  margin: 0;
+}
+
+.category-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.category-image-card {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.category-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(102%);
+  will-change: transform;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .hero-grid,
+  .category-block-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-left-spacer {
+    display: none;
+  }
+
+  .category-left-col {
+    gap: 1.5rem;
+  }
+
+  .services-intro-text,
+  .category-description {
+    max-width: 100%;
+  }
+
+  .services-category-block {
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-page-container {
+    padding: var(--page-padding-y) var(--page-padding-x) 0;
+  }
+
+  .services-page-hero {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .services-page-title {
+    font-size: clamp(3rem, 13.5vw, 5.5rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .services-meta-divider {
+    padding: 0.65rem 0;
+    margin-bottom: 2.25rem;
+  }
+
+  .meta-year {
+    font-size: 0.78rem;
+  }
+
+  .services-intro-block {
+    margin-bottom: 3.5rem;
+  }
+
+  .services-intro-text {
+    font-size: clamp(1.15rem, 5.2vw, 1.55rem);
+    line-height: 1.32;
+  }
+
+  .category-title {
+    font-size: 1.35rem;
+  }
+
+  .category-right-col {
+    gap: 1.75rem;
+  }
+
+  .category-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .category-image-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .category-image-card {
+    aspect-ratio: 1 / 1;
+  }
+
+  .services-category-block {
+    padding: 2.75rem 0;
+  }
+
+  .services-category-block:last-child {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page-title {
+    font-size: clamp(2.5rem, 14vw, 3.6rem);
+  }
+
+  .deliverable-item {
+    font-size: 0.86rem;
+  }
+
+  .category-image-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .category-image-card {
+    aspect-ratio: 16 / 10;
+  }
+}

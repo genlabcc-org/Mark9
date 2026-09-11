@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import WorksPage from './pages/WorksPage';
+import ServicesPage from './pages/ServicesPage';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -62,6 +63,10 @@ function App() {
         e.preventDefault();
         window.history.pushState({}, '', '/contact');
         setCurrentPath('/contact');
+      } else if (href === '/services' || href === '#services') {
+        e.preventDefault();
+        window.history.pushState({}, '', '/services');
+        setCurrentPath('/services');
       } else if (href === '/works' || href === '#works') {
         e.preventDefault();
         window.history.pushState({}, '', '/works');
@@ -110,6 +115,10 @@ function App() {
     return <Contact />;
   }
 
+  if (currentPath === '/services') {
+    return <ServicesPage />;
+  }
+
   if (currentPath === '/works' || currentPath === '/about') {
     return <WorksPage />;
   }
@@ -118,3 +127,4 @@ function App() {
 }
 
 export default App;
+
