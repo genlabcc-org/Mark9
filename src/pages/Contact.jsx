@@ -1,135 +1,149 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
-import { ArrowUpRight, Sparkles, Clock, Globe } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 
+const LinkedinIcon = ({ size = 16, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 16, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
 export function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [currentTime, setCurrentTime] = useState('');
 
-  // Live IST Clock
-  useEffect(() => {
-    const updateClock = () => {
-      const options = {
-        timeZone: 'Asia/Kolkata',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-      const timeString = new Intl.DateTimeFormat([], options).format(new Date());
-      setCurrentTime(`${timeString} IST`);
-    };
-
-    updateClock();
-    const interval = setInterval(updateClock, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Form Submit
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
       setFormSubmitted(true);
-    }, 1200);
+    }, 1000);
   };
 
   return (
     <div className="contact-page-wrapper">
       <Preloader />
       
-      {/* Top Main Header */}
+      {/* Top Header */}
       <div className="contact-header-wrap">
         <Header />
       </div>
 
       {/* Main Contact Section */}
       <main className="contact-main">
-        {/* Top Hero Headline */}
+        {/* Contact Hero Header */}
         <div className="contact-hero">
           <div className="contact-tag">
             <span className="square-bullet"></span>
             <span>(05) get in touch</span>
           </div>
 
-          <h1 className="contact-title">
-            Let’s build something <span className="orange-text">bold</span> together.
-          </h1>
-
-          <p className="contact-subtitle">
-            Have a project in mind or want to talk design? Drop us a line or email us directly — we typically respond within 24 hours.
-          </p>
+          <h2 className="contact-title">
+            <span>let's build something</span>
+            <br />
+            <span>people can't scroll past<span className="orange-text">.</span></span>
+          </h2>
         </div>
 
-        {/* Content Split: Left Info, Right Form */}
+        {/* Content Split: Left Contact Details, Right Functional Form */}
         <div className="contact-grid">
-          {/* Left Column: Direct Info & Socials */}
+          {/* Left Column: Direct Contact Info & Socials */}
           <div className="contact-left-col">
+            {/* Phone */}
             <div className="info-card">
-              <span className="card-label">direct email</span>
-              <a href="mailto:hey@mark9.design" className="email-link">
-                hey@mark9.design
-              </a>
-            </div>
-
-            <div className="info-card">
-              <span className="card-label">location & time</span>
-              <div className="time-location-row">
-                <div className="location-item">
-                  <Globe size={16} />
-                  <span>India (UTC +5:30)</span>
-                </div>
-                <div className="time-item">
-                  <Clock size={16} />
-                  <span>{currentTime || '14:38 IST'}</span>
-                </div>
+              <span className="card-label">phone</span>
+              <div className="contact-info-row">
+                <Phone size={18} className="info-icon" />
+                <a href="tel:+919994535120" className="contact-detail-link">
+                  +91 99945 35120
+                </a>
               </div>
             </div>
 
+            {/* Email */}
             <div className="info-card">
-              <span className="card-label">elsewhere</span>
+              <span className="card-label">email</span>
+              <div className="contact-info-row">
+                <Mail size={18} className="info-icon" />
+                <a href="mailto:info@mark9.cc" className="contact-detail-link">
+                  info@mark9.cc
+                </a>
+              </div>
+            </div>
+
+            {/* Address */}
+            <div className="info-card">
+              <span className="card-label">address</span>
+              <div className="contact-info-row address-row">
+                <MapPin size={18} className="info-icon pin-icon" />
+                <p className="address-text-detail">
+                  121/c, kottar–parvathipuram rd, chetti kulam, nagercoil, tamil nadu 629001
+                </p>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="info-card">
+              <span className="card-label">social</span>
               <div className="contact-social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-pill">
-                  LinkedIn <ArrowUpRight size={14} />
+                <a
+                  href="https://www.instagram.com/mark9.cc/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-pill"
+                >
+                  <InstagramIcon size={14} />
+                  <span>@mark9.cc</span>
+                  <ArrowUpRight size={14} />
                 </a>
-                <a href="https://dribbble.com" target="_blank" rel="noreferrer" className="social-pill">
-                  Dribbble <ArrowUpRight size={14} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-pill">
-                  Instagram <ArrowUpRight size={14} />
-                </a>
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="social-pill">
-                  GitHub <ArrowUpRight size={14} />
+                <a
+                  href="https://www.linkedin.com/company/mark9cc/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-pill"
+                >
+                  <LinkedinIcon size={14} />
+                  <span>mark9 on linkedin</span>
+                  <ArrowUpRight size={14} />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Inquiry Form */}
+          {/* Right Column: Simple Contact Form (Name, Email, Company, Message) */}
           <div className="contact-right-col">
             {formSubmitted ? (
               <div className="form-success-card">
                 <div className="success-icon-wrap">
                   <Sparkles size={32} />
                 </div>
-                <h3>Message Sent!</h3>
+                <h3>message sent!</h3>
                 <p>
-                  Thank you for reaching out, {formData.name || 'there'}. We’ve received your inquiry and will be in touch within 24 hours.
+                  thank you for reaching out, {formData.name || 'there'}. we've received your message and will get back to you shortly.
                 </p>
                 <button 
                   className="reset-btn"
                   onClick={() => {
                     setFormSubmitted(false);
-                    setFormData({ name: '', email: '', message: '' });
+                    setFormData({ name: '', email: '', company: '', message: '' });
                   }}
                 >
-                  Send Another Message
+                  send another message
                 </button>
               </div>
             ) : (
@@ -137,12 +151,12 @@ export function Contact() {
                 {/* Name & Email Fields */}
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="contact-name" className="form-label">Your Name</label>
+                    <label htmlFor="contact-name" className="form-label">name</label>
                     <input
                       id="contact-name"
                       type="text"
                       required
-                      placeholder="Jane Doe"
+                      placeholder="your name"
                       className="form-input"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -150,12 +164,12 @@ export function Contact() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="contact-email" className="form-label">Your Email</label>
+                    <label htmlFor="contact-email" className="form-label">email</label>
                     <input
                       id="contact-email"
                       type="email"
                       required
-                      placeholder="jane@company.com"
+                      placeholder="your email"
                       className="form-input"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -163,14 +177,27 @@ export function Contact() {
                   </div>
                 </div>
 
-                {/* Project Details */}
+                {/* Company Field */}
                 <div className="form-group">
-                  <label htmlFor="contact-message" className="form-label">Tell us about your project</label>
+                  <label htmlFor="contact-company" className="form-label">company</label>
+                  <input
+                    id="contact-company"
+                    type="text"
+                    placeholder="company name"
+                    className="form-input"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  />
+                </div>
+
+                {/* Message Field */}
+                <div className="form-group">
+                  <label htmlFor="contact-message" className="form-label">message</label>
                   <textarea
                     id="contact-message"
                     required
-                    rows={6}
-                    placeholder="Describe your goals, key features, or timelines..."
+                    rows={5}
+                    placeholder="describe your project or goals..."
                     className="form-textarea"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -180,11 +207,11 @@ export function Contact() {
                 {/* Submit Button */}
                 <button type="submit" className="submit-btn" disabled={isSubmitting}>
                   {isSubmitting ? (
-                    <span className="submitting-spinner">Sending...</span>
+                    <span className="submitting-spinner">sending...</span>
                   ) : (
                     <>
-                      <span>Send Inquiry</span>
-                      <span className="btn-dot">●</span>
+                      <span>send message</span>
+                      <span className="btn-arrow">→</span>
                     </>
                   )}
                 </button>
@@ -200,4 +227,3 @@ export function Contact() {
 }
 
 export default Contact;
-

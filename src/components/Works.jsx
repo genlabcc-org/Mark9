@@ -84,7 +84,11 @@ export function Works() {
           >
             {/* Image Container */}
             <div className="work-image-wrapper">
-              <img src={work.image} alt={work.title} className="work-img" />
+              <img
+                src={work.image}
+                alt={`MARK9 branding and design case study — ${work.title}: ${work.subtitle}`}
+                className="work-img"
+              />
             </div>
 
             {/* Text Information Below Image */}

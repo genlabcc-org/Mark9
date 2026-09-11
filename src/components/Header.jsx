@@ -14,10 +14,10 @@ export function Header() {
   return (
     <>
       {/* GSAP Pixel Grid Overlay for Menu Transition */}
-      <ShapeOverlays 
-        isOpened={isMenuOpen} 
-        color="var(--accent-red)" 
-        onComplete={() => setIsOverlayAnimating(false)} 
+      <ShapeOverlays
+        isOpened={isMenuOpen}
+        color="var(--accent-red)"
+        onComplete={() => setIsOverlayAnimating(false)}
       />
 
       <header className="hero-header">
@@ -29,9 +29,9 @@ export function Header() {
             </svg>
           </a>
         </div>
-        <button 
-          className="menu-toggle-btn" 
-          onClick={toggleMenu} 
+        <button
+          className="menu-toggle-btn"
+          onClick={toggleMenu}
           aria-label="Open Menu"
         >
           <span className="menu-line"></span>
@@ -50,9 +50,9 @@ export function Header() {
               </svg>
             </a>
           </div>
-          <button 
-            className="menu-close-btn" 
-            onClick={toggleMenu} 
+          <button
+            className="menu-close-btn"
+            onClick={toggleMenu}
             aria-label="Close Menu"
           >
             ✕
@@ -64,8 +64,8 @@ export function Header() {
             <a href="#services" onClick={toggleMenu} className="menu-nav-item">
               <span className="item-num">01</span> services
             </a>
-            <a href="#about" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">02</span> about us
+            <a href="/works" onClick={toggleMenu} className="menu-nav-item">
+              <span className="item-num">02</span> works
             </a>
             <a href="#what-we-do" onClick={toggleMenu} className="menu-nav-item">
               <span className="item-num">03</span> what we do
@@ -73,7 +73,7 @@ export function Header() {
             <a href="#insights" onClick={toggleMenu} className="menu-nav-item">
               <span className="item-num">04</span> insights
             </a>
-            <a href="#contact" onClick={toggleMenu} className="menu-nav-item">
+            <a href="/contact" onClick={toggleMenu} className="menu-nav-item">
               <span className="item-num">05</span> contact
             </a>
           </nav>
@@ -87,16 +87,16 @@ export function Header() {
             <div className="info-block">
               <span className="info-label">elsewhere</span>
               <div className="social-links">
-                <a href="#linkedin">LinkedIn</a>
-                <a href="#dribbble">Dribbble</a>
-                <a href="#instagram">Instagram</a>
+                <a href="#linkedin">linkedin</a>
+                <a href="#dribbble">dribbble</a>
+                <a href="#instagram">instagram</a>
               </div>
             </div>
 
             <div className="info-block">
               <span className="info-label">status</span>
               <div className="status-indicator">
-                <span className="black-dot">●</span> Open for select projects
+                <span className="black-dot">●</span> open for select projects
               </div>
             </div>
           </div>

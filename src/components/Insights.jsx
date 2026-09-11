@@ -6,28 +6,28 @@ export function Insights() {
   const insightsData = [
     {
       id: 1,
-      category: 'Technology Selection',
+      category: 'technology selection',
       icon: Monitor,
-      date: 'March 4, 2026',
-      title: 'Your CRM is not the problem. Your process is.',
+      date: 'march 4, 2026',
+      title: 'your crm is not the problem. your process is.',
       image: '/insight1.jpg',
       link: '#'
     },
     {
       id: 2,
-      category: 'Implementation',
+      category: 'implementation',
       icon: Target,
-      date: 'March 3, 2026',
+      date: 'march 3, 2026',
       title: '5 growth levers most companies ignore until it is too late.',
       image: '/project3.png',
       link: '#'
     },
     {
       id: 3,
-      category: 'Design Systems',
+      category: 'design systems',
       icon: Layers,
-      date: 'February 28, 2026',
-      title: 'Building scalable UI components for high-velocity teams.',
+      date: 'february 28, 2026',
+      title: 'building scalable ui components for high-velocity teams.',
       image: '/project5.png',
       link: '#'
     }
@@ -44,10 +44,10 @@ export function Insights() {
               <span>insights</span>
             </div>
 
-            <h2 className="insights-title">Insights<span className="dot-red">.</span></h2>
+            <h2 className="insights-title">insights<span className="dot-red">.</span></h2>
 
             <p className="insights-desc">
-              Lessons, frameworks, and honest takes on what it actually takes to grow.
+              lessons, frameworks, and honest takes on what it actually takes to grow.
             </p>
           </div>
 
@@ -71,7 +71,11 @@ export function Insights() {
               >
                 {/* Image & Gradient Overlay */}
                 <div className="card-image-wrapper">
-                  <img src={item.image} alt={item.title} className="card-img" />
+                  <img
+                    src={item.image}
+                    alt={`MARK9 insight article illustration — ${item.title}`}
+                    className="card-img"
+                  />
                   <div className="card-overlay-gradient"></div>
                 </div>
 

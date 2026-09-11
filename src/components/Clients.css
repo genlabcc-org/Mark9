@@ -1,0 +1,136 @@
+/* Clients Section - Horizontal Logo Strip matching reference */
+.clients-section {
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  padding: 5.5rem 3rem 6.5rem;
+  background-color: #F5F5F2;
+  color: #090909;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-top: 1px solid rgba(9, 9, 9, 0.08);
+}
+
+.clients-container {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.clients-header-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+}
+
+.clients-tag-centered {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #777777;
+}
+
+.clients-tag-centered .bullet-square {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+}
+
+.clients-title-centered {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #090909;
+  margin: 0;
+}
+
+.clients-title-centered .orange-text {
+  color: var(--accent-red);
+}
+
+.clients-sub-centered {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+  max-width: 680px;
+}
+
+/* Horizontal Single-Row Logo-Only Strip */
+.clients-logo-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1000px;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  padding: 1.5rem 0;
+}
+
+.client-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  padding: 1.2rem 1.6rem;
+  color: #090909;
+}
+
+.client-wordmark-logo {
+  height: 26px;
+  width: auto;
+  flex-shrink: 0;
+  color: #090909;
+}
+
+@media (max-width: 992px) {
+  .clients-logo-strip {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-section {
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  .clients-header-centered {
+    margin-bottom: 2.2rem;
+  }
+
+  .clients-logo-strip {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .client-logo-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .client-wordmark-logo {
+    height: 20px;
+  }
+}

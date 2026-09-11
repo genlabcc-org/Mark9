@@ -4,6 +4,7 @@ import Works from '../components/Works';
 import BrandMarquee from '../components/BrandMarquee';
 import Services from '../components/Services';
 import About from '../components/About';
+import Clients from '../components/Clients';
 import WhyChoose from '../components/WhyChoose';
 import Insights from '../components/Insights';
 import FAQ from '../components/FAQ';
@@ -18,8 +19,9 @@ export function Home() {
       <Preloader />
       <Hero />
       <About />
-      <WhyChoose />
       <Services />
+      <Clients />
+      <WhyChoose />
       <Works />
       <BrandMarquee />
       <Insights />
@@ -31,5 +33,3 @@ export function Home() {
 }
 
 export default Home;
-
-

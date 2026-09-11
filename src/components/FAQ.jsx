@@ -5,28 +5,28 @@ import './FAQ.css';
 const FAQ_DATA = [
   {
     id: '01',
-    question: 'What is your typical turnaround time?',
-    answer: 'Our standard turnaround time ranges from 4 to 8 weeks depending on project scope, complexity, and feedback cycles. We establish clear milestones during onboarding.'
+    question: 'what is your typical turnaround time?',
+    answer: 'our standard turnaround time ranges from 4 to 8 weeks depending on project scope, complexity, and feedback cycles. we establish clear milestones during onboarding.'
   },
   {
     id: '02',
-    question: 'Do you offer custom design solutions?',
-    answer: 'Yes, 100%. We craft bespoke digital identities and interactive web experiences tailored specifically to your brand vision and business objectives.'
+    question: 'do you offer custom design solutions?',
+    answer: 'yes, 100%. we craft bespoke digital identities and interactive web experiences tailored specifically to your brand vision and business objectives.'
   },
   {
     id: '03',
-    question: 'What industries do you specialize in?',
-    answer: 'We partner primarily with tech startups, fintech platforms, AI innovators, luxury eCommerce brands, and forward-thinking digital enterprises.'
+    question: 'what industries do you specialize in?',
+    answer: 'we partner primarily with tech startups, fintech platforms, ai innovators, luxury ecommerce brands, and forward-thinking digital enterprises.'
   },
   {
     id: '04',
-    question: 'Can you handle both design and development?',
-    answer: 'Absolutely. We provide comprehensive end-to-end execution, from visual strategy and UI/UX design to custom frontend development and high-performance animations.'
+    question: 'can you handle both design and development?',
+    answer: 'absolutely. we provide comprehensive end-to-end execution, from visual strategy and ui/ux design to custom frontend development and high-performance animations.'
   },
   {
     id: '05',
-    question: 'Do you provide post-launch support?',
-    answer: 'Yes, we provide ongoing maintenance packages, performance tuning, security updates, and continuous design iterations to support long-term growth.'
+    question: 'do you provide post-launch support?',
+    answer: 'yes, we provide ongoing maintenance packages, performance tuning, security updates, and continuous design iterations to support long-term growth.'
   }
 ];
 
@@ -42,7 +42,7 @@ export function FAQ() {
       <div className="faq-header">
         <span className="faq-tag">
           <span className="bullet-square"></span>
-          <span>(05) FAQ</span>
+          <span>(05) faq</span>
         </span>
       </div>
 
@@ -50,8 +50,8 @@ export function FAQ() {
         {/* Left Column - Large Typography Heading */}
         <div className="faq-left-col">
           <h2 className="faq-heading">
-            Frequently Asked<br />
-            Questions
+            frequently asked<br />
+            questions
           </h2>
         </div>
 

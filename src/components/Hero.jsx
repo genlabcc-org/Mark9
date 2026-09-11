@@ -8,38 +8,39 @@ export function Hero() {
     <section className="hero-section">
       <Header />
 
-      {/* Sub Meta Line */}
+      {/* Eyebrow Tag */}
       <div className="hero-meta-bar">
         <div className="meta-left">
           <span className="square-bullet"></span>
-          <span>mark9 studio — design school</span>
-        </div>
-        <div className="meta-right">
-          <span>design school — 2026</span>
+          <span>design · strategy · marketing</span>
         </div>
       </div>
 
-      {/* Hero Title and Bio Content Block */}
+      {/* Hero Main Content */}
       <div className="hero-main-content">
         <div className="hero-title-container">
           <h1 className="hero-title">
+            <div className="title-row">we don't just design brands.</div>
             <div className="title-row">
-              <span>we design interfaces</span>
-            </div>
-            <div className="title-row">
-              <span>that <span>move</span> <span className="people-bg-text">people</span><span className="orange-text">.</span></span>
+              we build the ones people <span className="people-bg-text">remember</span><span className="orange-text">.</span>
             </div>
           </h1>
         </div>
 
         <div className="hero-bio">
           <p>
-            I design websites and digital products for universities, research institutes and finance companies — work that has to win over a boardroom and still feel effortless to use.
+            MARK9 is a full-stack design partner — branding, UI/UX, packaging, strategy and marketing, all working from one table, one vision, one goal: making your brand impossible to ignore.
           </p>
-          <a href="/contact" className="hero-talk-btn">
-            <span>let’s talk</span>
-            <ArrowUpRight size={16} />
-          </a>
+
+          <div className="hero-cta-group">
+            <a href="/contact" className="hero-talk-btn">
+              <span>let's build something</span>
+              <ArrowUpRight size={16} />
+            </a>
+            <a href="/works" className="hero-secondary-btn">
+              <span>see our work</span>
+            </a>
+          </div>
         </div>
       </div>
 

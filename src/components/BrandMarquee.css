@@ -50,7 +50,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   color: #666666;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .brand-marquee-tag .bullet-square {

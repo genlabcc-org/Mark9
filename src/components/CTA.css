@@ -1,7 +1,9 @@
-/* CTA Section Styles */
+/* CTA Section Styles (Compact Full-Bleed) */
 .cta-section {
-  width: 100%;
-  padding: 4.5rem 0 3.5rem;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  padding: 4.8rem 3rem 4.2rem;
   background-color: var(--bg-dark);
   color: var(--text-primary);
   display: flex;
@@ -11,18 +13,28 @@
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cta-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .cta-tag {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   color: var(--text-muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 .cta-tag .bullet-square {
@@ -30,82 +42,131 @@
   width: 6px;
   height: 6px;
   background-color: var(--accent-red);
-  border-radius: 1px;
+  border-radius: 50%;
 }
 
 .cta-title-wrapper {
-  margin: 0.5rem 0 1.8rem;
+  margin-bottom: 0.6rem;
   text-align: center;
   width: 100%;
 }
 
 .cta-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 9.5vw, 115px);
+  font-size: clamp(1.95rem, 3.8vw, 3.7rem);
   font-weight: 800;
-  line-height: 0.94;
-  letter-spacing: 0.03em;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
   margin: 0;
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .cta-title .orange-text {
   color: var(--accent-red);
 }
 
-.cta-email-wrapper {
-  margin-bottom: 1rem;
+.cta-subline {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 2rem 0;
+  max-width: 680px;
 }
 
-.cta-email {
+/* Actions & Buttons */
+.cta-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cta-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  background-color: var(--accent-red);
+  color: #ffffff;
+  border-radius: 999px;
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--text-primary);
   text-decoration: none;
-  letter-spacing: -0.02em;
-  position: relative;
-  padding-bottom: 3px;
+  letter-spacing: 0.04em;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(255, 34, 0, 0.2);
+}
+
+.cta-primary-btn:hover {
+  background-color: #e01e00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 34, 0, 0.3);
+}
+
+.cta-primary-btn .btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.cta-primary-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Contact Info Bar */
+.cta-contact-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.04em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-contact-info-bar a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.cta-email::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--accent-red);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cta-email:hover {
+.cta-contact-info-bar a:hover {
   color: var(--accent-red);
 }
 
-.cta-email:hover::after {
-  transform: scaleX(1);
-  transform-origin: left center;
+.cta-contact-info-bar .divider-dot {
+  color: rgba(255, 255, 255, 0.25);
 }
 
 @media (max-width: 768px) {
   .cta-section {
-    padding: 3.5rem 0 2.5rem;
-  }
-
-  .cta-tag {
-    font-size: 0.72rem;
-    margin-bottom: 1rem;
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 3.5rem 1.25rem 2.8rem;
   }
 
   .cta-title {
-    font-size: clamp(2.2rem, 11vw, 3.8rem);
+    font-size: clamp(1.3rem, 4.5vw, 2.2rem);
+    white-space: normal;
   }
 
-  .cta-email {
-    font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  .cta-subline {
+    font-size: 0.82rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .cta-primary-btn {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.78rem;
+  }
+
+  .cta-contact-info-bar {
+    font-size: 0.7rem;
+    gap: 0.4rem;
   }
 }

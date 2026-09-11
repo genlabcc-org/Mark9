@@ -57,9 +57,9 @@
 
 .about-headline {
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+  font-size: clamp(2.4rem, 3.8vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.04em;
   color: #090909;
   margin: 0;
@@ -106,8 +106,8 @@
 /* Stats Grid */
 .about-stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(9, 9, 9, 0.15);
 }
@@ -197,8 +197,8 @@
   }
 
   .about-stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
     text-align: center;
   }
 

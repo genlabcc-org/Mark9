@@ -3,12 +3,49 @@ import { motion, AnimatePresence } from 'motion/react';
 import './Services.css';
 
 const servicesList = [
-  { id: '(01)', title: 'branding', image: '/project2.png' },
-  { id: '(02)', title: 'ux/ui design', image: '/project3.png' },
-  { id: '(03)', title: 'web & development', image: '/project5.png' },
-  { id: '(04)', title: 'design school', image: '/portrait1.jpg' }
+  {
+    id: '(01)',
+    title: 'branding',
+    description: 'identity, voice, position, story, guidelines.',
+    image: '/project2.png'
+  },
+  {
+    id: '(02)',
+    title: 'design',
+    description: 'social assets, collateral, marketing decks, print.',
+    image: '/project3.png'
+  },
+  {
+    id: '(03)',
+    title: 'strategy',
+    description: 'market positioning, brand direction, launch playbooks.',
+    image: '/project5.png'
+  },
+  {
+    id: '(04)',
+    title: 'marketing',
+    description: 'performance campaigns, organic growth, content systems.',
+    image: '/portrait1.jpg'
+  },
+  {
+    id: '(05)',
+    title: 'packaging design',
+    description: 'unboxing experiences, retail presence, print-ready files.',
+    image: '/project2.png'
+  },
+  {
+    id: '(06)',
+    title: 'ui/ux',
+    description: 'web design, mobile interfaces, digital design systems.',
+    image: '/project3.png'
+  },
+  {
+    id: '(07)',
+    title: 'ads',
+    description: 'high-converting static & video creatives for Meta, Google, & more.',
+    image: '/project5.png'
+  }
 ];
-
 
 export function Services() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -27,8 +64,11 @@ export function Services() {
       <div className="services-header">
         <span className="services-tag">
           <span className="bullet-square"></span>
-          <span>our services</span>
+          <span>services</span>
         </span>
+        <h2 className="services-subheadline">
+          everything a brand needs<span className="orange-text">.</span> nothing it doesn't<span className="orange-text">.</span>
+        </h2>
       </div>
 
       <div
@@ -56,7 +96,10 @@ export function Services() {
                 mass: 0.4
               }}
             >
-              <img src={servicesList[hoveredIndex].image} alt="Service Preview" />
+              <img
+                src={servicesList[hoveredIndex].image}
+                alt={`MARK9 ${servicesList[hoveredIndex].title} portfolio showcase — ${servicesList[hoveredIndex].description}`}
+              />
             </motion.div>
           )}
         </AnimatePresence>
@@ -69,7 +112,10 @@ export function Services() {
           >
             <div className="service-content">
               <span className="service-num">{service.id}</span>
-              <h2 className="service-title">{service.title}</h2>
+              <div className="service-text-group">
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-desc">{service.description}</p>
+              </div>
             </div>
           </div>
         ))}
