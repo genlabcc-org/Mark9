@@ -71,7 +71,7 @@ const PROJECTS_LIST = [
     client: 'Maison Noir',
     year: '2025',
     subtitle: 'crafting high-conversion digital flagship experiences for luxury fashion.',
-    image: 'https://assets.codepen.io/16327/portrait-image-12.jpg',
+    image: 'portrait1.jpg',
     tags: ['luxury', 'e-commerce', 'webgl']
   },
   {
