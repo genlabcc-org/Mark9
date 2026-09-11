@@ -6,7 +6,7 @@ import './Preloader.css';
 export function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
-  const [pixelExit, setPixelExit] = useState(false);
+  const [overlayExit, setOverlayExit] = useState(false);
 
   useEffect(() => {
     const controls = animate(0, 100, {
@@ -16,10 +16,10 @@ export function Preloader({ onComplete }) {
         setProgress(Math.round(latest));
       },
       onComplete: () => {
-        setPixelExit(true);
+        setOverlayExit(true);
         setTimeout(() => {
           setIsFinished(true);
-          setPixelExit(false);
+          setOverlayExit(false);
           if (onComplete) onComplete();
         }, 450);
       },
@@ -31,7 +31,7 @@ export function Preloader({ onComplete }) {
   return (
     <>
       <ShapeOverlays
-        isOpened={pixelExit}
+        isOpened={overlayExit}
         color="var(--accent-red)"
       />
 

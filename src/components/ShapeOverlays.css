@@ -1,5 +1,5 @@
-/* Pixelated Grid Shape Overlays Styles */
-.shape-overlays-pixel {
+/* Liquid Curve SVG Shape Overlays Styles */
+.shape-overlays {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,19 +7,14 @@
   height: 100vh;
   width: 100dvw;
   height: 100dvh;
-  display: grid;
   z-index: 9995;
   pointer-events: none;
 }
 
-.shape-overlays-pixel.active {
+.shape-overlays.active {
   pointer-events: auto;
 }
 
-.pixel-overlay-box {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  will-change: transform, opacity;
+.shape-overlays__path {
+  will-change: d;
 }

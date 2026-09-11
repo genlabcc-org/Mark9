@@ -1,41 +1,35 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './ShapeOverlays.css';
 
+const PATH_COMMANDS = {
+  hiddenTop: 'M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z',
+  sweepDownMid: 'M 0 0 L 100 0 L 100 65 Q 50 115 0 65 Z',
+  full: 'M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z',
+  retractUpMid: 'M 0 0 L 100 0 L 100 35 Q 50 -15 0 35 Z',
+};
+
 export function ShapeOverlays({ isOpened, onComplete, color = "var(--accent-red)" }) {
-  const containerRef = useRef(null);
+  const path0Ref = useRef(null);
+  const path1Ref = useRef(null);
+  const path2Ref = useRef(null);
   const tlRef = useRef(null);
   const prevIsOpenedRef = useRef(isOpened);
   const onCompleteRef = useRef(onComplete);
-
-  const [gridDimensions, setGridDimensions] = useState(() => {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    return isMobile ? { rows: 10, cols: 6 } : { rows: 6, cols: 10 };
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      const isMobile = window.innerWidth < 768;
-      const nextDims = isMobile ? { rows: 10, cols: 6 } : { rows: 6, cols: 10 };
-      setGridDimensions((prev) => (prev.rows !== nextDims.rows || prev.cols !== nextDims.cols ? nextDims : prev));
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     onCompleteRef.current = onComplete;
   }, [onComplete]);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    const boxes = containerRef.current.querySelectorAll('.pixel-overlay-box');
+    const paths = [path0Ref.current, path1Ref.current, path2Ref.current].filter(Boolean);
+    if (paths.length === 0) return;
 
-    // Prevent double execution on initial render if closed, or if isOpened hasn't changed
     if (prevIsOpenedRef.current === isOpened) {
       if (!isOpened) {
-        gsap.set(boxes, { scale: 0, opacity: 0 });
+        paths.forEach((p) => p.setAttribute('d', PATH_COMMANDS.hiddenTop));
+      } else {
+        paths.forEach((p) => p.setAttribute('d', PATH_COMMANDS.full));
       }
       return;
     }
@@ -50,65 +44,90 @@ export function ShapeOverlays({ isOpened, onComplete, color = "var(--accent-red)
     });
     tlRef.current = tl;
 
-    const { rows, cols } = gridDimensions;
-
     if (isOpened) {
-      // OPENING: Pixel boxes assemble & grow to cover viewport (slower animation)
-      gsap.set(boxes, { scale: 0, opacity: 0, borderRadius: '0px' });
-      tl.to(boxes, {
-        scale: 1.03,
-        opacity: 1,
-        borderRadius: '0px',
-        duration: 0.6,
-        ease: 'power2.out',
-        stagger: {
-          grid: [rows, cols],
-          from: 'random',
-          amount: 0.7
-        }
+      // OPENING: Curved wave paths sweep down to fill screen
+      paths.forEach((path, i) => {
+        const delay = i * 0.08;
+        tl.to(
+          path,
+          {
+            attr: { d: PATH_COMMANDS.sweepDownMid },
+            duration: 0.35,
+            ease: 'power2.in'
+          },
+          delay
+        ).to(
+          path,
+          {
+            attr: { d: PATH_COMMANDS.full },
+            duration: 0.35,
+            ease: 'power2.out'
+          },
+          delay + 0.35
+        );
       });
     } else {
-      // CLOSING: Pixel boxes shrink & dissolve away (slower animation)
-      gsap.set(boxes, { scale: 1, opacity: 1, borderRadius: '0px' });
-      tl.to(boxes, {
-        scale: 0,
-        opacity: 0,
-        borderRadius: '0px',
-        duration: 0.6,
-        ease: 'power2.inOut',
-        stagger: {
-          grid: [rows, cols],
-          from: 'random',
-          amount: 0.7
-        }
+      // CLOSING: Curved wave paths retract back up to top
+      paths.forEach((path, i) => {
+        const delay = (paths.length - 1 - i) * 0.08;
+        tl.to(
+          path,
+          {
+            attr: { d: PATH_COMMANDS.retractUpMid },
+            duration: 0.35,
+            ease: 'power2.in'
+          },
+          delay
+        ).to(
+          path,
+          {
+            attr: { d: PATH_COMMANDS.hiddenTop },
+            duration: 0.35,
+            ease: 'power2.out'
+          },
+          delay + 0.35
+        );
       });
     }
 
     return () => {
       if (tlRef.current) tlRef.current.kill();
     };
-  }, [isOpened, gridDimensions]);
+  }, [isOpened]);
 
-  const totalBoxes = gridDimensions.rows * gridDimensions.cols;
+  const fills = [
+    'var(--text-dark)',
+    'rgba(255, 34, 0, 0.4)',
+    color
+  ];
 
   return (
-    <div
-      ref={containerRef}
-      className={`shape-overlays-pixel ${isOpened ? 'active' : ''}`}
-      style={{
-        gridTemplateColumns: `repeat(${gridDimensions.cols}, 1fr)`,
-        gridTemplateRows: `repeat(${gridDimensions.rows}, 1fr)`
-      }}
+    <svg
+      className={`shape-overlays ${isOpened ? 'active' : ''}`}
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
     >
-      {Array.from({ length: totalBoxes }).map((_, index) => (
-        <div
-          key={index}
-          className="pixel-overlay-box"
-          style={{ backgroundColor: color }}
-        />
-      ))}
-    </div>
+      <path
+        ref={path0Ref}
+        className="shape-overlays__path"
+        fill={fills[0]}
+        d={PATH_COMMANDS.hiddenTop}
+      />
+      <path
+        ref={path1Ref}
+        className="shape-overlays__path"
+        fill={fills[1]}
+        d={PATH_COMMANDS.hiddenTop}
+      />
+      <path
+        ref={path2Ref}
+        className="shape-overlays__path"
+        fill={fills[2]}
+        d={PATH_COMMANDS.hiddenTop}
+      />
+    </svg>
   );
 }
 
 export default ShapeOverlays;
+
