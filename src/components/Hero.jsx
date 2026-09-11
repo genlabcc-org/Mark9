@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from './Header';
 import { ArrowUpRight } from 'lucide-react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './Hero.css';
 
 export function Hero() {
+  const heroRef = useRef(null);
+  useSplitReveal(heroRef);
+
   return (
-    <section className="hero-section">
+    <section className="hero-section" ref={heroRef}>
       <Header />
 
       {/* Eyebrow Tag */}
@@ -20,10 +24,14 @@ export function Hero() {
       <div className="hero-main-content">
         <div className="hero-title-container">
           <h1 className="hero-title">
-            <div className="title-row">we don't just design brands.</div>
-            <div className="title-row">
-              we build the ones people <span className="people-bg-text">remember</span><span className="orange-text">.</span>
-            </div>
+            <span className="split-line-wrap">
+              <span className="split-line-content">we don't just design brands.</span>
+            </span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">
+                we build the ones people <span className="people-bg-text">remember</span><span className="orange-text">.</span>
+              </span>
+            </span>
           </h1>
         </div>
 

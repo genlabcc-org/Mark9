@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './About.css';
 
 export function About() {
+  const aboutRef = useRef(null);
+  useSplitReveal(aboutRef);
+
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="about" ref={aboutRef}>
       <div className="about-header">
         <span className="about-tag">
           <span className="bullet-square"></span>
@@ -22,11 +26,12 @@ export function About() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="about-headline">
-            <span>your brand's </span>
-            <br />
-            <span>biggest fan<span className="orange-text">.</span></span>
-            <br />
-            <span>and its toughest critic<span className="orange-text">.</span></span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">your brand's biggest fan<span className="orange-text">.</span></span>
+            </span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">and its toughest critic<span className="orange-text">.</span></span>
+            </span>
           </h2>
         </motion.div>
 

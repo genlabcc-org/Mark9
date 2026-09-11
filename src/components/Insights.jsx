@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Monitor, Target, Layers } from 'lucide-react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './Insights.css';
 
 export function Insights() {
+  const insightsRef = useRef(null);
+  useSplitReveal(insightsRef);
+
   const insightsData = [
     {
       id: 1,
@@ -34,7 +38,7 @@ export function Insights() {
   ];
 
   return (
-    <section className="insights-section" id="insights">
+    <section className="insights-section" id="insights" ref={insightsRef}>
       <div className="insights-container">
         {/* Left Column: Heading, Description & Button */}
         <div className="insights-left-col">
@@ -44,7 +48,11 @@ export function Insights() {
               <span>insights</span>
             </div>
 
-            <h2 className="insights-title">insights<span className="dot-red">.</span></h2>
+            <h2 className="insights-title">
+              <span className="split-line-wrap">
+                <span className="split-line-content">insights<span className="dot-red">.</span></span>
+              </span>
+            </h2>
 
             <p className="insights-desc">
               lessons, frameworks, and honest takes on what it actually takes to grow.
@@ -64,9 +72,9 @@ export function Insights() {
           {insightsData.map((item) => {
             const IconComponent = item.icon;
             return (
-              <a 
-                key={item.id} 
-                href={item.link} 
+              <a
+                key={item.id}
+                href={item.link}
                 className="insight-card"
               >
                 {/* Image & Gradient Overlay */}

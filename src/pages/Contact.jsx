@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
+import useSplitReveal from '../utils/useSplitReveal';
 import { ArrowUpRight, Sparkles, Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 
@@ -25,6 +26,8 @@ export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const contactRef = useRef(null);
+  useSplitReveal(contactRef);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +41,7 @@ export function Contact() {
   return (
     <div className="contact-page-wrapper">
       <Preloader />
-      
+
       {/* Top Header */}
       <div className="contact-header-wrap">
         <Header />
@@ -47,16 +50,19 @@ export function Contact() {
       {/* Main Contact Section */}
       <main className="contact-main">
         {/* Contact Hero Header */}
-        <div className="contact-hero">
+        <div className="contact-hero" ref={contactRef}>
           <div className="contact-tag">
             <span className="square-bullet"></span>
             <span>(05) get in touch</span>
           </div>
 
           <h2 className="contact-title">
-            <span>let's build something</span>
-            <br />
-            <span>people can't scroll past<span className="orange-text">.</span></span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">let's build something</span>
+            </span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">people can't scroll past<span className="orange-text">.</span></span>
+            </span>
           </h2>
         </div>
 
@@ -136,7 +142,7 @@ export function Contact() {
                 <p>
                   thank you for reaching out, {formData.name || 'there'}. we've received your message and will get back to you shortly.
                 </p>
-                <button 
+                <button
                   className="reset-btn"
                   onClick={() => {
                     setFormSubmitted(false);

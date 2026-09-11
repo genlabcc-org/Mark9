@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './Services.css';
 
 const servicesList = [
@@ -48,6 +49,8 @@ const servicesList = [
 ];
 
 export function Services() {
+  const servicesRef = useRef(null);
+  useSplitReveal(servicesRef);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -60,14 +63,19 @@ export function Services() {
   };
 
   return (
-    <section className="services-section" id="services">
+    <section className="services-section" id="services" ref={servicesRef}>
       <div className="services-header">
         <span className="services-tag">
           <span className="bullet-square"></span>
           <span>services</span>
         </span>
         <h2 className="services-subheadline">
-          everything a brand needs<span className="orange-text">.</span> nothing it doesn't<span className="orange-text">.</span>
+          <span className="split-line-wrap">
+            <span className="split-line-content">everything a brand needs<span className="orange-text">.</span></span>
+          </span>
+          <span className="split-line-wrap">
+            <span className="split-line-content">nothing it doesn't<span className="orange-text">.</span></span>
+          </span>
         </h2>
       </div>
 

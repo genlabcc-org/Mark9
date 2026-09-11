@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './CTA.css';
 
 export function CTA() {
+  const ctaRef = useRef(null);
+  useSplitReveal(ctaRef);
+
   return (
-    <section className="cta-section" id="contact">
+    <section className="cta-section" id="contact" ref={ctaRef}>
       <div className="cta-container">
         {/* Top Tag Line */}
         <motion.div
@@ -18,18 +22,17 @@ export function CTA() {
           <span>get in touch</span>
         </motion.div>
 
-        {/* Main Title (Single Line) */}
-        <motion.div
-          className="cta-title-wrapper"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
+        {/* Main Title (Split Lines) */}
+        <div className="cta-title-wrapper">
           <h2 className="cta-title">
-            got a brand worth building? let's <span className="orange-text">talk.</span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">got a brand worth building?</span>
+            </span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">let's <span className="orange-text">talk.</span></span>
+            </span>
           </h2>
-        </motion.div>
+        </div>
 
         {/* Subline */}
         <motion.p

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './Clients.css';
 
 const clientList = [
@@ -10,8 +11,11 @@ const clientList = [
 ];
 
 export function Clients() {
+  const clientsRef = useRef(null);
+  useSplitReveal(clientsRef);
+
   return (
-    <section className="clients-section" id="clients">
+    <section className="clients-section" id="clients" ref={clientsRef}>
       <div className="clients-container">
         {/* Centered Section Tag & Heading */}
         <div className="clients-header-centered">
@@ -20,7 +24,9 @@ export function Clients() {
             <span>trusted by</span>
           </span>
           <h2 className="clients-title-centered">
-            brands that trusted us with their story<span className="orange-text">.</span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">brands that trusted us with their story<span className="orange-text">.</span></span>
+            </span>
           </h2>
           <p className="clients-sub-centered">
             from hospitals to retail giants, we've partnered with brands who needed more than just a logo — they needed a voice.

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './FAQ.css';
 
 const FAQ_DATA = [
@@ -32,13 +33,15 @@ const FAQ_DATA = [
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
+  const faqRef = useRef(null);
+  useSplitReveal(faqRef);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="faq-section" id="faq">
+    <section className="faq-section" id="faq" ref={faqRef}>
       <div className="faq-header">
         <span className="faq-tag">
           <span className="bullet-square"></span>
@@ -50,8 +53,12 @@ export function FAQ() {
         {/* Left Column - Large Typography Heading */}
         <div className="faq-left-col">
           <h2 className="faq-heading">
-            frequently asked<br />
-            questions
+            <span className="split-line-wrap">
+              <span className="split-line-content">frequently asked</span>
+            </span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">questions</span>
+            </span>
           </h2>
         </div>
 

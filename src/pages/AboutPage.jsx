@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
 import CTA from '../components/CTA';
+import useSplitReveal from '../utils/useSplitReveal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Flip } from 'gsap/Flip';
@@ -22,6 +23,8 @@ const GALLERY_IMAGES = [
 ];
 
 export function AboutPage() {
+  const aboutPageRef = useRef(null);
+  useSplitReveal(aboutPageRef);
   // GSAP Flip + ScrollTrigger Bento Gallery Animation
   useEffect(() => {
     const galleryElement = document.querySelector("#gallery-bento-about");
@@ -74,7 +77,7 @@ export function AboutPage() {
   }, []);
 
   return (
-    <div className="about-page-wrapper">
+    <div className="about-page-wrapper" ref={aboutPageRef}>
       <Preloader />
 
       {/* Header */}
@@ -89,7 +92,9 @@ export function AboutPage() {
           <div className="about-hero-header">
             <span className="about-hero-tag">(02) about mark9 studio</span>
             <h1 className="about-hero-title">
-              we craft digital experiences that define brands & move people.
+              <span className="split-line-wrap">
+                <span className="split-line-content">we craft digital experiences that define brands &amp; move people.</span>
+              </span>
             </h1>
           </div>
           <div className="about-hero-meta">
@@ -135,7 +140,12 @@ export function AboutPage() {
             <div className="content-left">
               <span className="section-label">— our philosophy</span>
               <h2 className="content-heading">
-                design isn't just how things look — it's how software respects human attention.
+                <span className="split-line-wrap">
+                  <span className="split-line-content">design isn't just how things look —</span>
+                </span>
+                <span className="split-line-wrap">
+                  <span className="split-line-content">it's how software respects human attention.</span>
+                </span>
               </h2>
             </div>
 

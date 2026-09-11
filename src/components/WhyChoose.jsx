@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import { Layers, Globe, Zap } from 'lucide-react';
+import useSplitReveal from '../utils/useSplitReveal';
 import './WhyChoose.css';
 
 const WHY_US_ITEMS = [
@@ -9,7 +10,7 @@ const WHY_US_ITEMS = [
     line1: 'one team,',
     line2: 'every discipline',
     description:
-      'No back-and-forth between five different agencies. Strategy, branding, design, web, and ads — all under one roof, aligned from day one.',
+      'no back-and-forth between five different agencies. strategy, branding, design, web, and ads — all under one roof, aligned from day one.',
     icon: <Layers size={46} strokeWidth={1.5} />
   },
   {
@@ -17,7 +18,7 @@ const WHY_US_ITEMS = [
     line1: 'rooted,',
     line2: 'but ambitious',
     description:
-      "We're based in Nagercoil, Tamil Nadu — and we bring world-class design standards to local brands ready to scale nationwide.",
+      "we're based in nagercoil, tamil nadu — and we bring world-class design standards to local brands ready to scale nationwide.",
     icon: <Globe size={46} strokeWidth={1.5} />
   },
   {
@@ -25,14 +26,17 @@ const WHY_US_ITEMS = [
     line1: 'built to perform,',
     line2: 'not just impress',
     description:
-      "We don't design for awards — we design for conversion, recognition, and revenue. Pretty is good. Effective is better.",
+      "we don't design for awards — we design for conversion, recognition, and revenue. pretty is good. effective is better.",
     icon: <Zap size={46} strokeWidth={1.5} />
   }
 ];
 
 export function WhyChoose() {
+  const sectionRef = useRef(null);
+  useSplitReveal(sectionRef);
+
   return (
-    <section className="why-choose-section" id="why-choose">
+    <section className="why-choose-section" id="why-choose" ref={sectionRef}>
       {/* Section Header Tag */}
       <div className="why-choose-header">
         <span className="why-choose-tag">
@@ -45,9 +49,12 @@ export function WhyChoose() {
         {/* Main Headline (Exactly 2 Lines) */}
         <div className="why-choose-headline-wrapper">
           <h2 className="why-choose-headline">
-            <span className="headline-line">design that thinks like a business<span className="dot-red">.</span></span>
-            <br />
-            <span className="headline-line">strategy that feels like art<span className="dot-red">.</span></span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">design that thinks like a business<span className="dot-red">.</span></span>
+            </span>
+            <span className="split-line-wrap">
+              <span className="split-line-content">strategy that feels like art<span className="dot-red">.</span></span>
+            </span>
           </h2>
         </div>
 
@@ -81,3 +88,4 @@ export function WhyChoose() {
 }
 
 export default WhyChoose;
+

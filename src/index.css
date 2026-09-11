@@ -1,9 +1,7 @@
-
-
 @font-face {
   font-family: 'Fractual';
   src: url('/fonts/Fractul.woff2') format('woff2'),
-       url("https://db.onlinewebfonts.com/t/cb601ca75e5b1d13f72452bfcd2c2b0a.woff2") format("woff2");
+    url("https://db.onlinewebfonts.com/t/cb601ca75e5b1d13f72452bfcd2c2b0a.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -59,4 +57,38 @@ h6 {
   height: 7px;
   background-color: var(--accent-red);
   border-radius: 50% !important;
+}
+
+/* ─── Split-Line Reveal (GSAP) ─────────────────────────────── */
+.split-line-wrap {
+  display: block;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.split-line-content {
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* Lenis Smooth Scroll Global Rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

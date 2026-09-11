@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import gsap from 'gsap';
+import useSplitReveal from '../utils/useSplitReveal';
 import './Works.css';
 
 const WORKS_DATA = [
@@ -35,6 +36,9 @@ const WORKS_DATA = [
 ];
 
 export function Works() {
+  const worksRef = useRef(null);
+  useSplitReveal(worksRef);
+
   const handleMouseEnter = (e) => {
     const img = e.currentTarget.querySelector('.work-img');
     if (img) {
@@ -60,13 +64,18 @@ export function Works() {
   };
 
   return (
-    <section className="works-section" id="work">
+    <section className="works-section" id="work" ref={worksRef}>
       {/* Section Header */}
       <div className="works-header">
         <span className="works-tag">
           <span className="bullet-square"></span>
           <span>selected works</span>
         </span>
+        <h2 className="works-title">
+          <span className="split-line-wrap">
+            <span className="split-line-content">selected works & case studies<span className="dot-red">.</span></span>
+          </span>
+        </h2>
       </div>
 
       {/* 2x2 Grid of 4 Works Cards */}

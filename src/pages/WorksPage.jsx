@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
 import CTA from '../components/CTA';
+import useSplitReveal from '../utils/useSplitReveal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Flip } from 'gsap/Flip';
@@ -89,6 +90,8 @@ const CATEGORIES = ['all', 'branding', 'web apps', 'ai & tech'];
 
 export function WorksPage() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const worksPageRef = useRef(null);
+  useSplitReveal(worksPageRef);
 
   // GSAP Flip + ScrollTrigger Bento Gallery Animation (desktop only)
   // NOTE: Disabled on mobile — body{overflow-x:hidden} clips GSAP's position:fixed
@@ -152,7 +155,7 @@ export function WorksPage() {
     : PROJECTS_LIST.filter(p => p.category === activeFilter);
 
   return (
-    <div className="about-page-wrapper">
+    <div className="about-page-wrapper" ref={worksPageRef}>
       <Preloader />
 
       {/* Header */}
@@ -167,7 +170,9 @@ export function WorksPage() {
           <div className="about-hero-header">
             <span className="about-hero-tag">(02) selected works & projects</span>
             <h1 className="about-hero-title">
-              featured work, digital products & brand archives.
+              <span className="split-line-wrap">
+                <span className="split-line-content">featured work, digital products &amp; brand archives.</span>
+              </span>
             </h1>
           </div>
           <div className="about-hero-meta">
@@ -212,7 +217,11 @@ export function WorksPage() {
           <div className="works-projects-header">
             <div className="works-projects-title-wrap">
               <span className="section-label">— featured case studies</span>
-              <h2 className="works-projects-heading">selected projects</h2>
+              <h2 className="works-projects-heading">
+                <span className="split-line-wrap">
+                  <span className="split-line-content">selected projects</span>
+                </span>
+              </h2>
             </div>
 
             {/* Filter Tabs */}
