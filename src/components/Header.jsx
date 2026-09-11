@@ -74,7 +74,7 @@ export function Header() {
           <div className="menu-info-sidebar">
             <div className="info-block">
               <span className="info-label">say hi</span>
-              <a href="mailto:hey@mark9.design" className="info-value">hey@mark9.design</a>
+              <a href="mailto:sales@mark9.cc" className="info-value">sales@mark9.cc</a>
             </div>
 
             <div className="info-block">
