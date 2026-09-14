@@ -1,14 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ShapeOverlays from './ShapeOverlays';
 import './Header.css';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOverlayAnimating, setIsOverlayAnimating] = useState(false);
+  const [currentPath, setCurrentPath] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentPath(window.location.pathname);
+    }
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsOverlayAnimating(true);
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navItems = [
+    { number: '01', label: 'about', href: '/about' },
+    { number: '02', label: 'services', href: '/services' },
+    { number: '03', label: 'works', href: '/works' },
+    { number: '04', label: 'what we do', href: '#what-we-do' },
+    { number: '05', label: 'insights', href: '#insights' },
+    { number: '06', label: 'contact', href: '/contact' },
+  ];
+
+  const isLinkActive = (href) => {
+    if (href.startsWith('/')) {
+      return currentPath === href || (href === '/' && currentPath === '');
+    }
+    return false;
   };
 
   return (
@@ -54,21 +77,19 @@ export function Header() {
       <div className={`fullscreen-menu-overlay ${isMenuOpen ? 'active' : ''}`}>
         <div className="menu-content">
           <nav className="menu-nav-links">
-            <a href="/services" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">01</span> services
-            </a>
-            <a href="/works" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">02</span> works
-            </a>
-            <a href="#what-we-do" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">03</span> what we do
-            </a>
-            <a href="#insights" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">04</span> insights
-            </a>
-            <a href="/contact" onClick={toggleMenu} className="menu-nav-item">
-              <span className="item-num">05</span> contact
-            </a>
+            {navItems.map((item) => {
+              const active = isLinkActive(item.href);
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={toggleMenu}
+                  className={`menu-nav-item ${active ? 'active' : ''}`}
+                >
+                  <span className="item-num">{item.number}</span> {item.label}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="menu-info-sidebar">

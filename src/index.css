@@ -81,6 +81,22 @@ h6 {
   border-radius: 50% !important;
 }
 
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted-light);
+  text-transform: lowercase;
+  letter-spacing: 0.15em;
+}
+
+.orange-text {
+  color: var(--accent-red);
+}
+
 /* ─── Split-Line Reveal (GSAP) ─────────────────────────────── */
 .split-line-wrap {
   display: block;

@@ -1,6 +1,6 @@
-/* About Page / Works Page Styles - Off-White Light Theme (#F5F5F2) */
+/* Works Page Styles - Off-White Light Theme (#F5F5F2) */
 
-.about-page-wrapper {
+.works-page-wrapper {
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg-light);
@@ -14,11 +14,11 @@
 }
 
 /* Header Adaptations for Light Theme */
-.about-page-wrapper .header-logo-svg {
+.works-page-wrapper .header-logo-svg {
   color: var(--text-dark);
 }
 
-.about-page-wrapper .menu-line {
+.works-page-wrapper .menu-line {
   background-color: var(--text-dark);
 }
 

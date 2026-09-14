@@ -158,6 +158,32 @@
   filter: hue-rotate(240deg) saturate(130%) contrast(110%);
 }
 
+/* Bottom Description Footer */
+.brand-marquee-footer {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 680px;
+  text-align: center;
+}
+
+.brand-marquee-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  margin: 0;
+  opacity: 0.85;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .brand-marquee-sticky-wrapper {
@@ -166,6 +192,16 @@
 
   .brand-marquee-pinned-container {
     gap: 1rem;
+  }
+
+  .brand-marquee-footer {
+    bottom: 2rem;
+    width: 92%;
+  }
+
+  .brand-marquee-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .inline-capsule {

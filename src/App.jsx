@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import WorksPage from './pages/WorksPage';
 import ServicesPage from './pages/ServicesPage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -73,8 +74,8 @@ function App() {
         setCurrentPath('/works');
       } else if (href === '/about' || href === '#about') {
         e.preventDefault();
-        window.history.pushState({}, '', '/works');
-        setCurrentPath('/works');
+        window.history.pushState({}, '', '/about');
+        setCurrentPath('/about');
       } else if (href === '/' || href === '#home') {
         e.preventDefault();
         window.history.pushState({}, '', '/');
@@ -119,8 +120,12 @@ function App() {
     return <ServicesPage />;
   }
 
-  if (currentPath === '/works' || currentPath === '/about') {
+  if (currentPath === '/works') {
     return <WorksPage />;
+  }
+
+  if (currentPath === '/about') {
+    return <AboutPage />;
   }
 
   return <Home />;

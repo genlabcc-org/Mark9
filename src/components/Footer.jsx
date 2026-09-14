@@ -58,7 +58,7 @@ export function Footer() {
             <span className="footer-col-label">studio</span>
             <ul className="footer-links-list">
               <li>
-                <a href="#about">
+                <a href="/about">
                   <span className="link-dash">—</span> who we are
                 </a>
               </li>

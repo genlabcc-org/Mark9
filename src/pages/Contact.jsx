@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Preloader from '../components/Preloader';
 import Button from '../components/Button';
 import useSplitReveal from '../utils/useSplitReveal';
-import { Sparkles, Phone, Mail, MapPin } from 'lucide-react';
+import { Sparkles, Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import './Contact.css';
 
 const LinkedinIcon = ({ size = 16, className = "" }) => (
@@ -41,7 +40,6 @@ export function Contact() {
 
   return (
     <div className="contact-page-wrapper">
-      <Preloader />
 
       {/* Top Header */}
       <div className="contact-header-wrap">

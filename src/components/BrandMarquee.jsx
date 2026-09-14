@@ -101,8 +101,12 @@ export function BrandMarquee() {
           </div>
         </div>
 
-
-
+        {/* Bottom Description */}
+        <div className="brand-marquee-footer">
+          <p className="brand-marquee-desc">
+            we engineer transformative digital identities and high-performing web platforms where strategic vision meets relentless design precision<span className="highlight-orange">.</span>
+          </p>
+        </div>
       </section>
     </div>
   );

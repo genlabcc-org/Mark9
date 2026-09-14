@@ -155,7 +155,7 @@ export function WorksPage() {
     : PROJECTS_LIST.filter(p => p.category === activeFilter);
 
   return (
-    <div className="about-page-wrapper" ref={worksPageRef}>
+    <div className="works-page-wrapper" ref={worksPageRef}>
       <Preloader />
 
       {/* Header */}
