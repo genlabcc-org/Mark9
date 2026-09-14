@@ -11,6 +11,16 @@ export function Header() {
     if (typeof window !== 'undefined') {
       setCurrentPath(window.location.pathname);
     }
+
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isMenuOpen]);
 
   const toggleMenu = () => {
@@ -22,8 +32,8 @@ export function Header() {
     { number: '01', label: 'about', href: '/about' },
     { number: '02', label: 'services', href: '/services' },
     { number: '03', label: 'works', href: '/works' },
-    { number: '04', label: 'what we do', href: '#what-we-do' },
-    { number: '05', label: 'insights', href: '#insights' },
+    // { number: '04', label: 'what we do', href: '#what-we-do' },
+    // { number: '05', label: 'insights', href: '#insights' },
     { number: '06', label: 'contact', href: '/contact' },
   ];
 
@@ -109,7 +119,8 @@ export function Header() {
         </div>
 
         <div className="menu-footer">
-          <span>© 2026 mark9 studio</span>
+          <span>© 2026 mark9 </span>
+          <span>design · strategy · marketing</span>
         </div>
       </div>
     </>

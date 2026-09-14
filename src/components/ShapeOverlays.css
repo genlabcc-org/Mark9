@@ -1,4 +1,3 @@
-/* Liquid Curve SVG Shape Overlays Styles */
 .shape-overlays {
   position: fixed;
   top: 0;
@@ -9,6 +8,10 @@
   height: 100dvh;
   z-index: 9995;
   pointer-events: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .shape-overlays.active {
@@ -17,4 +20,5 @@
 
 .shape-overlays__path {
   will-change: d;
+  transform: translate3d(0, 0, 0);
 }

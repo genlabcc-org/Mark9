@@ -85,7 +85,7 @@ export function Preloader({ onComplete }) {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <span className="bullet-square"></span>
-                <span>mark9 studio — design school</span>
+                <span>mark9 — design · strategy · marketing</span>
               </motion.div>
 
               <motion.div

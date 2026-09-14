@@ -19,7 +19,7 @@
 }
 
 .hero-header.menu-active .header-logo-svg .logo-dot {
-  fill: var(--accent-red);
+  fill: #ffffff;
 }
 
 .hero-header.menu-active .menu-toggle-btn {
@@ -112,12 +112,15 @@
   box-sizing: border-box;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease 0.12s;
+  visibility: hidden;
+  transition: opacity 0.2s ease 0s, visibility 0.2s ease 0.2s;
 }
 
 .fullscreen-menu-overlay.active {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.35s ease 0.45s, visibility 0s ease 0s;
 }
 
 .dark-brand span {
@@ -259,6 +262,13 @@
   .fullscreen-menu-overlay {
     padding: calc(var(--page-padding-y) + 3rem) var(--page-padding-x) 1.5rem;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .fullscreen-menu-overlay.active {
+    transition: opacity 0.3s ease 0.35s, visibility 0s ease 0s;
   }
 
   .dark-brand span {
