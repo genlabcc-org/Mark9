@@ -202,7 +202,7 @@ export function Works() {
           <a href="/works" className="single-project-link" aria-label="Explore Music Pro 2 Project">
             <div className="single-project-image-wrap">
               <img
-                src="/hero3.jpg"
+                src="/project5.png"
                 alt="music pro 2"
                 className="single-project-img"
               />

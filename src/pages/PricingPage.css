@@ -12,15 +12,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-.pricing-page-container .site-footer,
-.pricing-page-container .pre-footer-marquee-wrapper {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 100vw;
-  box-sizing: border-box;
+  padding: 0 var(--page-padding-x);
 }
 
 .pricing-main-content {
@@ -32,7 +24,7 @@
   justify-content: flex-start;
   position: relative;
   z-index: 2;
-  padding: 0 var(--page-padding-x);
+  padding: 0;
   box-sizing: border-box;
 }
 

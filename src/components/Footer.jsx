@@ -8,7 +8,7 @@ export function Footer() {
   useSplitReveal(footerRef);
 
   return (
-    <>
+    <div className="global-footer-wrapper">
       {/* Giant Pre-Footer Text Banner (Rendered cleanly above the footer element) */}
       <PreFooterMarquee />
 
@@ -94,7 +94,7 @@ export function Footer() {
 
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 

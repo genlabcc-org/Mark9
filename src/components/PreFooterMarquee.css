@@ -1,8 +1,8 @@
 /* Pre-Footer Giant Static Banner Styles */
 .pre-footer-marquee-wrapper {
-  width: calc(100% + (2 * var(--page-padding-x)));
-  margin-left: calc(-1 * var(--page-padding-x));
-  margin-right: calc(-1 * var(--page-padding-x));
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   padding: 4rem 0 3rem;
   background-color: #0c0c0c;
   overflow: hidden;

@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Header from './Header';
 import useSplitReveal from '../utils/useSplitReveal';
 import './Hero.css';
 
@@ -122,7 +121,6 @@ export function Hero() {
 
   return (
     <section className="hero-container-wrap" ref={heroRef}>
-      <Header />
       {/* 3-Column Hero Cards Grid */}
       <div className="hero-columns-grid">
         {heroCards.map((card) => (

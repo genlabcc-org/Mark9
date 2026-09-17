@@ -1,8 +1,31 @@
-/* Site Footer Component Styles - Expanded Tall Layout */
-.site-footer {
+/* Global Footer Wrapper: Handles full edge-to-edge width and luxury rounded top card across all pages */
+.global-footer-wrapper {
   width: calc(100% + (2 * var(--page-padding-x)));
   margin-left: calc(-1 * var(--page-padding-x));
   margin-right: calc(-1 * var(--page-padding-x));
+  background-color: #0c0c0c;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.85);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* When rendered inside Home's .footer-stack-panel which already handles outer bounds */
+.footer-stack-panel .global-footer-wrapper {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Site Footer Component Styles - Expanded Tall Layout */
+.site-footer {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   background-color: #161616;
   color: #ffffff;
   padding: 6.5rem var(--page-padding-x) 5.5rem;
@@ -239,6 +262,10 @@
 }
 
 @media (max-width: 768px) {
+  .global-footer-wrapper {
+    border-radius: 16px 16px 0 0;
+  }
+
   .site-footer {
     padding: 4.5rem var(--page-padding-x) 2.5rem;
   }

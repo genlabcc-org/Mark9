@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
@@ -17,6 +18,7 @@ export function Home() {
   return (
     <div className="home-container">
       <Preloader />
+      <Header />
       <div className="main-content-flow" ref={mainRef}>
         <Hero />
         <About />
