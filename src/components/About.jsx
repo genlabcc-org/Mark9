@@ -3,83 +3,66 @@ import { motion } from 'motion/react';
 import useSplitReveal from '../utils/useSplitReveal';
 import './About.css';
 
+const ABOUT_STATS = [
+  {
+    num: '50+',
+    label: 'brands built'
+  },
+  {
+    num: '7+',
+    label: 'years of design thinking'
+  },
+  {
+    num: '4',
+    label: 'cities and counting'
+  },
+  {
+    num: '100%',
+    label: 'obsessed with getting it right'
+  }
+];
+
 export function About() {
   const aboutRef = useRef(null);
   useSplitReveal(aboutRef);
 
   return (
     <section className="about-section" id="about" ref={aboutRef}>
-      <div className="about-header">
-        <span className="about-tag">
+      {/* Top Header Row with Horizontal Line */}
+      <div className="about-top-header">
+        <span className="about-header-label">
           <span className="bullet-square"></span>
           <span>who we are</span>
         </span>
+        <div className="about-header-line"></div>
       </div>
 
       <div className="about-container">
-        {/* Left Column: Title */}
+        {/* Left Spacer for Offset Grid Layout */}
+        <div className="about-left-spacer"></div>
+
+        {/* Right Content Block */}
         <motion.div
-          className="about-left-col"
+          className="about-right-content"
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="about-headline">
-            <span className="split-line-wrap">
-              <span className="split-line-content">your brand's biggest fan<span className="orange-text">.</span></span>
-            </span>
-            <span className="split-line-wrap">
-              <span className="split-line-content">and its toughest critic<span className="orange-text">.</span></span>
-            </span>
-          </h2>
-        </motion.div>
+          {/* Main Paragraph Narrative */}
+          <p className="about-paragraph">
+            founded in 2023, mark9 is a creative design and marketing studio that transforms ideas into impactful brands. we offer branding, design, strategy, marketing, packaging, ui/ux, and more under one roof, helping businesses build strong and memorable brand identities.
+          </p>
 
-        {/* Right Column: Bio Paragraphs, Stats & Button */}
-        <motion.div
-          className="about-right-col"
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-        >
-          <div className="about-bio-text">
-            <p>
-              MARK9 exists for one reason — to turn ideas into brands people actually feel something for. We're your design partner from the very first sketch to the final scroll-stopping ad.
-            </p>
-
-            <p>
-              We sit with your business, understand what makes it tick, and build a brand identity that works as hard as you do — on shelves, on screens, and in people's minds.
-            </p>
-
-            <p className="dimmed-paragraph">
-              One studio. Every discipline your brand needs. Zero disconnect.
-            </p>
-          </div>
-
-          {/* Stats Bar (4 Stats) */}
+          {/* 3-Column Big Stats Grid */}
           <div className="about-stats-grid">
-            <div className="stat-item">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">brands built</span>
-            </div>
-
-            <div className="stat-item">
-              <span className="stat-number">7+</span>
-              <span className="stat-label">years of design thinking</span>
-            </div>
-
-            <div className="stat-item">
-              <span className="stat-number">4</span>
-              <span className="stat-label">cities and counting</span>
-            </div>
-
-            <div className="stat-item">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">obsessed with getting it right</span>
-            </div>
+            {ABOUT_STATS.map((stat, idx) => (
+              <div className="about-stat-card" key={idx}>
+                <span className="about-stat-num">{stat.num}</span>
+                <span className="about-stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
-
         </motion.div>
       </div>
     </section>
@@ -87,3 +70,4 @@ export function About() {
 }
 
 export default About;
+

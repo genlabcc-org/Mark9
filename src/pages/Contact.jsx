@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
+import Button from '../components/Button';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Button from '../components/Button';
+import Preloader from '../components/Preloader';
 import useSplitReveal from '../utils/useSplitReveal';
 import { Sparkles, Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import './Contact.css';
@@ -40,12 +41,8 @@ export function Contact() {
 
   return (
     <div className="contact-page-wrapper">
-
-      {/* Top Header */}
-      <div className="contact-header-wrap">
-        <Header />
-      </div>
-
+      <Preloader />
+      <Header />
       {/* Main Contact Section */}
       <main className="contact-main">
         {/* Contact Hero Header */}
@@ -223,7 +220,6 @@ export function Contact() {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );

@@ -1,0 +1,50 @@
+/* Pre-Footer Giant Static Banner Styles */
+.pre-footer-marquee-wrapper {
+  width: calc(100% + (2 * var(--page-padding-x)));
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  padding: 4rem 0 3rem;
+  background-color: #0c0c0c;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.pre-footer-static-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Text with Black to White Fade Gradient */
+.pre-footer-text {
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 15.5vw, 19.5rem);
+  font-weight: 100;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-transform: lowercase;
+  white-space: nowrap;
+  display: block;
+
+  /* Black to White Vertical Gradient Fill */
+  background: linear-gradient(180deg, #ffffff 15%, rgba(255, 255, 255, 0.12) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.92;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .pre-footer-marquee-wrapper {
+    padding: 2.5rem 0 1.8rem;
+  }
+
+  .pre-footer-text {
+    font-size: clamp(2.8rem, 15vw, 6.5rem);
+  }
+}

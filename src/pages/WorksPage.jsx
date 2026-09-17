@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
+import CTA from '../components/CTA';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
-import CTA from '../components/CTA';
 import useSplitReveal from '../utils/useSplitReveal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -157,12 +157,7 @@ export function WorksPage() {
   return (
     <div className="works-page-wrapper" ref={worksPageRef}>
       <Preloader />
-
-      {/* Header */}
-      <div className="about-header-wrap">
-        <Header />
-      </div>
-
+      <Header />
       {/* Main Content */}
       <main className="about-main">
         {/* Section 1: Hero Intro Section */}
@@ -326,7 +321,6 @@ export function WorksPage() {
 
       {/* CTA Section (Same as Home Page) */}
       <CTA />
-
       <Footer />
     </div>
   );

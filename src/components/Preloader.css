@@ -1,10 +1,10 @@
 /* Preloader Overlay Styles */
 .preloader-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-color: var(--bg-dark);
   z-index: 99999;
   display: flex;
@@ -25,7 +25,7 @@
 }
 
 .filling-svg {
-  width: clamp(240px, 48vw, 600px);
+  width: clamp(280px, 75vw, 700px);
   height: auto;
   max-height: 40vh;
   display: block;
@@ -89,10 +89,15 @@
 
 @media (max-width: 768px) {
   .preloader-overlay {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    height: 100dvh;
+  }
+
+  .filling-svg {
+    width: clamp(280px, 88vw, 600px);
   }
 
   .preloader-counter {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 }

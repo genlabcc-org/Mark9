@@ -20,14 +20,16 @@ export function CTA() {
           transition={{ duration: 0.5 }}
         >
           <span className="bullet-square"></span>
-          <span>get in touch</span>
+          <span>apply now</span>
         </motion.div>
 
         {/* Main Title (Split Lines) */}
         <div className="cta-title-wrapper">
           <h2 className="cta-title">
             <span className="split-line-wrap">
-              <span className="split-line-content">got a brand worth building? let's <span className="orange-text">talk.</span></span>
+              <span className="split-line-content">
+                ready to stop watching tutorials and start <span className="orange-text">becoming a designer?</span>
+              </span>
             </span>
           </h2>
         </div>
@@ -40,7 +42,7 @@ export function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          Whether you're starting from scratch, refreshing a legacy brand, or scaling across Tamil Nadu — we're ready.
+          limited seats per batch, so every student actually gets mentor time. apply now and secure your place in the next mark9 cohort.
         </motion.p>
 
         {/* Action Button & Contact Bar */}
@@ -52,11 +54,11 @@ export function CTA() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Button href="mailto:info@mark9.cc" variant="primary">
-            start a conversation
+            apply now →
           </Button>
 
           <div className="cta-contact-info-bar">
-            <span>Nagercoil, Tamil Nadu</span>
+            <span>nagercoil, tamil nadu</span>
             <span className="divider-dot">·</span>
             <a href="mailto:info@mark9.cc">info@mark9.cc</a>
             <span className="divider-dot">·</span>

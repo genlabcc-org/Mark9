@@ -1,110 +1,139 @@
 import React, { useRef } from 'react';
 import { motion } from 'motion/react';
-import gsap from 'gsap';
 import useSplitReveal from '../utils/useSplitReveal';
 import './Works.css';
-
-const WORKS_DATA = [
-  {
-    id: '01',
-    title: 'typography trends',
-    subtitle: 'how modern typography is changing the way we communicate online',
-    image: '/project2.png',
-    tag: 'editorial / 2026'
-  },
-  {
-    id: '02',
-    title: 'ai-driven design',
-    subtitle: 'how artificial intelligence is transforming the creative process',
-    image: '/project3.png',
-    tag: '3d & ai / 2026'
-  },
-  {
-    id: '03',
-    title: 'digital finance platform',
-    subtitle: 'reimagining high-stakes financial interfaces for institutional clients',
-    image: '/project5.png',
-    tag: 'fintech / 2026'
-  },
-  {
-    id: '04',
-    title: 'research & education portal',
-    subtitle: 'building scalable web infrastructure for global academic institutes',
-    image: '/portrait1.jpg',
-    tag: 'web dev / 2026'
-  }
-];
 
 export function Works() {
   const worksRef = useRef(null);
   useSplitReveal(worksRef);
 
-  const handleMouseEnter = (e) => {
-    const img = e.currentTarget.querySelector('.work-img');
-    if (img) {
-      gsap.to(img, {
-        scale: 1.0,
-        duration: 1.2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-      });
-    }
-  };
-
-  const handleMouseLeave = (e) => {
-    const img = e.currentTarget.querySelector('.work-img');
-    if (img) {
-      gsap.to(img, {
-        scale: 1.12,
-        duration: 1.2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-      });
-    }
-  };
-
   return (
     <section className="works-section" id="work" ref={worksRef}>
-      {/* Section Header */}
-      <div className="works-header">
-        <span className="works-tag">
+      {/* Top Header Row with Horizontal Line */}
+      <div className="works-top-header">
+        <span className="works-header-label">
           <span className="bullet-square"></span>
-          <span>selected works</span>
+          <span>last projects</span>
         </span>
+        <div className="works-header-line"></div>
       </div>
 
-      {/* 2x2 Grid of 4 Works Cards */}
-      <div className="works-grid">
-        {WORKS_DATA.map((work, index) => (
-          <motion.div
-            key={work.id}
-            className="work-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Image Container */}
-            <div className="work-image-wrapper">
+      {/* Main Single Project Container (Prada) */}
+      <div className="works-single-container">
+        <motion.div
+          className="single-project-card"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <a href="/works" className="single-project-link" aria-label="Explore Prada Project">
+            {/* Image Wrap */}
+            <div className="single-project-image-wrap">
               <img
-                src={work.image}
-                alt={`MARK9 branding and design case study — ${work.title}: ${work.subtitle}`}
-                className="work-img"
+                src="/project3.png"
+                alt="prada - iconic project"
+                className="single-project-img"
               />
             </div>
 
-            {/* Text Information Below Image */}
-            <div className="work-info-wrapper">
-              <h3 className="work-title">{work.title}</h3>
-              <p className="work-subtitle">{work.subtitle}</p>
+            {/* Bottom Caption Line */}
+            <div className="single-project-caption">
+              <span className="caption-title">prada</span>
+              <span className="caption-desc">an iconic project meticulously curated by our agency.</span>
             </div>
+          </a>
+        </motion.div>
+
+        {/* 2-Column Staggered Grid (Louis Vuitton & Cyber Tesla) */}
+        <div className="works-staggered-grid">
+          {/* Left Card: Louis Vuitton (Tall Portrait) */}
+          <motion.div
+            className="staggered-card card-left"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <a href="/works" className="single-project-link" aria-label="Explore Louis Vuitton Project">
+              <div className="staggered-image-wrap tall-wrap">
+                <img
+                  src="/project2.png"
+                  alt="louis vuitton"
+                  className="single-project-img"
+                />
+              </div>
+
+              <div className="staggered-caption">
+                <div className="staggered-title-box">
+                  <span className="staggered-title">louis</span>
+                  <span className="staggered-title">vuitton</span>
+                </div>
+                <div className="staggered-desc-box">
+                  <span className="caption-desc">louis vuitton, an embodiment of luxury and timeless elegance.</span>
+                </div>
+              </div>
+            </a>
           </motion.div>
-        ))}
+
+          {/* Right Card: Cyber Tesla (Landscape) */}
+          <motion.div
+            className="staggered-card card-right"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <a href="/works" className="single-project-link" aria-label="Explore Cyber Tesla Project">
+              <div className="staggered-image-wrap wide-wrap">
+                <img
+                  src="/project5.png"
+                  alt="cyber tesla"
+                  className="single-project-img"
+                />
+              </div>
+
+              <div className="staggered-caption">
+                <div className="staggered-title-box">
+                  <span className="staggered-title">cyber</span>
+                  <span className="staggered-title">tesla</span>
+                </div>
+                <div className="staggered-desc-box">
+                  <span className="caption-desc">tesla, a groundbreaking project crafted by our agency.</span>
+                </div>
+              </div>
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Bottom Full-width Card: Music Pro 2 */}
+        <motion.div
+          className="single-project-card music-pro-card"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <a href="/works" className="single-project-link" aria-label="Explore Music Pro 2 Project">
+            <div className="single-project-image-wrap">
+              <img
+                src="/hero3.jpg"
+                alt="music pro 2"
+                className="single-project-img"
+              />
+            </div>
+
+            <div className="single-project-caption">
+              <span className="caption-title">music pro 2</span>
+              <span className="caption-desc">a visionary project crafted by our agency with a harmonious fusion of creativity</span>
+            </div>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 export default Works;
+
+

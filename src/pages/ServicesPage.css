@@ -7,8 +7,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: var(--page-padding-y) var(--page-padding-x) 0;
-  overflow-x: hidden;
+  padding: 6.5rem var(--page-padding-x) 0;
   position: relative;
 }
 
@@ -215,6 +214,7 @@
 
 /* Responsive Media Queries */
 @media (max-width: 992px) {
+
   .hero-grid,
   .category-block-grid {
     grid-template-columns: 1fr;

@@ -5,46 +5,46 @@ import './Services.css';
 
 const servicesList = [
   {
-    id: '(01)',
+    id: '01',
     title: 'branding',
-    description: 'identity, voice, position, story, guidelines.',
+    description: "strategy, positioning and a personality your audience won't forget.",
     image: '/project2.png'
   },
   {
-    id: '(02)',
+    id: '02',
     title: 'design',
-    description: 'social assets, collateral, marketing decks, print.',
+    description: "visuals that don't just look good — they say something",
     image: '/project3.png'
   },
   {
-    id: '(03)',
+    id: '03',
     title: 'strategy',
-    description: 'market positioning, brand direction, launch playbooks.',
-    image: '/project5.png'
-  },
-  {
-    id: '(04)',
-    title: 'marketing',
-    description: 'performance campaigns, organic growth, content systems.',
+    description: "the thinking behind every move, so nothing is left to guesswork.",
     image: '/portrait1.jpg'
   },
   {
-    id: '(05)',
+    id: '04',
+    title: 'marketing',
+    description: "campaigns built to be seen, shared, and remembered",
+    image: '/project5.png'
+  },
+  {
+    id: '05',
     title: 'packaging design',
-    description: 'unboxing experiences, retail presence, print-ready files.',
+    description: "packs that earn a second look and a place in the cart",
+    image: '/portrait1.jpg'
+  },
+  {
+    id: '06',
+    title: 'ui/ux',
+    description: "digital experiences people actually enjoy using.",
     image: '/project2.png'
   },
   {
-    id: '(06)',
-    title: 'ui/ux',
-    description: 'web design, mobile interfaces, digital design systems.',
-    image: '/project3.png'
-  },
-  {
-    id: '(07)',
+    id: '07',
     title: 'ads',
-    description: 'high-converting static & video creatives for Meta, Google, & more.',
-    image: '/project5.png'
+    description: "creative that stops the scroll and starts a conversation.",
+    image: '/project3.png'
   }
 ];
 
@@ -65,17 +65,8 @@ export function Services() {
   return (
     <section className="services-section" id="services" ref={servicesRef}>
       <div className="services-header">
-        <span className="services-tag">
-          <span className="bullet-square"></span>
-          <span>services</span>
-        </span>
-        <h2 className="services-subheadline">
-          <span className="split-line-wrap">
-            <span className="split-line-content">everything a brand needs<span className="orange-text">.</span></span>
-          </span>
-          <span className="split-line-wrap">
-            <span className="split-line-content">nothing it doesn't<span className="orange-text">.</span></span>
-          </span>
+        <h2 className="services-headline">
+          our services<sup>®</sup>
         </h2>
       </div>
 
@@ -84,7 +75,7 @@ export function Services() {
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setHoveredIndex(null)}
       >
-        {/* Smooth Floating Preview Image */}
+        {/* Floating Preview Image */}
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
@@ -106,7 +97,7 @@ export function Services() {
             >
               <img
                 src={servicesList[hoveredIndex].image}
-                alt={`MARK9 ${servicesList[hoveredIndex].title} portfolio showcase — ${servicesList[hoveredIndex].description}`}
+                alt={`MARK9 ${servicesList[hoveredIndex].title}`}
               />
             </motion.div>
           )}
@@ -120,10 +111,8 @@ export function Services() {
           >
             <div className="service-content">
               <span className="service-num">{service.id}</span>
-              <div className="service-text-group">
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-desc">{service.description}</p>
-              </div>
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-desc">{service.description}</p>
             </div>
           </div>
         ))}

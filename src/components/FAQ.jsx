@@ -6,28 +6,38 @@ import './FAQ.css';
 const FAQ_DATA = [
   {
     id: '01',
-    question: 'what is your typical turnaround time?',
-    answer: 'our standard turnaround time ranges from 4 to 8 weeks depending on project scope, complexity, and feedback cycles. we establish clear milestones during onboarding.'
+    question: 'what makes mark9 different from other design institutes?',
+    answer: 'we don\'t start with software — we start with how you see the world. field visits, real mentors, and a curriculum that lets you try every discipline before you commit to one.'
   },
   {
     id: '02',
-    question: 'do you offer custom design solutions?',
-    answer: 'yes, 100%. we craft bespoke digital identities and interactive web experiences tailored specifically to your brand vision and business objectives.'
+    question: 'do i need prior design experience to join?',
+    answer: 'no. mark9 is built for beginners — month 1 starts from fundamentals, not assumptions.'
   },
   {
     id: '03',
-    question: 'what industries do you specialize in?',
-    answer: 'we partner primarily with tech startups, fintech platforms, ai innovators, luxury ecommerce brands, and forward-thinking digital enterprises.'
+    question: 'what will i learn in each month?',
+    answer: 'month 1: design fundamentals through field visits. month 2: hands-on basics across product design, graphic design and video editing. month 3: deep specialization in the discipline you\'re best suited for.'
   },
   {
     id: '04',
-    question: 'can you handle both design and development?',
-    answer: 'absolutely. we provide comprehensive end-to-end execution, from visual strategy and ui/ux design to custom frontend development and high-performance animations.'
+    question: 'who are the mentors?',
+    answer: 'industry professionals with 20+ years of experience, including former designers from ibm, infosys and mercedes-benz.'
   },
   {
     id: '05',
-    question: 'do you provide post-launch support?',
-    answer: 'yes, we provide ongoing maintenance packages, performance tuning, security updates, and continuous design iterations to support long-term growth.'
+    question: 'does mark9 offer placement support?',
+    answer: 'yes — mark9 actively supports placement in tier 1 cities after course completion.'
+  },
+  {
+    id: '06',
+    question: 'how long is the program?',
+    answer: '3 months, structured in three focused phases: fundamentals, exploration, and mastery.'
+  },
+  {
+    id: '07',
+    question: 'where is mark9 located?',
+    answer: '121/c, kottar–parvathipuram rd, chetti kulam, nagercoil, tamil nadu 629001.'
   }
 ];
 
@@ -42,26 +52,22 @@ export function FAQ() {
 
   return (
     <section className="faq-section" id="faq" ref={faqRef}>
-      <div className="faq-header">
-        <span className="faq-tag">
+      {/* Top Header Row with Horizontal Line */}
+      <div className="faq-top-header">
+        <span className="faq-header-label">
           <span className="bullet-square"></span>
-          <span>(05) faq</span>
+          <span>good questions deserve real answers</span>
         </span>
+        <div className="faq-header-line"></div>
       </div>
 
       <div className="faq-container">
         {/* Left Column - Large Typography Heading */}
         <div className="faq-left-col">
           <h2 className="faq-heading">
-            <span className="split-line-wrap">
-              <span className="split-line-content">frequently asked</span>
-            </span>
-            <span className="split-line-wrap">
-              <span className="split-line-content">questions</span>
-            </span>
+            frequently asked questions<span className="orange-text">.</span>
           </h2>
         </div>
-
 
         {/* Right Column - Accordion Items */}
         <div className="faq-right-col">
@@ -103,7 +109,6 @@ export function FAQ() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-
                 </div>
               );
             })}

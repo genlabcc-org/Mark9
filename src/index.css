@@ -10,16 +10,16 @@
 :root {
   /* Global Brand Colors (from Brand Specs) */
   --bg-dark: #090909;
-  --bg-light: #F5F5F2;
-  --bg-light-dim: #EBEBE6;
+  --bg-light: #090909;
+  --bg-light-dim: #141414;
   --text-primary: #fefefe;
-  --text-dark: #090909;
+  --text-dark: #fefefe;
   --text-muted: #808080;
-  --text-muted-light: #666666;
-  --text-muted-mid: #777777;
-  --text-muted-soft: #555555;
-  --text-muted-dim: #444444;
-  --text-muted-faint: #333333;
+  --text-muted-light: #999999;
+  --text-muted-mid: #aaaaaa;
+  --text-muted-soft: #bbbbbb;
+  --text-muted-dim: #cccccc;
+  --text-muted-faint: #dddddd;
   --accent-red: #ff2200;
   --accent-red-dark: #e01e00;
   --color-success: #16a34a;
@@ -41,6 +41,10 @@
   }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -52,8 +56,23 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   min-height: 100vh;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbars globally */
+html,
+body,
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 h1,

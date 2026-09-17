@@ -1,0 +1,166 @@
+/* Mentors Section Styles - Matching Reference Design Layout */
+.mentors-section {
+  width: calc(100% + (2 * var(--page-padding-x)));
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  padding: 6.5rem var(--page-padding-x) 8.5rem;
+  color: #ffffff;
+  background-color: var(--bg-dark);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Header Row with Horizontal Line */
+.mentors-top-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto 4.5rem;
+}
+
+.mentors-header-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.mentors-header-label .bullet-square {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+}
+
+.mentors-header-line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Container */
+.mentors-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* 5-Column Staggered Offset Grid Layout */
+.mentors-stagger-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3.5rem 2.2rem;
+  width: 100%;
+}
+
+.mentor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Explicit Grid Column Positioning for Staggered Rows */
+@media (min-width: 993px) {
+  .mentor-card.mentor-col-1 { grid-column: 1; }
+  .mentor-card.mentor-col-2 { grid-column: 2; }
+  .mentor-card.mentor-col-3 { grid-column: 3; }
+  .mentor-card.mentor-col-4 { grid-column: 4; }
+  .mentor-card.mentor-col-5 { grid-column: 5; }
+}
+
+.mentor-image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.mentor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.mentor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.1rem;
+}
+
+.mentor-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.mentor-role {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .mentors-section {
+    padding: 4.5rem var(--page-padding-x) 5.5rem;
+  }
+
+  .mentors-top-header {
+    margin-bottom: 3rem;
+  }
+
+  .mentors-stagger-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .mentors-stagger-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.25rem;
+  }
+
+  .mentor-image-wrap {
+    border-radius: 14px;
+  }
+
+  .mentor-name {
+    font-size: 1rem;
+  }
+
+  .mentor-role {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .mentors-stagger-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

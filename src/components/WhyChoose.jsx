@@ -4,30 +4,36 @@ import { Layers, Globe, Zap } from 'lucide-react';
 import useSplitReveal from '../utils/useSplitReveal';
 import './WhyChoose.css';
 
-const WHY_US_ITEMS = [
+const DIFFERENTIATOR_ITEMS = [
   {
     id: '01',
-    line1: 'one team,',
-    line2: 'every discipline',
+    title: 'field-first, not tool-first',
     description:
-      'no back-and-forth between five different agencies. strategy, branding, design, web, and ads — all under one roof, aligned from day one.',
-    icon: <Layers size={46} strokeWidth={1.5} />
+      'month 1 has zero software. you learn design by observing the real world — 4 field visits before you ever open a design tool.'
   },
   {
     id: '02',
-    line1: 'rooted,',
-    line2: 'but ambitious',
+    title: 'breadth before depth',
     description:
-      "we're based in nagercoil, tamil nadu — and we bring world-class design standards to local brands ready to scale nationwide.",
-    icon: <Globe size={46} strokeWidth={1.5} />
+      'month 2 puts every discipline in your hands — product design, graphic design, video editing — so you choose your path with real experience, not a guess.'
   },
   {
     id: '03',
-    line1: 'built to perform,',
-    line2: 'not just impress',
+    title: 'you choose where you fit',
     description:
-      "we don't design for awards — we design for conversion, recognition, and revenue. pretty is good. effective is better.",
-    icon: <Zap size={46} strokeWidth={1.5} />
+      'month 3 is yours. specialize in the discipline you connected with, and master it under focused mentorship.'
+  },
+  {
+    id: '04',
+    title: 'mentors who\'ve actually done it',
+    description:
+      'learn from professionals with 20+ years across ibm, infosys and mercedes-benz — not trainers reading off a slide deck.'
+  },
+  {
+    id: '05',
+    title: 'built for tier 1 placement',
+    description:
+      'every module is reverse-engineered from what top-city studios and companies actually hire for.'
   }
 ];
 
@@ -41,42 +47,32 @@ export function WhyChoose() {
       <div className="why-choose-header">
         <span className="why-choose-tag">
           <span className="bullet-square"></span>
-          <span>why us</span>
+          <span>what makes us different</span>
         </span>
       </div>
 
       <div className="why-choose-container">
-        {/* Main Headline (Exactly 2 Lines) */}
+        {/* Main Headline */}
         <div className="why-choose-headline-wrapper">
           <h2 className="why-choose-headline">
-            <span className="split-line-wrap">
-              <span className="split-line-content">design that thinks like a business<span className="dot-red">.</span></span>
-            </span>
-            <span className="split-line-wrap">
-              <span className="split-line-content">strategy that feels like art<span className="dot-red">.</span></span>
-            </span>
+            our learning process isn't borrowed from anyone<span className="dot-red">.</span>
           </h2>
         </div>
 
-        {/* 3-Column Feature Grid with Inline Icon & Number */}
+        {/* 5-Item Feature Grid */}
         <div className="why-choose-grid">
-          {WHY_US_ITEMS.map((item, index) => (
+          {DIFFERENTIATOR_ITEMS.map((item, index) => (
             <motion.div
               key={item.id}
               className="why-choose-card"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.12 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="why-choose-card-header-line">
+              <div className="why-choose-card-header">
                 <span className="why-choose-number">({item.id})</span>
-                <span className="why-choose-icon-inline">{item.icon}</span>
-                <h3 className="why-choose-card-title">
-                  <span>{item.line1}</span>
-                  <br />
-                  <span>{item.line2}</span>
-                </h3>
+                <h3 className="why-choose-card-title">{item.title}</h3>
               </div>
               <p className="why-choose-card-desc">{item.description}</p>
             </motion.div>

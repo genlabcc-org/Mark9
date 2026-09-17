@@ -4,7 +4,6 @@
   margin-left: calc(var(--page-padding-x) * -1);
   margin-right: calc(var(--page-padding-x) * -1);
   padding: 4.8rem var(--page-padding-x) 4.2rem;
-  background-color: var(--bg-dark);
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
@@ -53,13 +52,14 @@
 
 .cta-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.95rem, 3.8vw, 3.7rem);
+  font-size: clamp(1.95rem, 3.5vw, 3.4rem);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.035em;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 950px;
   color: var(--text-primary);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .cta-title .orange-text {

@@ -27,7 +27,6 @@ function App() {
 
     lenisRef.current = lenis;
 
-    // Connect Lenis to GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
     const updateTicker = (time) => {
@@ -52,7 +51,7 @@ function App() {
     }
   }, [currentPath]);
 
-  // Intercept links for seamless client-side routing & smooth anchor scrolling via Lenis
+  // Intercept links for seamless client-side routing
   useEffect(() => {
     const handleLinkClick = (e) => {
       const anchor = e.target.closest('a');
@@ -112,24 +111,11 @@ function App() {
     return () => document.removeEventListener('click', handleLinkClick);
   }, []);
 
-  if (currentPath === '/contact') {
-    return <Contact />;
-  }
-
-  if (currentPath === '/services') {
-    return <ServicesPage />;
-  }
-
-  if (currentPath === '/works') {
-    return <WorksPage />;
-  }
-
-  if (currentPath === '/about') {
-    return <AboutPage />;
-  }
-
+  if (currentPath === '/contact') return <Contact />;
+  if (currentPath === '/services') return <ServicesPage />;
+  if (currentPath === '/works') return <WorksPage />;
+  if (currentPath === '/about') return <AboutPage />;
   return <Home />;
 }
 
 export default App;
-

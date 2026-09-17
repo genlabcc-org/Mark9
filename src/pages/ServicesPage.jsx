@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import CTA from '../components/CTA';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CTA from '../components/CTA';
+import Preloader from '../components/Preloader';
 import useSplitReveal from '../utils/useSplitReveal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -178,8 +179,8 @@ export function ServicesPage() {
 
   return (
     <div className="services-page-container" ref={pageRef}>
+      <Preloader />
       <Header />
-
       {/* Services Main Content Wrapper */}
       <main className="services-main">
         {/* Hero Section */}
@@ -246,8 +247,6 @@ export function ServicesPage() {
 
       {/* CTA Section */}
       <CTA />
-
-      {/* Footer */}
       <Footer />
     </div>
   );

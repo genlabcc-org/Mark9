@@ -8,25 +8,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: var(--page-padding-y) var(--page-padding-x) 0;
-  overflow-x: hidden;
+  padding: 6.5rem var(--page-padding-x) 0;
   position: relative;
-}
-
-/* Header Adaptations for Light Theme */
-.about-page-wrapper .header-logo-svg {
-  color: var(--text-dark);
-}
-
-.about-page-wrapper .menu-line {
-  background-color: var(--text-dark);
-}
-
-.about-header-wrap {
-  width: 100%;
-  padding-top: 1rem;
-  position: relative;
-  z-index: 100;
 }
 
 .about-main {
@@ -34,7 +17,29 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 0;
+}
+
+/* Full Width Single Image Banner Section */
+.about-full-image-section {
+  width: calc(100% + (2 * var(--page-padding-x)));
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.about-full-image {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* -------------------------------------------------------------
@@ -64,7 +69,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .about-hero-title {
@@ -115,8 +120,9 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   color: var(--text-muted);
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
+
 
 .stat-value {
   font-family: var(--font-heading);
@@ -296,8 +302,9 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   color: var(--text-muted-mid);
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
+
 
 .content-heading {
   font-family: var(--font-heading);
@@ -418,7 +425,7 @@
 
 .process-card:hover {
   transform: translateY(-4px);
-  background-color: #E2E2DC;
+  background-color: #1f1f1f;
 }
 
 .process-num {
@@ -534,8 +541,12 @@
 }
 
 @media (max-width: 768px) {
+  .about-main {
+    gap: 5.5rem;
+  }
+
   .about-page-wrapper {
-    padding: var(--page-padding-y) var(--page-padding-x) 0;
+    padding-top: 5rem;
   }
 
   .about-hero-section {
