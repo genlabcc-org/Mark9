@@ -65,7 +65,7 @@ export function Hero() {
       num: '01.',
       title: 'prada',
       desc: 'an iconic project meticulously curated by our agency.',
-      image: '/hero1.jpg',
+      image: '/hero1.jpeg',
       href: '/works',
     },
     {
@@ -81,7 +81,7 @@ export function Hero() {
       num: '03.',
       title: 'louis vuitton',
       desc: 'luxury brand identity & digital storytelling campaign.',
-      image: '/hero3.jpg',
+      image: '/hero3.png',
       href: '/works',
     },
   ];

@@ -31,7 +31,8 @@ export function Header() {
     { number: '02', label: 'about', href: '/about' },
     { number: '03', label: 'services', href: '/services' },
     { number: '04', label: 'works', href: '/works' },
-    { number: '05', label: 'contact', href: '/contact' },
+    { number: '05', label: 'pricing', href: '/pricing' },
+    { number: '06', label: 'contact', href: '/contact' },
   ];
 
   const isLinkActive = (href) => {
@@ -70,7 +71,7 @@ export function Header() {
 
           <div className="header-col col-right">
             <a href="/services" className={`hero-nav-link ${isLinkActive('/services') ? 'active' : ''}`}>Services</a>
-            <a href="#insights" className="hero-nav-link">Blog</a>
+            <a href="/pricing" className={`hero-nav-link ${isLinkActive('/pricing') ? 'active' : ''}`}>Pricing</a>
             <a href="/contact" className={`hero-nav-link ${isLinkActive('/contact') ? 'active' : ''}`}>Contact</a>
           </div>
         </div>
