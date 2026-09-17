@@ -150,6 +150,54 @@ export function WorksPage() {
     };
   }, []);
 
+  // Ultra-Smooth GSAP Image Parallax for Works Grid Cards
+  useEffect(() => {
+    if (!worksPageRef.current) return;
+
+    let ctx;
+    const timer = setTimeout(() => {
+      ctx = gsap.context(() => {
+        const wrappers = worksPageRef.current.querySelectorAll('.work-image-wrapper');
+        wrappers.forEach((wrapper, index) => {
+          const img = wrapper.querySelector('.work-img');
+          if (!img) return;
+
+          // Consistent parallax direction across all project cards
+          const startY = -8;
+          const endY = 8;
+
+          gsap.fromTo(
+            img,
+            {
+              yPercent: startY,
+              scale: 1.18,
+              force3D: true,
+              transformOrigin: '50% 50%'
+            },
+            {
+              yPercent: endY,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wrapper,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.2,
+                invalidateOnRefresh: true
+              }
+            }
+          );
+        });
+      }, worksPageRef);
+
+      ScrollTrigger.refresh();
+    }, 120);
+
+    return () => {
+      clearTimeout(timer);
+      ctx && ctx.revert();
+    };
+  }, [activeFilter]);
+
   const filteredProjects = activeFilter === 'all'
     ? PROJECTS_LIST
     : PROJECTS_LIST.filter(p => p.category === activeFilter);

@@ -97,6 +97,7 @@
 }
 
 .footer-col-title {
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 500;
@@ -104,6 +105,7 @@
   margin: 0;
   letter-spacing: 0.02em;
   text-transform: lowercase;
+  will-change: transform, opacity, filter;
 }
 
 .footer-links-list {
@@ -117,6 +119,7 @@
 
 .footer-link,
 .footer-item-text {
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 0.94rem;
   font-weight: 400;
@@ -125,6 +128,7 @@
   line-height: 1.5;
   transition: color 0.25s ease;
   text-transform: lowercase;
+  will-change: transform, opacity, filter;
 }
 
 .footer-link:hover {
@@ -132,6 +136,7 @@
 }
 
 .footer-link-highlight {
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 0.94rem;
   font-weight: 500;
@@ -140,6 +145,7 @@
   line-height: 1.65;
   transition: color 0.25s ease;
   text-transform: lowercase;
+  will-change: transform, opacity, filter;
 }
 
 .footer-link-highlight:hover {
@@ -154,6 +160,7 @@
 }
 
 .footer-address-text {
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 400;
@@ -161,6 +168,7 @@
   line-height: 1.65;
   margin-top: 0.35rem;
   text-transform: lowercase;
+  will-change: transform, opacity, filter;
 }
 
 /* Bottom Footer Bar */
@@ -194,6 +202,7 @@
 }
 
 .footer-social-link {
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 500;
@@ -202,6 +211,7 @@
   letter-spacing: 0.08em;
   transition: opacity 0.25s ease;
   text-transform: lowercase;
+  will-change: transform, opacity, filter;
 }
 
 .footer-social-link:hover {

@@ -95,6 +95,10 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  will-change: transform;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .mentor-info {

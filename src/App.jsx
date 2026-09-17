@@ -42,13 +42,17 @@ function App() {
     };
   }, []);
 
-  // Handle route change scroll to top
+  // Handle route change scroll to top & recalculate ScrollTrigger positions
   useEffect(() => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+    return () => clearTimeout(timer);
   }, [currentPath]);
 
   // Intercept links for seamless client-side routing

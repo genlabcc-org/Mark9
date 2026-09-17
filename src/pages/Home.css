@@ -7,4 +7,30 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: relative;
+  overflow: clip;
+}
+
+/* Main Content Flow: Scrolls naturally with Lenis, scales & dims as Footer enters */
+.main-content-flow {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: var(--bg-dark, #0c0c0c);
+  will-change: transform, opacity;
+  transform-origin: center bottom;
+}
+
+/* Footer Stacking Panel: Glides over the pinned main content with rounded top and deep shadow */
+.footer-stack-panel {
+  position: relative;
+  z-index: 10;
+  width: calc(100% + (2 * var(--page-padding-x)));
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  background-color: var(--bg-dark, #0c0c0c);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.85);
+  border-top: none;
+  overflow: hidden;
 }

@@ -210,6 +210,9 @@
   display: block;
   filter: contrast(102%);
   will-change: transform;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Responsive Media Queries */

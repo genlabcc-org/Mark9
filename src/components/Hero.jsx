@@ -1,12 +1,63 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './Header';
 import useSplitReveal from '../utils/useSplitReveal';
 import './Hero.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function Hero() {
   const heroRef = useRef(null);
   useSplitReveal(heroRef);
+
+  // Ultra-Smooth GSAP Image Parallax for Hero Column Images
+  useEffect(() => {
+    if (!heroRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const cards = heroRef.current.querySelectorAll('.hero-card');
+
+      cards.forEach((card, index) => {
+        const img = card.querySelector('.hero-card-bg-img');
+        if (!img) return;
+
+        // Consistent parallax direction across all hero cards
+        const startY = -8;
+        const endY = 14;
+
+        gsap.fromTo(
+          img,
+          {
+            yPercent: startY,
+            scale: 1.28,
+            force3D: true,
+            transformOrigin: '50% 50%'
+          },
+          {
+            yPercent: endY,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heroRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 1.2,
+              invalidateOnRefresh: true
+            }
+          }
+        );
+      });
+    }, heroRef);
+
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+      ctx.revert();
+    };
+  }, []);
 
   const heroCards = [
     {
@@ -78,11 +129,14 @@ export function Hero() {
           <div
             key={card.id}
             className="hero-card"
-            style={{ backgroundImage: `url(${card.image})` }}
             onMouseEnter={handleCardMouseEnter}
             onMouseLeave={handleCardMouseLeave}
           >
-            <div className="hero-card-overlay"></div>
+            <img
+              src={card.image}
+              alt={card.title}
+              className="hero-card-bg-img"
+            />
             <div className="hero-card-bottom">
               <div className="hero-card-content-block">
                 <span className="hero-card-title">{card.num} {card.title}</span>

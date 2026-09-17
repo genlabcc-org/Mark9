@@ -1,0 +1,56 @@
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function useFooterStackReveal(mainRef, footerRef) {
+  useEffect(() => {
+    if (!mainRef.current || !footerRef.current) return;
+
+    let ctx;
+    const timer = setTimeout(() => {
+      ctx = gsap.context(() => {
+        const mainEl = mainRef.current;
+        const footerEl = footerRef.current;
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mainEl,
+            start: 'bottom bottom',
+            end: () => `+=${footerEl.offsetHeight}`,
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        tl.fromTo(
+          mainEl,
+          { scale: 1, opacity: 1 },
+          {
+            scale: 0.88,
+            opacity: 0.5,
+            ease: 'none',
+          }
+        );
+      });
+
+      ScrollTrigger.refresh();
+    }, 200);
+
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+      ctx && ctx.revert();
+    };
+  }, []);
+}
+
+export default useFooterStackReveal;

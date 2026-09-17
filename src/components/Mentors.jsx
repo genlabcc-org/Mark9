@@ -1,7 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useSplitReveal from '../utils/useSplitReveal';
 import './Mentors.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const MENTORS_LIST = [
   {
@@ -58,6 +62,53 @@ const MENTORS_LIST = [
 export function Mentors() {
   const mentorsRef = useRef(null);
   useSplitReveal(mentorsRef);
+
+  // Ultra-Smooth GSAP Image Parallax for Mentors Cards
+  useEffect(() => {
+    if (!mentorsRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const wraps = mentorsRef.current.querySelectorAll('.mentor-image-wrap');
+      wraps.forEach((wrap, index) => {
+        const img = wrap.querySelector('.mentor-img');
+        if (!img) return;
+
+        // Consistent parallax direction across all team cards
+        const startY = -8;
+        const endY = 8;
+
+        gsap.fromTo(
+          img,
+          {
+            yPercent: startY,
+            scale: 1.18,
+            force3D: true,
+            transformOrigin: '50% 50%'
+          },
+          {
+            yPercent: endY,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: wrap,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2,
+              invalidateOnRefresh: true
+            }
+          }
+        );
+      });
+    }, mentorsRef);
+
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+      ctx.revert();
+    };
+  }, []);
 
   return (
     <section className="mentors-section" id="mentors" ref={mentorsRef}>

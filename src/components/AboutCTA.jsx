@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import gsap from 'gsap';
+import useSplitReveal from '../utils/useSplitReveal';
 import './AboutCTA.css';
 
 export function AboutCTA() {
   const ctaRef = useRef(null);
+  useSplitReveal(ctaRef);
   const buttonRef = useRef(null);
   const bgRef = useRef(null);
   const textRef = useRef(null);

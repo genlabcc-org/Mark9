@@ -136,44 +136,51 @@ export function ServicesPage() {
   const pageRef = useRef(null);
   useSplitReveal(pageRef);
 
-  // Reverse / Opposite Image Parallax Scroll Effect
+  // Ultra-Smooth GSAP Reverse / Opposite Image Parallax Scroll Effect
   useEffect(() => {
     if (!pageRef.current) return;
-    const cards = pageRef.current.querySelectorAll('.category-image-card');
-    const animations = [];
 
-    cards.forEach((card, index) => {
-      const img = card.querySelector('img');
-      if (!img) return;
+    const ctx = gsap.context(() => {
+      const cards = pageRef.current.querySelectorAll('.category-image-card');
 
-      // Alternate reverse scroll directions for dynamic visual depth
-      const isOdd = index % 2 === 1;
-      const yStart = isOdd ? '16%' : '-16%';
-      const yEnd = isOdd ? '-16%' : '16%';
+      cards.forEach((card, index) => {
+        const img = card.querySelector('img');
+        if (!img) return;
 
-      const anim = gsap.fromTo(
-        img,
-        { y: yStart, scale: 1.15 },
-        {
-          y: yEnd,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 0.8
+        // Consistent parallax direction across all image cards
+        const startY = -12;
+        const endY = 12;
+
+        gsap.fromTo(
+          img,
+          {
+            yPercent: startY,
+            scale: 1.26,
+            force3D: true,
+            transformOrigin: '50% 50%'
+          },
+          {
+            yPercent: endY,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2,
+              invalidateOnRefresh: true
+            }
           }
-        }
-      );
+        );
+      });
+    }, pageRef);
 
-      animations.push(anim);
-    });
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
 
     return () => {
-      animations.forEach((anim) => {
-        if (anim.scrollTrigger) anim.scrollTrigger.kill();
-        anim.kill();
-      });
+      clearTimeout(timer);
+      ctx.revert();
     };
   }, []);
 
