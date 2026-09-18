@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
 import useSplitReveal from '../utils/useSplitReveal';
+import useFooterStackReveal from '../utils/useStackedPanels';
 import './PricingPage.css';
 
 const PRICING_PACKAGES = [
@@ -55,14 +56,18 @@ const PRICING_PACKAGES = [
 
 export function PricingPage() {
   const pageRef = useRef(null);
+  const mainRef = useRef(null);
+  const footerRef = useRef(null);
+
   useSplitReveal(pageRef);
+  useFooterStackReveal(mainRef, footerRef);
 
   return (
     <div className="pricing-page-container" ref={pageRef}>
       <Preloader />
       <Header />
 
-      <main className="pricing-main-content">
+      <main className="pricing-main-content main-content-flow" ref={mainRef}>
         {/* Editorial Statement Section */}
         <section className="pricing-editorial-section">
           <div className="pricing-editorial-container">
@@ -132,7 +137,9 @@ export function PricingPage() {
         </section>
       </main>
 
-      <Footer />
+      <div className="footer-stack-panel" ref={footerRef}>
+        <Footer />
+      </div>
     </div>
   );
 }

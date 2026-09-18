@@ -9,13 +9,18 @@ import About from '../components/About';
 import AboutCTA from '../components/AboutCTA';
 import Mentors from '../components/Mentors';
 import useSplitReveal from '../utils/useSplitReveal';
+import useFooterStackReveal from '../utils/useStackedPanels';
 import './AboutPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutPage() {
   const aboutPageRef = useRef(null);
+  const mainRef = useRef(null);
+  const footerRef = useRef(null);
+
   useSplitReveal(aboutPageRef);
+  useFooterStackReveal(mainRef, footerRef);
 
   // Ultra-Smooth GSAP Image Parallax for Fullscreen Project Banner
   useEffect(() => {
@@ -64,7 +69,7 @@ export function AboutPage() {
       <Preloader />
       <Header />
 
-      <main className="about-main">
+      <main className="about-main main-content-flow" ref={mainRef}>
         {/* MARK9 Logo Infinite Scrolling Banner */}
         <Mark9LogoScroll />
 
@@ -87,7 +92,9 @@ export function AboutPage() {
         <Mentors />
       </main>
 
-      <Footer />
+      <div className="footer-stack-panel" ref={footerRef}>
+        <Footer />
+      </div>
     </div>
   );
 }

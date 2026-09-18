@@ -1,7 +1,1 @@
-/* App level global wrapper */
-.app-global-wrapper {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/* App-level styles — intentionally minimal; all layout handled per-page */

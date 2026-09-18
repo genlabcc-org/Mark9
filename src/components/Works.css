@@ -5,6 +5,7 @@
   margin-right: calc(-1 * var(--page-padding-x));
   padding: 5.5rem var(--page-padding-x) 6.5rem;
   color: #ffffff;
+  background-color: var(--bg-dark);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

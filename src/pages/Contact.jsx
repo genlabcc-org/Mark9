@@ -1,34 +1,22 @@
 import React, { useState, useRef } from 'react';
-import Button from '../components/Button';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
+import Mark9LogoScroll from '../components/Mark9LogoScroll';
 import useSplitReveal from '../utils/useSplitReveal';
-import { Sparkles, Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import useFooterStackReveal from '../utils/useStackedPanels';
 import './Contact.css';
 
-const LinkedinIcon = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const InstagramIcon = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-
 export function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const contactRef = useRef(null);
+  const mainRef = useRef(null);
+  const footerRef = useRef(null);
+
   useSplitReveal(contactRef);
+  useFooterStackReveal(mainRef, footerRef);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,191 +24,122 @@ export function Contact() {
     setTimeout(() => {
       setIsSubmitting(false);
       setFormSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
     }, 1000);
   };
 
   return (
-    <div className="contact-page-wrapper">
+    <div className="contact-page-wrapper" ref={contactRef}>
       <Preloader />
       <Header />
-      {/* Main Contact Section */}
-      <main className="contact-main">
-        {/* Contact Hero Header */}
-        <div className="contact-hero" ref={contactRef}>
-          <div className="contact-tag">
-            <span className="square-bullet"></span>
-            <span>(05) get in touch</span>
-          </div>
 
-          <h2 className="contact-title">
-            <span className="split-line-wrap">
-              <span className="split-line-content">let's build something</span>
-            </span>
-            <span className="split-line-wrap">
-              <span className="split-line-content">people can't scroll past<span className="orange-text">.</span></span>
-            </span>
-          </h2>
-        </div>
+      <main className="contact-main main-content-flow" ref={mainRef}>
+        {/* Top Infinite Scrolling Marquee Banner */}
+        <Mark9LogoScroll />
 
-        {/* Content Split: Left Contact Details, Right Functional Form */}
-        <div className="contact-grid">
-          {/* Left Column: Direct Contact Info & Socials */}
-          <div className="contact-left-col">
-            {/* Phone */}
-            <div className="info-card">
-              <span className="card-label">phone</span>
-              <div className="contact-info-row">
-                <Phone size={18} className="info-icon" />
-                <a href="tel:+919994535120" className="contact-detail-link">
+        {/* Minimal Studio Contact Section */}
+        <section className="contact-studio-section">
+          <div className="contact-studio-container">
+            {/* Left Column: Capsule/Stadium Studio Photo + Address */}
+            <div className="contact-studio-left">
+              <div className="contact-studio-image-wrap">
+                <img
+                  src="/about-banner.jpg"
+                  alt="mark9 studio workspace"
+                  className="contact-studio-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="contact-studio-info">
+                <h3 className="studio-city">nagercoil</h3>
+                <p className="studio-address">
+                  121/c, kottar–parvathipuram rd<br />
+                  chetti kulam, nagercoil 629001<br />
                   +91 99945 35120
-                </a>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="info-card">
-              <span className="card-label">email</span>
-              <div className="contact-info-row">
-                <Mail size={18} className="info-icon" />
-                <a href="mailto:info@mark9.cc" className="contact-detail-link">
-                  info@mark9.cc
-                </a>
-              </div>
-            </div>
-
-            {/* Address */}
-            <div className="info-card">
-              <span className="card-label">address</span>
-              <div className="contact-info-row address-row">
-                <MapPin size={18} className="info-icon pin-icon" />
-                <p className="address-text-detail">
-                  121/c, kottar–parvathipuram rd, chetti kulam, nagercoil, tamil nadu 629001
                 </p>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="info-card">
-              <span className="card-label">social</span>
-              <div className="contact-social-links">
-                <a
-                  href="https://www.instagram.com/mark9.cc/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-pill"
-                >
-                  <InstagramIcon size={14} />
-                  <span>@mark9.cc</span>
-                  <ArrowUpRight size={14} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/mark9cc/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-pill"
-                >
-                  <LinkedinIcon size={14} />
-                  <span>mark9 on linkedin</span>
-                  <ArrowUpRight size={14} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Simple Contact Form (Name, Email, Company, Message) */}
-          <div className="contact-right-col">
-            {formSubmitted ? (
-              <div className="form-success-card">
-                <div className="success-icon-wrap">
-                  <Sparkles size={32} />
-                </div>
-                <h3>message sent!</h3>
-                <p>
-                  thank you for reaching out, {formData.name || 'there'}. we've received your message and will get back to you shortly.
-                </p>
-                <Button
-                  variant="secondary"
-                  showIcon={false}
-                  onClick={() => {
-                    setFormSubmitted(false);
-                    setFormData({ name: '', email: '', company: '', message: '' });
-                  }}
-                >
-                  send another message
-                </Button>
-              </div>
-            ) : (
-              <form className="contact-form" onSubmit={handleSubmit}>
-                {/* Name & Email Fields */}
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="contact-name" className="form-label">name</label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      required
-                      placeholder="your name"
-                      className="form-input"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="contact-email" className="form-label">email</label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      required
-                      placeholder="your email"
-                      className="form-input"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    />
-                  </div>
-                </div>
-
-                {/* Company Field */}
-                <div className="form-group">
-                  <label htmlFor="contact-company" className="form-label">company</label>
+            {/* Right Column: Minimal Dark Contact Form */}
+            <div className="contact-studio-right">
+              <form className="minimal-contact-form" onSubmit={handleSubmit}>
+                {/* Name Field */}
+                <div className="minimal-form-field">
+                  <label htmlFor="minimal-name" className="minimal-label">
+                    name
+                  </label>
                   <input
-                    id="contact-company"
+                    id="minimal-name"
                     type="text"
-                    placeholder="company name"
-                    className="form-input"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    name="name"
+                    required
+                    placeholder="enter your name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="minimal-input"
+                  />
+                </div>
+
+                {/* E-mail Field */}
+                <div className="minimal-form-field">
+                  <label htmlFor="minimal-email" className="minimal-label">
+                    e-mail
+                  </label>
+                  <input
+                    id="minimal-email"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="enter your e-mail"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="minimal-input"
                   />
                 </div>
 
                 {/* Message Field */}
-                <div className="form-group">
-                  <label htmlFor="contact-message" className="form-label">message</label>
+                <div className="minimal-form-field">
+                  <label htmlFor="minimal-message" className="minimal-label">
+                    message
+                  </label>
                   <textarea
-                    id="contact-message"
+                    id="minimal-message"
+                    name="message"
                     required
-                    rows={5}
-                    placeholder="describe your project or goals..."
-                    className="form-textarea"
+                    rows={4}
+                    placeholder="your message..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  ></textarea>
+                    className="minimal-textarea"
+                  />
                 </div>
 
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  variant="dark"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'sending...' : 'send message'}
-                </Button>
+                {/* Submit Button & Notification */}
+                <div className="minimal-form-actions">
+                  <button
+                    type="submit"
+                    className="minimal-submit-btn"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'sending...' : 'submit message'}
+                  </button>
+
+                  {formSubmitted && (
+                    <span className="minimal-success-msg">
+                      message sent successfully!
+                    </span>
+                  )}
+                </div>
               </form>
-            )}
+            </div>
           </div>
-        </div>
+        </section>
       </main>
-      <Footer />
+
+      <div className="footer-stack-panel" ref={footerRef}>
+        <Footer />
+      </div>
     </div>
   );
 }

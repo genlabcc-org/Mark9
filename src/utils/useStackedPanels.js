@@ -38,6 +38,14 @@ export function useFooterStackReveal(mainRef, footerRef) {
       });
 
       ScrollTrigger.refresh();
+
+      if (mainEl) {
+        mainEl.querySelectorAll('img').forEach((img) => {
+          if (!img.complete) {
+            img.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+          }
+        });
+      }
     }, 200);
 
     const handleResize = () => {

@@ -28,6 +28,16 @@
   z-index: 100;
 }
 
+.works-main {
+  width: 100%;
+  flex: 1;
+  min-height: calc(100vh - 200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
 .about-main {
   width: 100%;
   margin: 0 auto;

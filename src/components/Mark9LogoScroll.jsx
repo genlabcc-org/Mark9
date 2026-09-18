@@ -42,13 +42,13 @@ export function Mark9LogoScroll() {
   }, []);
 
   const logoItems = [
-    { type: 'logo', src: '/logo.svg', alt: 'MARK9' },
+    { type: 'logo', src: '/logo.svg', alt: 'mark9' },
     { type: 'dash', text: '—' },
-    { type: 'logo', src: '/logo.svg', alt: 'MARK9' },
+    { type: 'logo', src: '/logo.svg', alt: 'mark9' },
     { type: 'dash', text: '—' },
-    { type: 'logo', src: '/logo.svg', alt: 'MARK9' },
+    { type: 'logo', src: '/logo.svg', alt: 'mark9' },
     { type: 'dash', text: '—' },
-    { type: 'logo', src: '/logo.svg', alt: 'MARK9' },
+    { type: 'logo', src: '/logo.svg', alt: 'mark9' },
     { type: 'dash', text: '—' },
   ];
 
@@ -77,7 +77,7 @@ export function Mark9LogoScroll() {
         {/* Left Column */}
         <div className="logo-scroll-col col-left">
           <p className="scroll-left-text">
-            WITH A BROAD SPECTRUM OF DESIGN NEEDS IN MIND, OUR DESIGN COLLECTION ENCOMPASSES EVERYTHING FROM ELEGANT AND TIMELESS STYLES TO MODERN AND DARING DESIGNS.
+            with a broad spectrum of design needs in mind, our design collection encompasses everything from elegant and timeless styles to modern and daring designs.
           </p>
         </div>
 
@@ -90,10 +90,10 @@ export function Mark9LogoScroll() {
         <div className="logo-scroll-col col-right">
           <div className="scroll-agency-header">
             <span className="bullet-dot">•</span>
-            <span className="agency-title">CREATIVE AGENCY</span>
+            <span className="agency-title">creative agency</span>
           </div>
           <p className="scroll-right-desc">
-            CRAFTING TIMELESS DESIGNS FOR INSPIRED LIVING
+            crafting timeless designs for inspired living
           </p>
         </div>
       </div>

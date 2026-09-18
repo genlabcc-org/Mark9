@@ -44,7 +44,7 @@ export function Footer() {
                   <li><a href="#about" className="footer-link">who we are</a></li>
                   <li><a href="/works" className="footer-link">our work</a></li>
                   <li><a href="/contact" className="footer-link">careers</a></li>
-                  <li><a href="#insights" className="footer-link">blog</a></li>
+                  <li><a href="/blog" className="footer-link">blog</a></li>
                 </ul>
               </div>
 

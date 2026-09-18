@@ -364,7 +364,7 @@
   .agency-bullet-tag {
     font-size: 0.8rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
+    text-transform: lowercase;
   }
 
   .hero-subheadline {

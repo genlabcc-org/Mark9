@@ -32,7 +32,8 @@ export function Header() {
     { number: '03', label: 'services', href: '/services' },
     { number: '04', label: 'works', href: '/works' },
     { number: '05', label: 'pricing', href: '/pricing' },
-    { number: '06', label: 'contact', href: '/contact' },
+    { number: '06', label: 'blog', href: '/blog' },
+    { number: '07', label: 'contact', href: '/contact' },
   ];
 
   const isLinkActive = (href) => {
@@ -58,21 +59,22 @@ export function Header() {
         {/* Desktop 3-Column Header Grid */}
         <div className="header-desktop-grid">
           <div className="header-col col-left">
-            <a href="/" className={`hero-nav-link ${isLinkActive('/') ? 'active' : ''}`}>Home</a>
-            <a href="/about" className={`hero-nav-link ${isLinkActive('/about') ? 'active' : ''}`}>About</a>
-            <a href="/works" className={`hero-nav-link ${isLinkActive('/works') ? 'active' : ''}`}>Works</a>
+            <a href="/" className={`hero-nav-link ${isLinkActive('/') ? 'active' : ''}`}>home</a>
+            <a href="/about" className={`hero-nav-link ${isLinkActive('/about') ? 'active' : ''}`}>about</a>
+            <a href="/works" className={`hero-nav-link ${isLinkActive('/works') ? 'active' : ''}`}>works</a>
           </div>
 
           <div className="header-col col-center">
-            <a href="/" className="mark9-logo-badge" aria-label="MARK9">
-              <img src="/logo.svg" alt="MARK9" className="mark9-badge-img" />
+            <a href="/" className="mark9-logo-badge" aria-label="mark9">
+              <img src="/logo.svg" alt="mark9" className="mark9-badge-img" />
             </a>
           </div>
 
           <div className="header-col col-right">
-            <a href="/services" className={`hero-nav-link ${isLinkActive('/services') ? 'active' : ''}`}>Services</a>
-            <a href="/pricing" className={`hero-nav-link ${isLinkActive('/pricing') ? 'active' : ''}`}>Pricing</a>
-            <a href="/contact" className={`hero-nav-link ${isLinkActive('/contact') ? 'active' : ''}`}>Contact</a>
+            <a href="/services" className={`hero-nav-link ${isLinkActive('/services') ? 'active' : ''}`}>services</a>
+            <a href="/pricing" className={`hero-nav-link ${isLinkActive('/pricing') ? 'active' : ''}`}>pricing</a>
+            <a href="/blog" className={`hero-nav-link ${isLinkActive('/blog') ? 'active' : ''}`}>blog</a>
+            <a href="/contact" className={`hero-nav-link ${isLinkActive('/contact') ? 'active' : ''}`}>contact</a>
           </div>
         </div>
 

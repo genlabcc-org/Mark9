@@ -8,6 +8,7 @@ import WorksPage from './pages/WorksPage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import PricingPage from './pages/PricingPage';
+import BlogPage from './pages/BlogPage';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -84,6 +85,10 @@ function App() {
         e.preventDefault();
         window.history.pushState({}, '', '/pricing');
         setCurrentPath('/pricing');
+      } else if (href === '/blog' || href === '#blog') {
+        e.preventDefault();
+        window.history.pushState({}, '', '/blog');
+        setCurrentPath('/blog');
       } else if (href === '/' || href === '#home') {
         e.preventDefault();
         window.history.pushState({}, '', '/');
@@ -125,6 +130,7 @@ function App() {
   if (currentPath === '/works') return <WorksPage />;
   if (currentPath === '/about') return <AboutPage />;
   if (currentPath === '/pricing') return <PricingPage />;
+  if (currentPath === '/blog') return <BlogPage />;
   return <Home />;
 }
 
