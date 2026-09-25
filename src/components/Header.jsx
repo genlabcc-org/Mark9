@@ -29,15 +29,17 @@ export function Header() {
   const navItems = [
     { number: '01', label: 'home', href: '/' },
     { number: '02', label: 'about', href: '/about' },
-    { number: '03', label: 'services', href: '/services' },
+    { number: '03', label: 'community', href: 'https://uncommon-institute-of-design.vercel.app/', target: '_blank', rel: 'noopener noreferrer' },
     { number: '04', label: 'works', href: '/works' },
-    { number: '05', label: 'pricing', href: '/pricing' },
-    { number: '06', label: 'blog', href: '/blog' },
-    { number: '07', label: 'contact', href: '/contact' },
+    { number: '05', label: 'services', href: '/services' },
+    { number: '06', label: 'pricing', href: '/pricing' },
+    { number: '07', label: 'blog', href: '/blog' },
+    { number: '08', label: 'contact', href: '/contact' },
   ];
 
   const isLinkActive = (href) => {
     if (!href) return false;
+    if (href.startsWith('http')) return false;
     if (href === '/') {
       return currentPath === '/' || currentPath === '';
     }
@@ -61,6 +63,14 @@ export function Header() {
           <div className="header-col col-left">
             <a href="/" className={`hero-nav-link ${isLinkActive('/') ? 'active' : ''}`}>home</a>
             <a href="/about" className={`hero-nav-link ${isLinkActive('/about') ? 'active' : ''}`}>about</a>
+            <a
+              href="https://uncommon-institute-of-design.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-nav-link"
+            >
+              community
+            </a>
             <a href="/works" className={`hero-nav-link ${isLinkActive('/works') ? 'active' : ''}`}>works</a>
           </div>
 
@@ -114,6 +124,8 @@ export function Header() {
                 <a
                   key={item.label}
                   href={item.href}
+                  target={item.target}
+                  rel={item.rel}
                   onClick={toggleMenu}
                   className={`menu-nav-item ${active ? 'active' : ''}`}
                 >
