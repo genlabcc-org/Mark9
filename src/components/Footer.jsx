@@ -86,7 +86,7 @@ export function Footer() {
               <a href="https://instagram.com/mark9.design" target="_blank" rel="noreferrer" className="footer-social-link">
                 instagram ↗
               </a>
-              <a href="https://linkedin.com/company/mark9" target="_blank" rel="noreferrer" className="footer-social-link">
+              <a href="https://www.linkedin.com/company/mark9cc/" target="_blank" rel="noreferrer" className="footer-social-link">
                 linkedin ↗
               </a>
             </div>
