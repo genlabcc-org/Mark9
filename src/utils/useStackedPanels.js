@@ -10,10 +10,11 @@ export function useFooterStackReveal(mainRef, footerRef) {
 
     let ctx;
     const timer = setTimeout(() => {
-      ctx = gsap.context(() => {
-        const mainEl = mainRef.current;
-        const footerEl = footerRef.current;
+      const mainEl = mainRef.current;
+      const footerEl = footerRef.current;
+      if (!mainEl || !footerEl) return;
 
+      ctx = gsap.context(() => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: mainEl,

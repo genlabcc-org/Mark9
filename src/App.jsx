@@ -9,6 +9,8 @@ import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import PricingPage from './pages/PricingPage';
 import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
+import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -85,10 +87,23 @@ function App() {
         e.preventDefault();
         window.history.pushState({}, '', '/pricing');
         setCurrentPath('/pricing');
+      } else if (href === '/blog-detail' || href.startsWith('/blog-detail') || href.startsWith('/blog/')) {
+        e.preventDefault();
+        window.history.pushState({}, '', href);
+        setCurrentPath(href);
+        if (lenisRef.current) {
+          lenisRef.current.scrollTo(0, { immediate: true });
+        } else {
+          window.scrollTo(0, 0);
+        }
       } else if (href === '/blog' || href === '#blog') {
         e.preventDefault();
         window.history.pushState({}, '', '/blog');
         setCurrentPath('/blog');
+      } else if (href === '/404') {
+        e.preventDefault();
+        window.history.pushState({}, '', '/404');
+        setCurrentPath('/404');
       } else if (href === '/' || href === '#home') {
         e.preventDefault();
         window.history.pushState({}, '', '/');
@@ -125,13 +140,16 @@ function App() {
     return () => document.removeEventListener('click', handleLinkClick);
   }, []);
 
+  if (currentPath === '/') return <Home />;
   if (currentPath === '/contact') return <Contact />;
   if (currentPath === '/services') return <ServicesPage />;
   if (currentPath === '/works') return <WorksPage />;
   if (currentPath === '/about') return <AboutPage />;
   if (currentPath === '/pricing') return <PricingPage />;
+  if (currentPath === '/blog-detail' || currentPath.startsWith('/blog-detail') || currentPath.startsWith('/blog/')) return <BlogDetailPage key={currentPath} />;
   if (currentPath === '/blog') return <BlogPage />;
-  return <Home />;
+  if (currentPath === '/404') return <NotFoundPage />;
+  return <NotFoundPage />;
 }
 
 export default App;

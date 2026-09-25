@@ -116,7 +116,7 @@ export function Works() {
             {/* Image Wrap */}
             <div className="single-project-image-wrap">
               <img
-                src="/project3.png"
+                src="/apollo.jpg"
                 alt="prada - iconic project"
                 className="single-project-img"
               />
@@ -124,7 +124,7 @@ export function Works() {
 
             {/* Bottom Caption Line */}
             <div className="single-project-caption">
-              <span className="caption-title">prada</span>
+              <span className="caption-title">Apollo</span>
               <span className="caption-desc">an iconic project meticulously curated by our agency.</span>
             </div>
           </a>

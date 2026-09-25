@@ -106,27 +106,29 @@ export function BlogPage() {
         <section className="blog-grid-section" aria-label="blog articles">
           <div className="blog-grid-container">
             {filteredPosts.map((post) => (
-              <article className="blog-card" key={post.id}>
-                {/* Image Wrap */}
-                <div className="blog-card-image-wrap">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="blog-card-img"
-                    loading="lazy"
-                  />
-                </div>
+              <a href={`/blog-detail?id=${post.id}`} key={post.id} className="blog-card-link" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                <article className="blog-card">
+                  {/* Image Wrap */}
+                  <div className="blog-card-image-wrap">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="blog-card-img"
+                      loading="lazy"
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="blog-card-content">
-                  <h2 className="blog-card-title">
-                    {post.title}
-                  </h2>
-                  <p className="blog-card-excerpt">
-                    {post.excerpt}
-                  </p>
-                </div>
-              </article>
+                  {/* Content */}
+                  <div className="blog-card-content">
+                    <h2 className="blog-card-title">
+                      {post.title}
+                    </h2>
+                    <p className="blog-card-excerpt">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </article>
+              </a>
             ))}
           </div>
         </section>
