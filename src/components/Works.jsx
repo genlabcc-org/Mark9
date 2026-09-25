@@ -143,8 +143,8 @@ export function Works() {
             <a href="/works" className="single-project-link" aria-label="Explore Louis Vuitton Project">
               <div className="staggered-image-wrap tall-wrap">
                 <img
-                  src="/project2.png"
-                  alt="louis vuitton"
+                  src="/anika.png"
+                  alt="anika jewellery"
                   className="single-project-img"
                 />
               </div>

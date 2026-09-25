@@ -8,43 +8,43 @@ const servicesList = [
     id: '01',
     title: 'branding',
     description: "strategy, positioning and a personality your audience won't forget.",
-    image: '/project2.png'
+    image: '/branding.png'
   },
   {
     id: '02',
     title: 'design',
     description: "visuals that don't just look good — they say something",
-    image: '/project3.png'
+    image: '/design.jpg'
   },
   {
     id: '03',
     title: 'strategy',
     description: "the thinking behind every move, so nothing is left to guesswork.",
-    image: '/portrait1.jpg'
+    image: '/strategy.png'
   },
   {
     id: '04',
     title: 'marketing',
     description: "campaigns built to be seen, shared, and remembered",
-    image: '/project5.png'
+    image: '/marketing.jpg'
   },
   {
     id: '05',
     title: 'packaging design',
     description: "packs that earn a second look and a place in the cart",
-    image: '/portrait1.jpg'
+    image: '/packaging.png'
   },
   {
     id: '06',
     title: 'ui/ux',
     description: "digital experiences people actually enjoy using.",
-    image: '/project2.png'
+    image: '/uiux.jpg'
   },
   {
     id: '07',
     title: 'ads',
     description: "creative that stops the scroll and starts a conversation.",
-    image: '/project3.png'
+    image: '/ads.jpg'
   }
 ];
 
