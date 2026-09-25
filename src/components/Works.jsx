@@ -12,7 +12,7 @@ const projects = [
     id: 'apollo',
     title: 'Apollo',
     desc: 'an iconic project meticulously curated by our agency.',
-    image: '/apollo.jpg',
+    image: '/project 4.png',
     alt: 'apollo - iconic project',
     link: '/works'
   },
@@ -20,7 +20,7 @@ const projects = [
     id: 'anika',
     title: 'Anika',
     desc: 'an embodiment of luxury and timeless elegance.',
-    image: '/project1.png',
+    image: '/project1 1.png',
     alt: 'anika jewellery',
     link: '/works'
   },
@@ -28,7 +28,7 @@ const projects = [
     id: 'faywalk',
     title: 'FayWalk',
     desc: 'a groundbreaking project crafted by our agency.',
-    image: '/project5.png',
+    image: '/Project3.png',
     alt: 'faywalk',
     link: '/works'
   },
@@ -36,7 +36,7 @@ const projects = [
     id: 'invenza',
     title: 'Invenza',
     desc: 'a visionary project crafted by our agency with a harmonious fusion of creativity',
-    image: '/project3.png',
+    image: '/Project2.png',
     alt: 'invenza',
     link: '/works'
   }
