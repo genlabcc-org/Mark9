@@ -26,7 +26,7 @@ export function Footer() {
               </div>
 
               <p className="footer-headline">
-                mark9 —an uncommon design institute.
+                mark9 —an uncommon design agency.
               </p>
 
               <div className="footer-cta-wrap">
@@ -69,7 +69,7 @@ export function Footer() {
                   <span className="footer-address-text">
                     121/c, kottar–parvathipuram rd,<br />
                     chetti kulam, nagercoil,<br />
-                    tamil nadu 629001
+                    Tamil nadu 629001
                   </span>
                 </address>
               </div>
@@ -79,7 +79,7 @@ export function Footer() {
           {/* Bottom Bar: Credits & Social Links */}
           <div className="footer-bottom-bar">
             <div className="footer-bottom-left">
-              <span>© 2026 <strong>mark9 design institute</strong>. all rights reserved.</span>
+              <span>© 2026 <strong>mark9 design agency</strong>. all rights reserved.</span>
             </div>
 
             <div className="footer-bottom-right">

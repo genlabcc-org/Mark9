@@ -6,7 +6,7 @@ import './FAQ.css';
 const FAQ_DATA = [
   {
     id: '01',
-    question: 'what makes mark9 different from other design institutes?',
+    question: 'what makes mark9 different from other design agency?',
     answer: 'we don\'t start with software — we start with how you see the world. field visits, real mentors, and a curriculum that lets you try every discipline before you commit to one.'
   },
   {
@@ -37,7 +37,7 @@ const FAQ_DATA = [
   {
     id: '07',
     question: 'where is mark9 located?',
-    answer: '121/c, kottar–parvathipuram rd, chetti kulam, nagercoil, tamil nadu 629001.'
+    answer: '121/c, kottar–parvathipuram rd, chetti kulam, nagercoil, Tamil nadu 629001.'
   }
 ];
 

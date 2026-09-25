@@ -28,7 +28,7 @@ const projects = [
     id: 'faywalk',
     title: 'FayWalk',
     desc: ' brings fresh ideas closer to its audience.',
-    image: '/Project3.png',
+    image: '/project3.png',
     alt: 'faywalk',
     link: '/works'
   },
@@ -36,7 +36,7 @@ const projects = [
     id: 'invenza',
     title: 'Invenza',
     desc: ' pairs thoughtful design with a fresh perspective.',
-    image: '/Project2.png',
+    image: '/project2.png',
     alt: 'invenza',
     link: '/works'
   }
