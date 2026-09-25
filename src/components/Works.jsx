@@ -11,7 +11,7 @@ const projects = [
   {
     id: 'apollo',
     title: 'Apollo',
-    desc: 'an iconic project meticulously curated by our agency.',
+    desc: 'blends thoughtful design with a distinctive identity.',
     image: '/project 4.png',
     alt: 'apollo - iconic project',
     link: '/works'
@@ -27,16 +27,16 @@ const projects = [
   {
     id: 'faywalk',
     title: 'FayWalk',
-    desc: 'a groundbreaking project crafted by our agency.',
-    image: '/project3.png',
+    desc: ' brings fresh ideas closer to its audience.',
+    image: '/Project3.png',
     alt: 'faywalk',
     link: '/works'
   },
   {
     id: 'invenza',
     title: 'Invenza',
-    desc: 'a visionary project crafted by our agency with a harmonious fusion of creativity',
-    image: '/project2.png',
+    desc: ' pairs thoughtful design with a fresh perspective.',
+    image: '/Project2.png',
     alt: 'invenza',
     link: '/works'
   }
@@ -127,7 +127,7 @@ export function Works() {
                 </div>
               </div>
             </a>
-          </motion.div>
+          </motion.div>  
         ))}
       </div>
     </section>
