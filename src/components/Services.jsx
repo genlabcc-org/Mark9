@@ -38,13 +38,13 @@ const servicesList = [
     id: '06',
     title: 'ui/ux',
     description: "digital experiences people actually enjoy using.",
-    image: '/uiux.jpg'
+    image: '/ui-ux.jpg'
   },
   {
     id: '07',
     title: 'ads',
     description: "creative that stops the scroll and starts a conversation.",
-    image: '/ads.jpg'
+    image: '/ads-night.jpg'
   }
 ];
 
