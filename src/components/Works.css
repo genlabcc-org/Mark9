@@ -3,7 +3,7 @@
   width: calc(100% + (2 * var(--page-padding-x)));
   margin-left: calc(-1 * var(--page-padding-x));
   margin-right: calc(-1 * var(--page-padding-x));
-  padding: 5.5rem var(--page-padding-x) 6.5rem;
+  padding: 5.5rem 1.25rem 6.5rem;
   color: #ffffff;
   background-color: var(--bg-dark);
   box-sizing: border-box;
@@ -19,8 +19,9 @@
   align-items: center;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1320px;
-  margin: 0 auto 3.5rem;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  margin: 0 0 3.5rem;
 }
 
 .works-header-label {
@@ -42,35 +43,43 @@
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-/* Single Project Container */
-.works-single-container {
+/* 2-Column Grid: 2 images in 1 line with a subtle gap */
+.works-grid-container {
   width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem 1.25rem;
+  align-items: start;
 }
 
-.single-project-card {
+.work-grid-card {
   width: 100%;
 }
 
-.single-project-link {
+.work-grid-link {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.3s ease;
 }
 
-.single-project-image-wrap {
+.work-grid-link:hover .work-title {
+  color: #ffffff;
+}
+
+.work-grid-image-wrap {
   position: relative;
   width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  background: #111111;
 }
 
-.single-project-img {
+.work-grid-img {
   width: 100%;
   height: auto;
   display: block;
@@ -81,160 +90,72 @@
 }
 
 /* Bottom Caption Line */
-.single-project-caption {
+.work-grid-caption {
   display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-  margin-top: 1.25rem;
-  padding-left: 0.2rem;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
 }
 
-.caption-title {
+.work-title-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.work-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 1.6vw, 1.55rem);
+  font-size: clamp(1.15rem, 1.4vw, 1.45rem);
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.01em;
   text-transform: lowercase;
+  transition: color 0.3s ease;
 }
 
-.caption-dot {
-  color: rgba(255, 255, 255, 0.5);
+.work-desc-box {
+  flex: 1;
+  padding-top: 0.15rem;
 }
 
-.caption-desc {
+.work-desc {
   font-family: var(--font-body);
-  font-size: clamp(0.85rem, 1.05vw, 1rem);
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
   text-transform: lowercase;
+  display: block;
 }
 
 /* Responsive Breakdown */
+@media (max-width: 992px) {
+  .works-grid-container {
+    gap: 2.5rem 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .works-section {
-    padding: 3.5rem var(--page-padding-x) 4.5rem;
+    padding: 3.5rem 1rem 4.5rem;
   }
 
   .works-top-header {
     margin-bottom: 2rem;
   }
 
-  .single-project-image-wrap {
-    height: auto;
-    border-radius: 6px;
+  .works-grid-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .single-project-caption {
-    font-size: 0.9rem;
-    flex-wrap: wrap;
+  .work-grid-caption {
+    flex-direction: column;
     gap: 0.4rem;
   }
-}
 
-/* 2-Column Staggered Grid (Louis Vuitton & Cyber Tesla) */
-.works-staggered-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 3.5rem;
-  margin-top: 4.5rem;
-  align-items: start;
-}
-
-.staggered-card {
-  width: 100%;
-}
-
-.staggered-image-wrap {
-  position: relative;
-  width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-}
-
-.tall-wrap {
-  aspect-ratio: 1 / 1.02;
-}
-
-.wide-wrap {
-  aspect-ratio: 16 / 10;
-}
-
-.staggered-caption {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  padding-left: 0.2rem;
-}
-
-.staggered-title-box {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-  min-width: 140px;
-  flex-shrink: 0;
-}
-
-.staggered-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 1.6vw, 1.55rem);
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  text-transform: lowercase;
-}
-
-.staggered-desc-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
-  font-family: var(--font-body);
-  font-size: clamp(0.85rem, 1.05vw, 1rem);
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.55;
-  padding-top: 0.15rem;
-}
-
-@media (max-width: 992px) {
-  .works-staggered-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    margin-top: 3.5rem;
-  }
-
-  .tall-wrap,
-  .wide-wrap {
-    aspect-ratio: 16 / 10;
-  }
-
-  .staggered-caption {
-    gap: 1.5rem;
-  }
-
-  .staggered-title-box {
-    min-width: 110px;
-  }
-}
-
-.music-pro-card {
-  max-width: 860px;
-  margin: 4.5rem auto 0 0;
-}
-
-.music-pro-card .single-project-image-wrap {
-  height: clamp(320px, 46vh, 520px);
-}
-
-@media (max-width: 768px) {
-  .music-pro-card {
-    max-width: 100%;
-    margin-top: 3.5rem;
-  }
-
-  .music-pro-card .single-project-image-wrap {
-    height: 300px;
+  .work-title-box {
+    min-width: unset;
   }
 }

@@ -17,7 +17,7 @@ const ABOUT_STATS = [
     label: 'cities and counting'
   },
   {
-    num: '100%',
+    num: '101%',
     label: 'obsessed with getting it right'
   }
 ];
