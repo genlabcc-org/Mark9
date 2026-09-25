@@ -89,7 +89,7 @@ export function AboutPage() {
         <AboutCTA />
 
         {/* Mentors / Team Showcase Section */}
-        <Mentors />
+        
       </main>
 
       <div className="footer-stack-panel" ref={footerRef}>
