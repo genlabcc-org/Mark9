@@ -51,7 +51,7 @@ export function About() {
         >
           {/* Main Paragraph Narrative */}
           <p className="about-paragraph">
-            founded in 2023, mark9 is a creative design and marketing studio that transforms ideas into impactful brands. we offer branding, design, strategy, marketing, packaging, ui/ux, and more under one roof, helping businesses build strong and memorable brand identities.
+            founded in 2026, mark9 is a creative design and marketing studio that transforms ideas into impactful brands. we offer branding, design, strategy, marketing, packaging, ui/ux, and more under one roof, helping businesses build strong and memorable brand identities.
           </p>
 
           {/* 3-Column Big Stats Grid */}

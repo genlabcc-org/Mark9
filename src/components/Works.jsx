@@ -151,11 +151,11 @@ export function Works() {
 
               <div className="staggered-caption">
                 <div className="staggered-title-box">
-                  <span className="staggered-title">louis</span>
-                  <span className="staggered-title">vuitton</span>
+                  <span className="staggered-title">Anika</span>
+                  
                 </div>
                 <div className="staggered-desc-box">
-                  <span className="caption-desc">louis vuitton, an embodiment of luxury and timeless elegance.</span>
+                  <span className="caption-desc">Anika, an embodiment of luxury and timeless elegance.</span>
                 </div>
               </div>
             </a>
@@ -180,11 +180,11 @@ export function Works() {
 
               <div className="staggered-caption">
                 <div className="staggered-title-box">
-                  <span className="staggered-title">cyber</span>
-                  <span className="staggered-title">tesla</span>
+                  <span className="staggered-title">FayWalk</span>
+                  
                 </div>
                 <div className="staggered-desc-box">
-                  <span className="caption-desc">tesla, a groundbreaking project crafted by our agency.</span>
+                  <span className="caption-desc">FayWalk, a groundbreaking project crafted by our agency.</span>
                 </div>
               </div>
             </a>
@@ -210,8 +210,8 @@ export function Works() {
 
             <div className="staggered-caption">
               <div className="staggered-title-box">
-                <span className="staggered-title">music</span>
-                <span className="staggered-title">pro 2</span>
+                <span className="staggered-title">Invenza</span>
+            
               </div>
               <div className="staggered-desc-box">
                 <span className="caption-desc">a visionary project crafted by our agency with a harmonious fusion of creativity</span>
