@@ -14,7 +14,7 @@ const projects = [
     desc: 'blends thoughtful design with a distinctive identity.',
     image: '/project 4.png',
     alt: 'apollo - iconic project',
-    link: '/works'
+    link: '/work-detail?id=apollo'
   },
   {
     id: 'anika',
@@ -22,7 +22,7 @@ const projects = [
     desc: 'an embodiment of luxury and timeless elegance.',
     image: '/project1 1.png',
     alt: 'anika jewellery',
-    link: '/works'
+    link: '/work-detail?id=anika'
   },
   {
     id: 'faywalk',
@@ -30,7 +30,7 @@ const projects = [
     desc: ' brings fresh ideas closer to its audience.',
     image: '/project3.png',
     alt: 'faywalk',
-    link: '/works'
+    link: '/work-detail?id=faywalk'
   },
   {
     id: 'invenza',
@@ -38,7 +38,7 @@ const projects = [
     desc: ' pairs thoughtful design with a fresh perspective.',
     image: '/project2.png',
     alt: 'invenza',
-    link: '/works'
+    link: '/work-detail?id=invenza'
   }
 ];
 

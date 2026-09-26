@@ -10,13 +10,14 @@ import AboutPage from './pages/AboutPage';
 import PricingPage from './pages/PricingPage';
 import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import WorkDetailPage from './pages/WorkDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(() => window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(() => window.location.pathname + window.location.search);
   const lenisRef = useRef(null);
 
   // Global Lenis Smooth Scroll Initialization across entire site
@@ -75,6 +76,15 @@ function App() {
         e.preventDefault();
         window.history.pushState({}, '', '/services');
         setCurrentPath('/services');
+      } else if (href === '/work-detail' || href.startsWith('/work-detail') || href.startsWith('/work/')) {
+        e.preventDefault();
+        window.history.pushState({}, '', href);
+        setCurrentPath(href);
+        if (lenisRef.current) {
+          lenisRef.current.scrollTo(0, { immediate: true });
+        } else {
+          window.scrollTo(0, 0);
+        }
       } else if (href === '/works' || href === '#works') {
         e.preventDefault();
         window.history.pushState({}, '', '/works');
@@ -136,19 +146,30 @@ function App() {
       }
     };
 
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname + window.location.search);
+    };
+
+    window.addEventListener('popstate', handlePopState);
     document.addEventListener('click', handleLinkClick);
-    return () => document.removeEventListener('click', handleLinkClick);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      document.removeEventListener('click', handleLinkClick);
+    };
   }, []);
 
-  if (currentPath === '/') return <Home />;
-  if (currentPath === '/contact') return <Contact />;
-  if (currentPath === '/services') return <ServicesPage />;
-  if (currentPath === '/works') return <WorksPage />;
-  if (currentPath === '/about') return <AboutPage />;
-  if (currentPath === '/pricing') return <PricingPage />;
-  if (currentPath === '/blog-detail' || currentPath.startsWith('/blog-detail') || currentPath.startsWith('/blog/')) return <BlogDetailPage key={currentPath} />;
-  if (currentPath === '/blog') return <BlogPage />;
-  if (currentPath === '/404') return <NotFoundPage />;
+  const pathOnly = currentPath.split('?')[0];
+
+  if (pathOnly === '/') return <Home />;
+  if (pathOnly === '/contact') return <Contact />;
+  if (pathOnly === '/services') return <ServicesPage />;
+  if (pathOnly === '/work-detail' || pathOnly.startsWith('/work-detail') || pathOnly.startsWith('/work/')) return <WorkDetailPage key={currentPath} />;
+  if (pathOnly === '/works') return <WorksPage />;
+  if (pathOnly === '/about') return <AboutPage />;
+  if (pathOnly === '/pricing') return <PricingPage />;
+  if (pathOnly === '/blog-detail' || pathOnly.startsWith('/blog-detail') || pathOnly.startsWith('/blog/')) return <BlogDetailPage key={currentPath} />;
+  if (pathOnly === '/blog') return <BlogPage />;
+  if (pathOnly === '/404') return <NotFoundPage />;
   return <NotFoundPage />;
 }
 

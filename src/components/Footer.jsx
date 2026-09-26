@@ -67,9 +67,9 @@ export function Footer() {
                   <a href="mailto:info@mark9.cc" className="footer-link-highlight">info@mark9.cc</a>
                   <a href="tel:+919994535120" className="footer-link-highlight">+91 99945 35120</a>
                   <span className="footer-address-text">
-                    121/c, kottar–parvathipuram rd,<br />
-                    chetti kulam, nagercoil,<br />
-                    Tamil nadu 629001
+                    121/C, Kottar–Parvathipuram Rd,<br />
+                    Chetti Kulam, Nagercoil,<br />
+                    Tamil Nadu 629001
                   </span>
                 </address>
               </div>
