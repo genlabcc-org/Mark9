@@ -108,8 +108,8 @@ export function ShapeOverlays({ isOpened, onComplete, color = "var(--accent-red)
   }, [isOpened]);
 
   const fills = [
-    'var(--text-dark)',
-    'rgba(255, 34, 0, 0.4)',
+    '#161616',
+    'rgba(255, 34, 0, 0.45)',
     color
   ];
 
