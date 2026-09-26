@@ -18,7 +18,7 @@
    1. HERO HEADER: Top Date Tag & Monolithic Title
 ───────────────────────────────────────────────────────────── */
 .work-detail-hero-header {
-  padding: 6.5rem var(--page-padding-x) 2.5rem;
+  padding: 7.5rem var(--page-padding-x) 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,22 +39,23 @@
 .work-detail-date-badge {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1vw, 0.88rem);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: lowercase;
   color: rgba(255, 255, 255, 0.65);
 }
 
 .work-detail-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 11vw, 9.5rem);
+  font-size: clamp(2.8rem, 9.5vw, 8.5rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 0;
   text-transform: lowercase;
+  word-break: break-word;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -75,7 +76,7 @@
 .work-detail-hero-media-wrap {
   width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 780px;
+  max-height: 740px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -95,7 +96,7 @@
    3. CENTERED EDITORIAL STATEMENT / QUOTE SECTION
 ───────────────────────────────────────────────────────────── */
 .work-detail-editorial-quote-section {
-  padding: 7.5rem var(--page-padding-x);
+  padding: 6.5rem var(--page-padding-x);
   background-color: var(--bg-dark);
   display: flex;
   justify-content: center;
@@ -112,7 +113,7 @@
 
 .work-detail-quote-text {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.1vw, 1.85rem);
+  font-size: clamp(1.15rem, 1.85vw, 1.75rem);
   font-weight: 400;
   line-height: 1.68;
   letter-spacing: -0.01em;
@@ -132,7 +133,7 @@
    4. PROJECT METADATA GRID
 ───────────────────────────────────────────────────────────── */
 .work-detail-meta-section {
-  padding: 0 var(--page-padding-x) 5.5rem;
+  padding: 0 var(--page-padding-x) 5rem;
 }
 
 .work-detail-meta-container {
@@ -143,7 +144,7 @@
   gap: 2.5rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 3.5rem 0;
+  padding: 3.2rem 0;
 }
 
 .work-detail-meta-col {
@@ -163,7 +164,7 @@
 
 .work-meta-val {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
   font-weight: 400;
   color: #ffffff;
   text-transform: lowercase;
@@ -180,7 +181,7 @@
 
 .work-services-list li {
   font-family: var(--font-heading);
-  font-size: 0.98rem;
+  font-size: clamp(0.9rem, 1.05vw, 1rem);
   color: rgba(255, 255, 255, 0.75);
   text-transform: lowercase;
 }
@@ -189,7 +190,7 @@
    5. DEEP NARRATIVE & APPROACH SECTION
 ───────────────────────────────────────────────────────────── */
 .work-detail-narrative-section {
-  padding: 3rem var(--page-padding-x) 6.5rem;
+  padding: 2.5rem var(--page-padding-x) 6.5rem;
 }
 
 .work-detail-narrative-container {
@@ -221,7 +222,7 @@
 
 .work-narrative-heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.5rem);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -232,14 +233,14 @@
 .work-narrative-right {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.8rem;
 }
 
 .work-narrative-para {
   font-family: var(--font-heading);
-  font-size: 1.12rem;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.75);
   text-transform: lowercase;
 }
 
@@ -277,60 +278,134 @@
 /* ─────────────────────────────────────────────────────────────
    6. RESPONSIVE BREAKPOINTS
 ───────────────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .work-detail-narrative-container {
-    grid-template-columns: 1fr;
     gap: 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .work-detail-hero-header {
+    padding: 7rem var(--page-padding-x) 2.2rem;
+  }
+
+  .work-detail-editorial-quote-section {
+    padding: 5rem var(--page-padding-x);
   }
 
   .work-detail-meta-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+    padding: 2.8rem 0;
+  }
+
+  .work-detail-narrative-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .work-narrative-left {
+    gap: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
   .work-detail-hero-header {
-    padding: 4.5rem var(--page-padding-x) 1.5rem;
+    padding: 6.8rem var(--page-padding-x) 1.8rem;
+  }
+
+  .work-detail-header-container {
+    gap: 0.9rem;
   }
 
   .work-detail-hero-media-wrap {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10;
+    max-height: 480px;
     border-radius: 8px;
   }
 
   .work-detail-editorial-quote-section {
-    padding: 4.5rem var(--page-padding-x);
+    padding: 3.8rem var(--page-padding-x);
+  }
+
+  .work-detail-meta-section {
+    padding: 0 var(--page-padding-x) 3.5rem;
   }
 
   .work-detail-meta-container {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem 1.5rem;
-    padding: 2.5rem 0;
+    gap: 2rem 1.25rem;
+    padding: 2.2rem 0;
   }
 
-  .work-narrative-section {
-    padding: 2.5rem var(--page-padding-x) 5rem;
+  .work-detail-narrative-section {
+    padding: 2rem var(--page-padding-x) 4.5rem;
+  }
+
+  .work-narrative-right {
+    gap: 2.2rem;
   }
 
   .work-narrative-subgrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.8rem;
+    padding-top: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
+  .work-detail-hero-header {
+    padding: 6.2rem var(--page-padding-x) 1.5rem;
+  }
+
   .work-detail-date-badge {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     letter-spacing: 0.1em;
   }
 
+  .work-detail-main-title {
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+  }
+
+  .work-detail-hero-media-wrap {
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+  }
+
+  .work-detail-editorial-quote-section {
+    padding: 3rem var(--page-padding-x);
+  }
+
   .work-detail-quote-text {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.6;
   }
 
   .work-detail-meta-container {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.6rem;
+    padding: 1.8rem 0;
+  }
+
+  .work-detail-narrative-section {
+    padding: 1.5rem var(--page-padding-x) 3.5rem;
+  }
+
+  .work-narrative-heading {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  .work-narrative-para {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .work-subgrid-title {
+    font-size: 1.05rem;
+  }
+
+  .work-subgrid-desc {
+    font-size: 0.9rem;
   }
 }

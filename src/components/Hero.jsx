@@ -65,7 +65,7 @@ export function Hero() {
       title: 'Strategy',
       desc: 'Build a clear foundation for your creative journey.',
       image: '/hero1.jpeg',
-      href: '/works',
+      href: '/work-detail?id=strategy',
     },
     {
       id: '02',
@@ -73,7 +73,7 @@ export function Hero() {
       title: 'Craft',
       desc: 'Develop practical design skills through making.',
       image: '/hero2.jpg',
-      href: '/works',
+      href: '/work-detail?id=craft',
     },
     {
       id: '03',
@@ -81,9 +81,16 @@ export function Hero() {
       title: 'Execution',
       desc: 'Turn design ideas into finished work.',
       image: '/hero3.png',
-      href: '/works',
+      href: '/work-detail?id=execution',
     },
   ];
+
+  const handleCardClick = (e, href) => {
+    e.preventDefault();
+    window.history.pushState({}, '', href);
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleCardMouseEnter = (e) => {
     const card = e.currentTarget;
@@ -124,11 +131,14 @@ export function Hero() {
       {/* 3-Column Hero Cards Grid */}
       <div className="hero-columns-grid">
         {heroCards.map((card) => (
-          <div
+          <a
             key={card.id}
+            href={card.href}
             className="hero-card"
+            onClick={(e) => handleCardClick(e, card.href)}
             onMouseEnter={handleCardMouseEnter}
             onMouseLeave={handleCardMouseLeave}
+            aria-label={`View ${card.title} details`}
           >
             <img
               src={card.image}
@@ -140,14 +150,14 @@ export function Hero() {
                 <span className="hero-card-title">{card.num} {card.title}</span>
                 <p className="hero-card-desc">{card.desc}</p>
               </div>
-              <a href={card.href} className="hero-arrow-btn" aria-label={`Explore ${card.title}`}>
+              <div className="hero-arrow-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
-              </a>
+              </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

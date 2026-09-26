@@ -12,6 +12,69 @@ import './WorkDetailPage.css';
 gsap.registerPlugin(ScrollTrigger);
 
 export const WORKS_DATABASE = {
+  strategy: {
+    id: 'strategy',
+    title: 'strategy',
+    date: 'july 8, 2024',
+    category: 'creative direction & brand strategy',
+    client: 'mark9 studio',
+    year: '2026',
+    services: ['brand positioning', 'market research', 'creative strategy', 'identity direction'],
+    duration: '3 months',
+    leadQuote: {
+      beforeItalic: 'strategy is the architecture behind every enduring brand. we decode market noise into ',
+      italicText: 'clear, decisive competitive advantage,',
+      afterItalic: ' ensuring every visual move commands cultural resonance.'
+    },
+    heroImage: '/hero1.jpeg',
+    heroAlt: 'strategy - mark9 creative agency',
+    overview: 'strategic brand positioning designed to build an unbreakable bridge between company vision and audience perception. we dissect consumer psychology and competitive white-space.',
+    challenge: 'in crowded markets, visual beauty alone falls flat without sharp positioning.',
+    solution: 'we engineer comprehensive brand roadmaps, value matrices, and tone-of-voice frameworks that guide every design execution.',
+    nextProjectId: 'craft'
+  },
+  craft: {
+    id: 'craft',
+    title: 'craft',
+    date: 'august 14, 2024',
+    category: 'design craft & visual systems',
+    client: 'mark9 studio',
+    year: '2026',
+    services: ['visual systems', 'typography design', 'spatial layouts', 'prototyping'],
+    duration: '3 months',
+    leadQuote: {
+      beforeItalic: 'craft is our obsession with the tactile details that elevate design into art. we sculpt ',
+      italicText: 'every curve, kerning, and pixel with relentless precision,',
+      afterItalic: ' creating experiences that feel effortless yet profound.'
+    },
+    heroImage: '/hero2.jpg',
+    heroAlt: 'craft - mark9 creative agency',
+    overview: 'practical design mastery developed through iterative prototyping, material experimentation, and pure visual rigor across print, spatial, and digital mediums.',
+    challenge: 'maintaining handcrafted excellence and artistic soul in scalable digital systems.',
+    solution: 'a harmonious marriage between artisanal sensibilities and modern computational design systems.',
+    nextProjectId: 'execution'
+  },
+  execution: {
+    id: 'execution',
+    title: 'execution',
+    date: 'september 21, 2024',
+    category: 'digital execution & production',
+    client: 'mark9 studio',
+    year: '2026',
+    services: ['full-stack build', 'motion design', 'launch campaigns', 'spatial art'],
+    duration: '3 months',
+    leadQuote: {
+      beforeItalic: 'execution is where visionary ideas transform into living realities. we bridge pure imagination with ',
+      italicText: 'seamless technical mastery and flawless velocity,',
+      afterItalic: ' delivering products that redefine industry benchmarks.'
+    },
+    heroImage: '/hero3.png',
+    heroAlt: 'execution - mark9 creative agency',
+    overview: 'turning conceptual design frameworks into deployed, world-class digital platforms and tangible consumer touchpoints that dominate their categories.',
+    challenge: 'delivering zero-latency, high-fidelity digital systems without sacrificing creative integrity.',
+    solution: 'full-stack creative engineering with micro-animations, bespoke shaders, and responsive architecture.',
+    nextProjectId: 'strategy'
+  },
   prada: {
     id: 'prada',
     title: 'prada',

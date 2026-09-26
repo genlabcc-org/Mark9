@@ -6,7 +6,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 10000;
   padding: 2.2rem var(--page-padding-x);
   box-sizing: border-box;
 }
@@ -107,6 +107,8 @@
   padding: 0;
   margin: 0;
   color: #ffffff;
+  position: relative;
+  z-index: 10001;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -132,12 +134,22 @@
 }
 
 /* Menu Active state overrides */
+.global-header.menu-active {
+  z-index: 10000;
+}
+
 .global-header.menu-active .menu-toggle-btn {
-  color: var(--text-dark);
+  color: #000000 !important;
+}
+
+.global-header.menu-active .menu-toggle-btn svg {
+  stroke: #000000 !important;
+  color: #000000 !important;
+  display: block;
 }
 
 .global-header.menu-active .menu-line {
-  background-color: var(--text-dark);
+  background-color: #000000 !important;
 }
 
 /* Fullscreen Navigation Menu Overlay */
@@ -285,7 +297,7 @@
     padding: 1.2rem var(--page-padding-x);
     width: 100%;
     max-width: 100%;
-    z-index: 1000;
+    z-index: 10000;
     box-sizing: border-box;
   }
 
