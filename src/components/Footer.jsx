@@ -65,7 +65,7 @@ export function Footer() {
                 <h4 className="footer-col-title">contact</h4>
                 <address className="footer-address">
                   <a href="mailto:info@mark9.cc" className="footer-link-highlight">info@mark9.cc</a>
-                  <a href="tel:+919994535120" className="footer-link-highlight">+91 99945 35120</a>
+                  <a href="tel:+919994535120" className="footer-link-highlight">+91 99945 35121</a>
                   <span className="footer-address-text">
                     121/C, Kottar–Parvathipuram Rd,<br />
                     Chetti Kulam, Nagercoil,<br />
