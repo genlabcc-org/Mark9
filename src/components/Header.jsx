@@ -64,7 +64,7 @@ export function Header() {
             <a href="/" className={`hero-nav-link ${isLinkActive('/') ? 'active' : ''}`}>home</a>
             <a href="/about" className={`hero-nav-link ${isLinkActive('/about') ? 'active' : ''}`}>about</a>
             <a
-              href="https://uncommon-institute-of-design.vercel.app/"
+              href="https://uid.mark9.cc/"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-nav-link"

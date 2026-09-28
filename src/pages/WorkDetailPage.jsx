@@ -121,7 +121,7 @@ export const WORKS_DATABASE = {
       italicText: 'each touchpoint feels relentlessly visionary,',
       afterItalic: ' bridging computational power with exquisite human craft.'
     },
-    heroImage: '/project 4.png',
+    heroImage: '/project 4.avif',
     heroAlt: 'apollo project showcase',
     overview: 'apollo is an iconic project meticulously curated by our agency. designed as an industry-defining interface for aerospace data systems, every screen balances high data density with serene visual hierarchy.',
     challenge: 'aerospace telemetry interfaces are notoriously complex and cluttered. the objective was reducing cognitive friction while retaining every critical telemetry data stream.',
@@ -153,7 +153,7 @@ export const WORKS_DATABASE = {
       italicText: 'every jewel tells an intimate story of grace,',
       afterItalic: ' enveloped in bespoke tactile packaging.'
     },
-    heroImage: '/project1 1.png',
+    heroImage: '/project1 1.avif',
     heroAlt: 'anika jewellery project',
     overview: 'anika haute joaillerie sought an exclusive visual identity that honored centuries of precious gemstone craftsmanship while appealing to a new cohort of discerning modern collectors.',
     challenge: 'bridging traditional gold and diamond craftsmanship with contemporary digital retail experiences without losing the tactile aura of luxury.',
@@ -185,7 +185,7 @@ export const WORKS_DATABASE = {
       italicText: 'a provocative visual language for urban explorers,',
       afterItalic: ' engineered to leave an indelible impression.'
     },
-    heroImage: '/project3.png',
+    heroImage: '/project3.avif',
     heroAlt: 'faywalk project',
     overview: 'faywalk is a disruptive urban streetwear collective. our team orchestrated the complete brand inception, physical garment graphics, digital lookbook, and viral launch campaign.',
     challenge: 'standing out in a saturated streetwear ecosystem demands uncompromised authenticity, radical aesthetics, and high-velocity digital engagement.',
@@ -217,7 +217,7 @@ export const WORKS_DATABASE = {
       italicText: 'complex algorithmic liquidity with intuitive elegance,',
       afterItalic: ' giving global investors total command over their capital.'
     },
-    heroImage: '/project2.png',
+    heroImage: '/project2.avif',
     heroAlt: 'invenza project',
     overview: 'invenza represents next-generation enterprise asset intelligence. we designed their comprehensive platform experience from foundational architecture to interactive 3d web presentation.',
     challenge: 'translating institutional-grade quantitative data into an effortless, aesthetically refined user journey accessible to modern institutional traders.',
