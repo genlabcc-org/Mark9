@@ -76,7 +76,7 @@ export function AboutPage() {
         {/* Full Screen Single Project Image Banner Section */}
         <section className="about-full-image-section">
           <img
-            src="/project3.png"
+            src="/project2.avif"
             alt="MARK9 Featured Project Showcase"
             className="about-full-image"
           />
