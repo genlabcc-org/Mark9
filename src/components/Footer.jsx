@@ -45,7 +45,7 @@ export function Footer() {
                   <li><a href="/works" className="footer-link">our work</a></li>
                   <li><a href="/contact" className="footer-link">careers</a></li>
                   <li><a href="/blog" className="footer-link">blog</a></li>
-                  <li><a href="https://uncommon-institute-of-design.vercel.app/" className="footer-link">join our community</a></li>
+                  <li><a href="https://uid.mark9.cc/" className="footer-link">join our community</a></li>
                 </ul>
               </div>
 
