@@ -29,7 +29,7 @@ export function Header() {
   const navItems = [
     { number: '01', label: 'home', href: '/' },
     { number: '02', label: 'about', href: '/about' },
-    { number: '03', label: 'community', href: 'https://uncommon-institute-of-design.vercel.app/', target: '_blank', rel: 'noopener noreferrer' },
+    { number: '03', label: 'UID', href: 'https://uid.mark9.cc/', target: '_blank', rel: 'noopener noreferrer' },
     { number: '04', label: 'works', href: '/works' },
     { number: '05', label: 'services', href: '/services' },
     { number: '06', label: 'pricing', href: '/pricing' },
@@ -64,12 +64,13 @@ export function Header() {
             <a href="/" className={`hero-nav-link ${isLinkActive('/') ? 'active' : ''}`}>home</a>
             <a href="/about" className={`hero-nav-link ${isLinkActive('/about') ? 'active' : ''}`}>about</a>
             <a
-              href="https://uncommon-institute-of-design.vercel.app/"
+              href="https://uid.mark9.cc/"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-nav-link"
+              style={{ textTransform: 'uppercase' }}
             >
-              community
+              UID
             </a>
             <a href="/works" className={`hero-nav-link ${isLinkActive('/works') ? 'active' : ''}`}>works</a>
           </div>
