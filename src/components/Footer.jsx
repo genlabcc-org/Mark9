@@ -84,7 +84,7 @@ export function Footer() {
             </div>
 
             <div className="footer-bottom-right">
-              <a href="https://instagram.com/mark9.design" target="_blank" rel="noreferrer" className="footer-social-link">
+              <a href="https://www.instagram.com/mark9.cc/" target="_blank" rel="noreferrer" className="footer-social-link">
                 instagram ↗
               </a>
               <a href="https://www.linkedin.com/company/mark9cc/" target="_blank" rel="noreferrer" className="footer-social-link">
