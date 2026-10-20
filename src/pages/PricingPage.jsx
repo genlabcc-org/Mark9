@@ -18,7 +18,7 @@ const PRICING_PACKAGES = [
       '3x revision & complete handoff'
     ],
     buttonText: 'add to cart',
-    image: '/project2.png',
+    image: '/project2.avif',
     showcaseTitle: 'leveraging data analytics for effective sustainable supply chain management',
     showcaseDesc: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -48,7 +48,7 @@ const PRICING_PACKAGES = [
       '3x revision & vector assets'
     ],
     buttonText: 'add to cart',
-    image: '/project3.png',
+    image: '/project3.avif',
     showcaseTitle: 'curating iconic visual identities across digital and physical mediums',
     showcaseDesc: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   }

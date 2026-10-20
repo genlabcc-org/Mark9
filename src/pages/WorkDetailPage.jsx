@@ -102,7 +102,7 @@ export const WORKS_DATABASE = {
     gallery: [
       { image: '/hero3.png', alt: 'prada spatial architecture', caption: 'sculptural spatial proportions' },
       { image: '/hero1.jpeg', alt: 'prada campaign model', caption: 'tactile editorial materials' },
-      { image: '/project2.png', alt: 'prada digital ui showcase', caption: 'monolithic digital interface' },
+      { image: '/project2.avif', alt: 'prada digital ui showcase', caption: 'monolithic digital interface' },
       { image: '/ads-night.jpg', alt: 'prada lighting campaign', caption: 'nocturnal ambient lighting' }
     ],
     nextProjectId: 'apollo'
@@ -132,9 +132,9 @@ export const WORKS_DATABASE = {
       { label: 'industry award', value: 'red dot 2024' }
     ],
     gallery: [
-      { image: '/project 4.png', alt: 'apollo display grid', caption: 'telemetry dashboard architecture' },
+      { image: '/project 4.avif', alt: 'apollo display grid', caption: 'telemetry dashboard architecture' },
       { image: '/hero2.jpg', alt: 'apollo visual geometry', caption: 'precision typography & grid' },
-      { image: '/project2.png', alt: 'apollo interface screen', caption: 'real-time analytical graphs' },
+      { image: '/project2.avif', alt: 'apollo interface screen', caption: 'real-time analytical graphs' },
       { image: '/222.png', alt: 'apollo brand collateral', caption: 'physical brand guidelines' }
     ],
     nextProjectId: 'anika'
@@ -164,7 +164,7 @@ export const WORKS_DATABASE = {
       { label: 'client retention', value: '92%' }
     ],
     gallery: [
-      { image: '/project1 1.png', alt: 'anika brand photography', caption: 'editorial macro photography' },
+      { image: '/project1 1.avif', alt: 'anika brand photography', caption: 'editorial macro photography' },
       { image: '/packaging.png', alt: 'anika bespoke packaging', caption: 'tactile debossed presentation boxes' },
       { image: '/branding.png', alt: 'anika identity system', caption: 'custom typography & monogram' },
       { image: '/anika.png', alt: 'anika lookbook', caption: 'high-jewelry collection catalogue' }
@@ -196,7 +196,7 @@ export const WORKS_DATABASE = {
       { label: 'brand value', value: '$1.4m' }
     ],
     gallery: [
-      { image: '/project3.png', alt: 'faywalk capsule collection', caption: 'apparel silhouette design' },
+      { image: '/project3.avif', alt: 'faywalk capsule collection', caption: 'apparel silhouette design' },
       { image: '/design.jpg', alt: 'faywalk graphic system', caption: 'subcultural emblem prints' },
       { image: '/ads.jpg', alt: 'faywalk billboard campaign', caption: 'metropolitan outdoor media' },
       { image: '/insight1.jpg', alt: 'faywalk studio process', caption: 'raw textile experimentation' }
@@ -228,7 +228,7 @@ export const WORKS_DATABASE = {
       { label: 'nps score', value: '94/100' }
     ],
     gallery: [
-      { image: '/project2.png', alt: 'invenza dashboard showcase', caption: 'spatial asset analytics interface' },
+      { image: '/project2.avif', alt: 'invenza dashboard showcase', caption: 'spatial asset analytics interface' },
       { image: '/strategy.png', alt: 'invenza system architecture', caption: 'modular design token matrix' },
       { image: '/uiux.jpg', alt: 'invenza mobile experience', caption: 'touch-optimized mobile terminals' },
       { image: '/333.png', alt: 'invenza brand identity', caption: 'corporate collateral & brand kit' }

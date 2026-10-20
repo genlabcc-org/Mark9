@@ -12,7 +12,7 @@ const BLOG_POSTS = [
     category: 'news',
     title: 'integrations unleashed - how to improve web design process',
     excerpt: 'veniam est ipsum deserunt repellendus aut omnis officiis beatae. id consectetur animi id quia voluptatem ut aliquid.',
-    image: '/project2.png'
+    image: '/project2.avif'
   },
   {
     id: 2,

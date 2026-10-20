@@ -12,7 +12,7 @@ const POST_DATABASE = {
     category: 'news',
     date: 'july 3, 2024',
     title: 'integrations unleashed - how to improve web design process',
-    image: '/project2.png',
+    image: '/project2.avif',
     lead: "introduction: unleashing creativity through webflow's designer and agency templates",
     sections: [
       {
