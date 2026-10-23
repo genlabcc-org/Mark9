@@ -20,7 +20,7 @@ const projects = [
     id: 'anika',
     title: 'Anika',
     desc: 'an embodiment of luxury and timeless elegance.',
-    image: '/project1 1.avif',
+    image: '/anika1.png',
     alt: 'anika jewellery',
     link: '/work-detail?id=anika'
   },
@@ -28,7 +28,7 @@ const projects = [
     id: 'faywalk',
     title: 'FayWalk',
     desc: ' brings fresh ideas closer to its audience.',
-    image: '/project3.avif',
+    image: '/faywalk.png',
     alt: 'faywalk',
     link: '/work-detail?id=faywalk'
   },
@@ -57,7 +57,7 @@ export function Works() {
         if (img) {
           gsap.fromTo(
             img,
-            { yPercent: -2, scale: 1.02, force3D: true, transformOrigin: '50% 50%' },
+            { yPercent: -2, scale: 1.05, force3D: true, transformOrigin: '50% 50%' },
             {
               yPercent: 2,
               ease: 'none',
